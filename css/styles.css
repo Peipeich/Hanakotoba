@@ -1,0 +1,2 @@
+/* Mismo orden de capas que Tailwind (siempre en la primera línea) */
+@layer theme, base, components, utilities;
