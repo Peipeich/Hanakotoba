@@ -1,2 +1,22 @@
 /* Mismo orden de capas que Tailwind (siempre en la primera línea) */
 @layer theme, base, components, utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem; /* para que la cabecera fija no tape los títulos */
+    }
+
+    /* MODO OSCURO CAMBIANDO EL TEMA ENTERO
+       Cuando el <html> tiene la clase .dark, redefinimos las variables del @theme.
+       Todas las clases que las usan (bg-fondo, text-texto, border-borde...)
+       cambian solas, sin escribir dark: en cada elemento del HTML. */
+    .dark {
+        --color-bg: #535841;
+        --color-flower:#D9DFFF;
+        --color-darktext: #f6efe9;
+         --color-lighttext:#434037;
+        --color-nav:#FDF5C8;
+        color-scheme: dark;
+    }
+}
