@@ -1,5 +1,17 @@
-/* Mismo orden de capas que Tailwind (siempre en la primera línea) */
-@layer theme, base, components, utilities;
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Lato:wght@300;400;700;900&display=swap');
+
+@import "tailwindcss";
+
+/* Theme: modo oscuro */
+.dark {
+    --color-bg: #535841;
+    --color-flower: #D9DFFF;
+    --color-darktext: #F6EFE9;
+    --color-lighttext: #434037;
+    --color-nav: #FDF5C8;
+
+    color-scheme: dark;
+}
 
 @layer base {
     html {

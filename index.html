@@ -24,36 +24,33 @@
     <!-- Variables -->
     
     <style type="text/tailwindcss">
-
+            /* Variante dark personalizada */
             @custom-variant dark (&:where(.dark, .dark *));
 
+            /* Theme: modo claro */
             @theme static {
-                /* COLORES */
-                /* --color-periwinkle: #D9DFFF;
-                --color-beige: #F6EFE9;
-                --color-yellow: #FDF5C8;
-                --color-green: #BDC2AC;
-                --color-darkyellow: #82783F;
-                --color-darkgreen: #535841;
-                --color-black: #434037; */
-                --color-bg:#D9DFFf;
-                --color-flower:#FDF5C8
-                --color-darktext:#434037;
-                --color-lighttext:#FDF5C8;
-                --color-nav:#82783F;
+                --color-bg: #D9DFFF;
+                --color-flower: #FDF5C8;
+                --color-darktext: #434037;
+                --color-lighttext: #FDF5C8;
+                --color-nav: #82783F;
 
-            }
+            /* Fuentes */
+                --font-lato: "Lato", sans-serif;
+                --font-asul: "Asul", serif;
+}
 
         </style>
 </head>
-<body class="">
-    <nav class="">
+<body class="bg-bg">
+    <nav class="nav ">
         <div class="menu">
 
         </div>
-        <div class="switch">
-
-        </div>
+        <button id="boton-tema" type="button" aria-pressed="false"
+            class="rounded-full border border-borde px-3 py-2 text-sm md:px-4 font-semibold hover:border-acento hover:text-acento">
+        Modo oscuro
+        </button>
         <!-- (esto luego en ordenador es el boton de reserva) -->
         <div class="burger">
 
@@ -62,7 +59,7 @@
 
     <main class="">
         <div class="">
-            <h1>花言葉</h1>
+            <h1 class="">花言葉</h1>
         </div>
 
     </main>
@@ -117,24 +114,26 @@
     </section>
 
     <section class="horario">
-        <div>
-            <h2>HORARIO</h2>
-            <p></p>
-             <a href="#">Más info</a>
+        <div class="">
+            <h2 class="">HORARIO</h2>
+            <p class=""></p>
+             <a class="" href="#">Más info</a>
         </div>
     </section>
 
     <section class="mapa">
-        <h2></h2>
-        <div>
-            <p></p>
+        <h2 class="">
+
+        </h2>
+        <div class="">
+            <p class=""></p>
             <iframe src="" frameborder="0"></iframe>
         </div>
     </section>
 
     <footer>
         <div class="footer-top">
-            <p></p>
+            <p class=""></p>
             <div class="newsletter">
                 <label for="email">NEWSLETTER</label>
                 <div class="newslettertype">
@@ -146,8 +145,8 @@
 
         </div>
         <div class="footer-bottom">
-            <p><i class="fa-solid fa-phone"></i> +81 67895945</p>
-            <p><i class="fa-solid fa-envelope"></i> Nipponongakufest@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +67 676767676</p>
+            <p><i class="fa-solid fa-envelope"></i> Hanakotoba@gmail.com</p>
         </div>
     </footer>
     
