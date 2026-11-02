@@ -24,34 +24,27 @@
     <!-- Variables -->
    
     <style type="text/tailwindcss">
-            /* Variante dark personalizada */
-            @custom-variant dark (&:where(.dark, .dark *));
 
-            /* Theme: modo claro */
-            @theme static {
+    /* VARIANTE DARK */
+    @custom-variant dark (&:where(.dark, .dark *));
 
-                /* COLORES */
-/*                 --color-periwinkle: #D9DFFF;
-                --color-beige: #F6EFE9;
-                --color-yellow: #FDF5C8;
-                --color-green: #BDC2AC;
-                --color-darkyellow: #82783F;
-                --color-darkgreen: #535841;
-                --color-black: #434037; */
+    /* THEME: MODO CLARO */
+    @theme static {
 
-                --color-bg: #D9DFFF;
-                --color-deg: #FDF5C8;
-                --color-flower: #FDF5C8;
-                --color-darktext: #434037;
-                --color-lighttext: #FDF5C8;
-                --color-nav: #82783F;
+        /* COLORES */
+        --color-bg: #D9DFFF;
+        --color-deg: #FDF5C8;
+        --color-flower: #FDF5C8;
+        --color-darktext: #434037;
+        --color-lighttext: #FDF5C8;
+        --color-nav: #82783F;
 
-            /* Fuentes */
-                --font-lato: "Lato", sans-serif;
-                --font-asul: "Asul", serif;
-}
+        /* FUENTES */
+        --font-lato: "Lato", sans-serif;
+        --font-asul: "Asul", serif;
+    }
 
-        </style>
+    </style>
 </head>
 <body class="bg-linear-to-b from-bg via-deg to-bg">
    <nav class="nav w-full fixed top-0 left-0 bg-nav text-lighttext p-5 z-50">
