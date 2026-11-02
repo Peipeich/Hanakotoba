@@ -1,11 +1,39 @@
-const raiz = document.documentElement; // <html>
+const raiz = document.documentElement;
 const botonTema = document.querySelector('#boton-tema');
-// Al cargar: ¿eligió oscuro la última vez?
+
+// MODO OSCURO
 if (localStorage.getItem('tema') === 'oscuro') {
-raiz.classList.add('dark');
+    raiz.classList.add('dark');
 }
+
 botonTema.addEventListener('click', function () {
-raiz.classList.toggle('dark');
-const oscuro = raiz.classList.contains('dark');
-localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
+    raiz.classList.toggle('dark');
+
+    const oscuro = raiz.classList.contains('dark');
+    localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
+});
+
+// MENU HAMBURGUESA
+$(function () {
+
+    $('.burger').on('click', function () {
+
+        // Mostrar u ocultar el menú
+        $('#menu-mov').toggleClass('hidden');
+
+        // Comprobar si el menú está abierto
+        const abierto = !$('#menu-mov').hasClass('hidden');
+
+        // Cambiar el icono
+        if (abierto) {
+            $('#icon-menu').attr('data-feather', 'x');
+        } else {
+            $('#icon-menu').attr('data-feather', 'menu');
+        }
+
+        // Actualizar los iconos de Feather
+        feather.replace();
+
+    });
+
 });

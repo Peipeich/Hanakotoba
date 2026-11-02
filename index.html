@@ -1,272 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanakotoba</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanakotoba</title>
 
-    <!-- FAVICON  -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- FAVICON  -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- EMOJIS -->
-      <script src="https://unpkg.com/feather-icons"></script>
+    <!-- EMOJIS -->
+      <script src="https://unpkg.com/feather-icons"></script>
 
-    <!-- JS  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css">
+    <!-- JS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css">
 
-    <!-- Nuestro CSS propio -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Nuestro CSS propio -->
+    <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Tailwind desde el CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Variables -->
-    
-    <style type="text/tailwindcss">
-            /* Variante dark personalizada */
-            @custom-variant dark (&:where(.dark, .dark *));
+    <!-- Variables -->
+   
+    <style type="text/tailwindcss">
+            /* Variante dark personalizada */
+            @custom-variant dark (&:where(.dark, .dark *));
 
-            /* Theme: modo claro */
-            @theme static {
-                --color-bg: #D9DFFF;
-                --color-flower: #FDF5C8;
-                --color-darktext: #434037;
-                --color-lighttext: #FDF5C8;
-                --color-nav: #82783F;
+            /* Theme: modo claro */
+            @theme static {
 
-            /* Fuentes */
-                --font-lato: "Lato", sans-serif;
-                --font-asul: "Asul", serif;
+                /* COLORES */
+/*                 --color-periwinkle: #D9DFFF;
+                --color-beige: #F6EFE9;
+                --color-yellow: #FDF5C8;
+                --color-green: #BDC2AC;
+                --color-darkyellow: #82783F;
+                --color-darkgreen: #535841;
+                --color-black: #434037; */
+
+                --color-bg: #D9DFFF;
+                --color-deg: #FDF5C8;
+                --color-flower: #FDF5C8;
+                --color-darktext: #434037;
+                --color-lighttext: #FDF5C8;
+                --color-nav: #82783F;
+
+            /* Fuentes */
+                --font-lato: "Lato", sans-serif;
+                --font-asul: "Asul", serif;
 }
 
-        </style>
+        </style>
 </head>
-<body class="bg-bg">
-    <nav class="nav ">
-        <div class="menu">
-            <div class="menu-logo">
-                <a class="" href="index.html">LOGO</a>
-            </div>
-            <!-- esto es para ordenador  -->
-            <div class="menu-element">
-                <ul>
-                    <li>
-                        <a class="" href="">Sobre nosotros</a>
-                    </li>
-                    <li>
-                        <a class="" href="">Productos</a>
-                    </li>
-                    <li>
-                        <a class="" href="">Información</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <button id="boton-tema" type="button" aria-pressed="false"
-            class="rounded-full border border-borde px-3 py-2 text-sm md:px-4 font-semibold hover:border-acento hover:text-acento">
-        Modo oscuro
-        </button>
-        <!-- (esto luego en ordenador es el boton de reserva) -->
-        <div class="burger">
-            <i data-feather="menu"></i>
-        </div>
-        <!-- EL MENU DESPLEGADO  -->
-        <div>
-            <a href="index.html">HOME</a>
-            <a href="">SOBRE NOSOTROS</a>
-            <a href="">NUESTROS PRODUCTOS</a>
-            <a href="">INFORMACIÓN</a>
-            <a href="">RESERVA</a>
-        </div>
-        <div class="reserva">
-            <p>RESERVA</p>
-        </div>
-    </nav>
+<body class="bg-linear-to-b from-bg via-deg to-bg">
+   <nav class="nav w-full fixed top-0 left-0 bg-nav text-lighttext p-5 z-50">
 
-    <main class="">
-        <div class="">
-            <h1 class="">花言葉</h1>
-            <p>flor?</p>
-        </div>
+        <div class="flex w-full items-center justify-between">
+            <!-- LOGO -->
+            <div class="menu-logo text-2xl">
+                <a href="index.html">花言葉</a>
+            </div>
+            <div class="flex gap-6">
+                <!-- BOTÓN MODO OSCURO -->
+                <button id="boton-tema" type="button"class="rounded-full border px-3 py-2 text-sm font-semibold">
+                Modo oscuro
+                </button>
+   
+                <!-- BOTÓN HAMBURGUESA -->
+                <div class="burger cursor-pointer z-50">
+                    <i id="icon-menu" data-feather="menu"></i>
+                </div>
+            </div>
+        </div>
 
-    </main>
+        <!-- MENU DESPLEGADO -->
+        <div id="menu-mov" class="hidden fixed p-10 inset-0 z-40 w-full h-screen bg-nav text-lighttext flex flex-col items-center justify-center">
 
-    <section class="">
-        <h2 class="">
-            Most Popular
-        </h2>
-        <div class="tarjetas-popu">
-            <div class="tar-red">
+            <ul class="flex flex-col text-center items-center gap-8">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="">SOBRE NOSOTROS</a></li>
+                <li><a href="">NUESTROS PRODUCTOS</a></li>
+                <li><a href="">INFORMACIÓN</a></li>
+                <li><a href="">RESERVA</a></li>
+         </ul>
 
-            </div>
-            <div class="tar-cuad">
+        </div>
+        <!-- esto es para ordenador  -->
+        <div class="reserva hidden">
+            <p>RESERVA</p>
+        </div>
 
-            </div>
-            <div class="boton-popu">
-                <a href="#">Ver más</a>
-            </div>
-        </div>
-        <!-- para ordenador  -->
-        <div class="tarjetas-popu-extra">
-            <div class="tar-red">
+    </nav>
+     
 
-            </div>
-            <div class="tar-cuad">
+    <main class="">
+        <div class="">
+            <h1>花言葉</h1>
+            <h1 class=" text-8xl text-darktext text-center">花言葉</h1>
+            <p>flor?</p>
+        </div>
 
-            </div>
-            <div class="tar-cuad">
+    </main>
 
-            </div>
-            <div class="tar-cuad">
+    <section class="">
+        <h2 class="">
+            Most Popular
+        </h2>
+        <div class="tarjetas-popu">
+            <div class="tar-red">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-        </div>
+            </div>
+            <div class="boton-popu">
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+        <!-- para ordenador  -->
+        <div class="tarjetas-popu-extra">
+            <div class="tar-red">
 
-    </section>
+            </div>
+            <div class="tar-cuad">
 
-    <div class="marquesina">
-        <p class="">NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · </p>
-    </div>
+            </div>
+            <div class="tar-cuad">
 
-     <section class="">
-        <h2 class="">
-            Nuestro catálogo
-        </h2>
-        <div class="tarjetas-cata">
-            <div class="tar-red">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+        </div>
 
-            </div>
-            <div class="boton-cata">
-                <a href="#">Ver más</a>
-            </div>
-        </div>
-        <!-- para ordenador -->
-        <div class="tarjetas-cata-extra">
-            <div class="tar-cuad">
+    </section>
 
-            </div>
-            <div class="tar-cuad">
+    <div class="marquesina">
+        <p class="">NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · </p>
+    </div>
 
-            </div>
-            <div class="tar-cuad">
+     <section class="">
+        <h2 class="">
+            Nuestro catálogo
+        </h2>
+        <div class="tarjetas-cata">
+            <div class="tar-red">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-red">
+            </div>
+            <div class="boton-cata">
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+        <!-- para ordenador -->
+        <div class="tarjetas-cata-extra">
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-red">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-red">
 
-            </div>
-            <div class="tar-cuad">
+            </div>
+            <div class="tar-cuad">
 
-            </div
-            ><div class="tar-cuad">
+            </div>
+            <div class="tar-red">
 
-            </div>
-        </div>
+            </div>
+            <div class="tar-cuad">
 
-    </section>
+            </div>
+            <div class="tar-cuad">
 
-    <section class="horario">
-        <div class="">
-            <h2 class="">HORARIO</h2>
-            <div class="horas ">
-            <p class="">LUNES A VIERNES</p>
-            <p class="">10:00-14:00 -16:00-20:00</p>
-            <p class="">SÁBADOS</p>
-            <p class="">11:00-14:00</p>
-            <p class="">DOMINGO Y FESTIVOS</p>
-            <p class="">CERRADO</p>
-            </div>
-             <a class="" href="#">Más info</a>
-        </div>
-    </section>
+            </div>
+            <div class="tar-cuad">
 
-    <section class="mapa">
-        <div class="">
-            <h2 class="">Donde nos encontramos</h2>
-            <div>
-            <p class="">LUNES A VIERNES</p>
-            <p>10:00-14:00 -16:00-20:00</p>
-            <p>SÁBADOS</p>
-            <p>11:00-14:00</p>
-            <p>DOMINGO Y FESTIVOS</p>
-            <p>CERRADO</p>
-            </div>
-            
-        </div>
-        <div>
-            <iframe src="" frameborder="0"></iframe>
-        </div>
-    </section>
+            </div>
+            <div class="tar-cuad">
 
-    <footer>
-        <div class="footer-top">
-            <p class=""> Suscribete a nuestra newsletter</p>
-            <div class="newsletter">
-                <label for="email">NEWSLETTER</label>
-                <div class="newslettertype">
-                    <input type="Email" placeholder="Your email">
-                    <button>suscribete</button>
-                </div>
-            </div>
-            <h1 class="">CONSIGUE TU RAMO MAS BONITO Y FRESCO</h1>
-        </div>
-        <div class="footer-bottom">
-            <div class="rrss-icon">
-                <i data-feather="phone"></i> 
-                <i data-feather="mail"></i>
-                <i data-feather="instagram"></i>
-            </div>
-            <div class="rrss-info">
-                <p class=""> +67 676767676</p>
-                <p class="">Hanakotoba@gmail.com</p>
-                <p class=""> IG: @hanakotoba </p>
-            </div>
-            <div>
-                <a href="index.html">logo</a>
-            </div>
-            <div class="copyright">
-                <p class="">Copyright © 2018-2026 Hanakotoba. </p>
-                <p class="">Peiqi,Claudia. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- FETHER ICONS  -->
-    <script>
-        feather.replace();
-    </script>
-    <!-- JS  -->
-    <script src="js/script.js"></script>
-  
+            </div
+            ><div class="tar-cuad">
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="horario">
+        <div class="">
+            <h2 class="">HORARIO</h2>
+            <div class="horas ">
+            <p class="">LUNES A VIERNES</p>
+            <p class="">10:00-14:00 -16:00-20:00</p>
+            <p class="">SÁBADOS</p>
+            <p class="">11:00-14:00</p>
+            <p class="">DOMINGO Y FESTIVOS</p>
+            <p class="">CERRADO</p>
+            </div>
+             <a class="" href="#">Más info</a>
+        </div>
+    </section>
+
+    <section class="mapa">
+        <div class="">
+            <h2 class="">Donde nos encontramos</h2>
+            <div>
+            <p class="">LUNES A VIERNES</p>
+            <p>10:00-14:00 -16:00-20:00</p>
+            <p>SÁBADOS</p>
+            <p>11:00-14:00</p>
+            <p>DOMINGO Y FESTIVOS</p>
+            <p>CERRADO</p>
+            </div>
+           
+        </div>
+        <div>
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </section>
+
+    <footer class="nav bg-nav text-lighttext  px-6 py-8 flex-col text-center justify-between ">
+        <div class="footer-top">
+            <p class=""> Suscribete a nuestra newsletter</p>
+            <div class="newsletter">
+                <label for="email">NEWSLETTER</label>
+                <div class="newslettertype">
+                    <input type="Email" placeholder="Your email">
+                    <button>suscribete</button>
+                </div>
+            </div>
+            <h1 class="">CONSIGUE TU RAMO MAS BONITO Y FRESCO</h1>
+        </div>
+        <div class="footer-bottom">
+            <div class="rrss-icon">
+                <i data-feather="phone"></i>
+                <i data-feather="mail"></i>
+                <i data-feather="instagram"></i>
+            </div>
+            <div class="rrss-info">
+                <p class=""> +67 676767676</p>
+                <p class="">Hanakotoba@gmail.com</p>
+                <p class=""> IG: @hanakotoba </p>
+            </div>
+            <div>
+                <a href="index.html">logo</a>
+            </div>
+            <div class="copyright">
+                <p class="">Copyright © 2018-2026 Hanakotoba. </p>
+                <p class="">Peiqi,Claudia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+   
+    <!-- FETHER ICONS  -->
+    <script>
+        feather.replace();
+    </script>
+    <!-- JS  -->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- JS propio-->
+        <script src="js/script.js"></script>
+ 
 </body>
 </html>
