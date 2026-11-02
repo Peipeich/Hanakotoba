@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,36 +8,42 @@
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- EMOJIS -->
+    <script src="https://unpkg.com/feather-icons"></script>
 
-    <!-- AOS -->
+    <!-- JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
-    <!-- SWIPER -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css">
 
-    <!-- CSS PROPIO -->
+    <!-- Nuestro CSS propio -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- TAILWIND CSS V4 -->
+    <!-- Tailwind desde el CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- VARIABLES TAILWIND -->
+    <!-- Variables -->
     <style type="text/tailwindcss">
 
-        /* VARIANTE DARK */
+        /* Variante dark personalizada */
         @custom-variant dark (&:where(.dark, .dark *));
 
         /* THEME: MODO CLARO */
         @theme static {
+            /* COLORES */
+            --color-periwinkle: #D9DFFF;
+            --color-beige: #F6EFE9;
+            --color-yellow: #FDF5C8;
+            --color-green: #BDC2AC;
+            --color-darkyellow: #82783F;
+            --color-darkgreen: #535841;
+            --color-black: #434037;
 
             /* COLORES */
             --color-bg: #D9DFFF;
             --color-deg: #FDF5C8;
             --color-flower: #FDF5C8;
+            --color-tarjeta: #82783F;
+            --color-tarjeta2: #434037;
             --color-darktext: #434037;
             --color-lighttext: #FDF5C8;
             --color-nav: #82783F;
@@ -50,10 +54,9 @@
         }
 
     </style>
-
 </head>
 
-<body class="bg-linear-to-b from-bg via-deg to-bg">
+<body class="bg-bg">
 
     <!-- NAV -->
     <nav class="nav w-full fixed top-0 left-0 bg-nav text-lighttext p-5 z-50">
@@ -85,15 +88,14 @@
         </div>
 
         <!-- MENU DESPLEGADO -->
-        <div id="menu-mov"
-            class="hidden fixed inset-0 z-40 w-full h-screen p-10 bg-nav text-lighttext flex-col items-center justify-center">
+        <div id="menu-mov" class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-lighttext flex flex-col items-center justify-center">
 
-            <ul class="flex flex-col text-center items-center gap-8">
+            <ul class="flex flex-col items-center justify-center gap-8 text-center">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="">SOBRE NOSOTROS</a></li>
-                <li><a href="">NUESTROS PRODUCTOS</a></li>
-                <li><a href="">INFORMACIÓN</a></li>
-                <li><a href="">RESERVA</a></li>
+                <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                <li><a href="#productos">NUESTROS PRODUCTOS</a></li>
+                <li><a href="#informacion">INFORMACIÓN</a></li>
+                <li><a href="#reserva">RESERVA</a></li>
             </ul>
 
         </div>
@@ -107,43 +109,43 @@
 
 
     <!-- MAIN -->
-    <main>
-
+    <main class="my-50">
         <div>
-            <h1>花言葉</h1>
-            <h1 class="text-8xl text-darktext text-center">花言葉</h1>
+            <h1 class="text-9xl text-darktext text-center">花言葉</h1>
             <p>flor?</p>
         </div>
-
     </main>
 
 
     <!-- MOST POPULAR -->
-    <section>
+    <section class="flex flex-col items-center justify-center">
 
-        <h2>Most Popular</h2>
+        <h2 class="text-5xl pb-10 text-darktext">Most Popular</h2>
 
-        <div class="tarjetas-popu">
+        <div class="w-full min-h-[1000px] flex flex-col items-center justify-around gap-10">
 
-            <div class="tar-red"></div>
+            <!-- Óvalo superior -->
+            <div class="w-[300px] h-[450px] shrink-0 rounded-full bg-tarjeta2 rotate-[15deg]">
+            </div>
 
-            <div class="tar-cuad"></div>
+            <!-- Óvalo inferior -->
+            <div class="w-[300px] h-[450px] shrink-0 rounded-full bg-tarjeta rotate-[-12deg]">
+            </div>
 
+            <!-- Botón -->
             <div class="boton-popu">
-                <a href="#">Ver más</a>
+                <a class="rounded-full bg-darktext text-bg px-3 py-2" href="#">Ver más</a>
             </div>
 
         </div>
 
         <!-- PARA ORDENADOR -->
         <div class="tarjetas-popu-extra">
-
             <div class="tar-red"></div>
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
-
         </div>
 
     </section>
@@ -151,7 +153,10 @@
 
     <!-- MARQUESINA -->
     <div class="marquesina">
-        <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
+        <div class="marquesina-contenido bg-darktext text-lighttext my-5 py-3 text-2xl">
+            <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
+            <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
+        </div>
     </div>
 
 
@@ -161,7 +166,6 @@
         <h2>Nuestro catálogo</h2>
 
         <div class="tarjetas-cata">
-
             <div class="tar-red"></div>
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
@@ -169,12 +173,10 @@
             <div class="boton-cata">
                 <a href="#">Ver más</a>
             </div>
-
         </div>
 
         <!-- PARA ORDENADOR -->
         <div class="tarjetas-cata-extra">
-
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
@@ -188,7 +190,6 @@
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
             <div class="tar-cuad"></div>
-
         </div>
 
     </section>
@@ -198,24 +199,18 @@
     <section class="horario">
 
         <div>
-
             <h2>HORARIO</h2>
 
             <div class="horas">
-
                 <p>LUNES A VIERNES</p>
-                <p>10:00-14:00 - 16:00-20:00</p>
-
+                <p>10:00-14:00 -16:00-20:00</p>
                 <p>SÁBADOS</p>
                 <p>11:00-14:00</p>
-
                 <p>DOMINGO Y FESTIVOS</p>
                 <p>CERRADO</p>
-
             </div>
 
             <a href="#">Más info</a>
-
         </div>
 
     </section>
@@ -225,16 +220,13 @@
     <section class="mapa">
 
         <div>
-
             <h2>Donde nos encontramos</h2>
 
             <div>
                 <p>LUNES A VIERNES</p>
-                <p>10:00-14:00 - 16:00-20:00</p>
-
+                <p>10:00-14:00 -16:00-20:00</p>
                 <p>SÁBADOS</p>
                 <p>11:00-14:00</p>
-
                 <p>DOMINGO Y FESTIVOS</p>
                 <p>CERRADO</p>
             </div>
@@ -242,7 +234,7 @@
         </div>
 
         <div>
-            <iframe src="" title="Ubicación de Hanakotoba"></iframe>
+            <iframe src="" frameborder="0"></iframe>
         </div>
 
     </section>
@@ -251,66 +243,62 @@
     <!-- FOOTER -->
     <footer class="nav bg-nav text-lighttext px-6 py-8 flex flex-col text-center justify-between">
 
-        <div class="footer-top">
+        <div class="footer-top flex flex-col gap-3">
 
             <p>Suscríbete a nuestra newsletter</p>
 
             <div class="newsletter">
 
-                <label for="email">NEWSLETTER</label>
+                <label class="block text-2xl py-4" for="email">NEWSLETTER</label>
 
                 <div class="newslettertype">
-                    <input id="email" type="email" placeholder="Your email">
-                    <button type="button">Suscríbete</button>
+                    <input class="rounded-full border px-3 py-2" id="email" type="email" placeholder="Your email">
+                    <button class="rounded-full border px-3 py-2" type="button">Suscríbete</button>
                 </div>
 
             </div>
 
-            <h1>CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h1>
+            <h1 class="pb-20">CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h1>
 
         </div>
 
 
-        <div class="footer-bottom">
-
-            <div class="rrss-icon">
-                <i data-feather="phone"></i>
-                <i data-feather="mail"></i>
-                <i data-feather="instagram"></i>
-            </div>
-
-            <div class="rrss-info">
-                <p>+67 676767676</p>
-                <p>Hanakotoba@gmail.com</p>
-                <p>IG: @hanakotoba</p>
+        <div class="footer-bottom flex flex-col gap-8">
+            <div class="rrss">
+                <div class="rrss-icon flex justify-center items-center">
+                    <i data-feather="phone"></i>
+                    <i data-feather="mail"></i>
+                    <i data-feather="instagram"></i>
+                </div>
+                <div class="rrss-info">
+                    <p>+67 676767676</p>
+                    <p>Hanakotoba@gmail.com</p>
+                    <p>IG: @hanakotoba</p>
+                </div>
             </div>
 
             <div>
-                <a href="index.html">logo</a>
+                <a class="text-9xl" href="index.html">花言葉</a>
             </div>
 
             <div class="copyright">
                 <p>Copyright © 2018-2026 Hanakotoba.</p>
-                <p>Peiqi, Claudia. Todos los derechos reservados.</p>
+                <p>Peiqi,Claudia. Todos los derechos reservados.</p>
             </div>
 
         </div>
 
     </footer>
 
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
+    <!-- JQuery  -->
+     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <!-- FEATHER ICONS -->
-    <script src="https://unpkg.com/feather-icons"></script>
-
-    <!-- JS PROPIO -->
-    <script src="js/script.js"></script>
-
-    <!-- INICIALIZAR ICONOS -->
     <script>
         feather.replace();
     </script>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

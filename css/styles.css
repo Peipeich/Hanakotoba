@@ -8,6 +8,8 @@
     --color-bg: #535841;
     --color-deg: #82783F;
     --color-flower: #D9DFFF;
+    --color-tarjeta: #BDC2AC;
+    --color-tarjeta2: #D9DFFF;
     --color-darktext: #F6EFE9;
     --color-lighttext: #434037;
     --color-nav: #FDF5C8;
@@ -31,4 +33,57 @@
         font-family: var(--font-asul);
     }
 
+    h1,h2{
+     font-family: var(--font-asul);
+    }
+
+    p {
+        font-family: var(--font-lato);
+    }
+
+    /* MOST POPULAR */
+.most-popular {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
 }
+
+/* TARJETAS MÓVIL */
+.tarjetas-popu {
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
+/* TARJETAS ORDENADOR */
+.tarjetas-popu-extra {
+    display: none;
+}
+
+/* CATÁLOGO */
+.tarjetas-cata,
+.tarjetas-cata-extra {
+    width: 100%;
+    position: relative;
+}
+
+}
+
+.marquesina {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquesina-contenido {
+    display: flex;
+    width: max-content;
+}
+
+.marquesina-contenido p {
+    flex-shrink: 0;
+    padding-right: 20px;
+}
+
+
