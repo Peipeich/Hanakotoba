@@ -1,3 +1,13 @@
+/* TEORIA  */
+@layer theme, base, components, utilities;
+
+/* ID >> CLASS >> TAG */
+
+/* Los selectores o estilos de etiqueta (tag,h1,div), se colocan en "base" */
+
+/* Los selectores por clase (.class), iran en "components" */
+
+/* APARTADO DE CSS  */
 
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Lato:wght@300;400;700;900&display=swap');
 
@@ -6,13 +16,12 @@
 /* THEME: MODO OSCURO */
 .dark {
     --color-bg: #535841;
-    --color-deg: #82783F;
     --color-flower: #D9DFFF;
     --color-tarjeta: #BDC2AC;
     --color-tarjeta2: #D9DFFF;
     --color-darktext: #F6EFE9;
     --color-lighttext: #434037;
-    --color-nav: #FDF5C8;
+    --color-nav: #82783F;
 
     color-scheme: dark;
 }
@@ -41,49 +50,56 @@
         font-family: var(--font-lato);
     }
 
+}
+@layer components {
+    
     /* MOST POPULAR */
-.most-popular {
+    .most-popular {
     width: 100%;
     position: relative;
     overflow: hidden;
     padding: 80px 20px;
-}
-
-/* TARJETAS MÓVIL */
-.tarjetas-popu {
+    }
+    
+    /* TARJETAS MÓVIL */
+    .tarjetas-popu {
     width: 100%;
     position: relative;
     align-items: center;
-}
-
-/* TARJETAS ORDENADOR */
-.tarjetas-popu-extra {
+    }
+    
+    /* TARJETAS ORDENADOR */
+    .tarjetas-popu-extra {
     display: none;
-}
-
-/* CATÁLOGO */
-.tarjetas-cata,
-.tarjetas-cata-extra {
+    }
+    
+    /* CATÁLOGO */
+    .tarjetas-cata,
+    .tarjetas-cata-extra {
     width: 100%;
     position: relative;
-}
-
-}
-
-.marquesina {
+    }
+    
+    
+    
+    .marquesina {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-}
-
-.marquesina-contenido {
+    }
+    
+    .marquesina-contenido {
     display: flex;
     width: max-content;
-}
-
-.marquesina-contenido p {
+    }
+    
+    .marquesina-contenido p {
     flex-shrink: 0;
     padding-right: 20px;
+    }
+
+
 }
+
 
 

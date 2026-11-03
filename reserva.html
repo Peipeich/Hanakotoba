@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanakotoba</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="/favicon.icon">
+
+    <!-- EMOJIS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css">
+
+    <!-- Nuestro CSS propio -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Variables -->
+    <style type="text/tailwindcss">
+
+        /* Variante dark personalizada */
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        /* THEME: MODO CLARO */
+        @theme static {
+            /* COLORES */
+            --color-periwinkle: #D9DFFF;
+            --color-beige: #F6EFE9;
+            --color-yellow: #FDF5C8;
+            --color-green: #BDC2AC;
+            --color-darkyellow: #82783F;
+            --color-darkgreen: #535841;
+            --color-black: #434037;
+
+            /* COLORES */
+            --color-bg: #D9DFFF;
+            --color-deg: #FDF5C8;
+            --color-flower: #FDF5C8;
+            --color-tarjeta: #82783F;
+            --color-tarjeta2: #434037;
+            --color-darktext: #434037;
+            --color-lighttext: #FDF5C8;
+            --color-nav: #FDF5C8;
+
+            /* FUENTES */
+            --font-lato: "Lato", sans-serif;
+            --font-asul: "Asul", serif;
+        }
+
+    </style>
+</head>
+
+<body class="bg-linear-to-b from-bg via-deg to-bg">
+
+    <!-- NAV -->
+    <nav class="nav w-full fixed top-0 left-0 bg-nav text-darktext p-5 z-50">
+
+        <div class="flex w-full items-center justify-between">
+
+            <!-- LOGO -->
+            <div class="menu-logo text-2xl">
+                <a href="index.html">花言葉</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+
+                <!-- BOTÓN MODO OSCURO -->
+                <button
+                    id="boton-tema"
+                    type="button"
+                    aria-pressed="false"
+                    class="rounded-full border px-3 py-2 text-sm font-semibold">
+                    Modo oscuro
+                </button>
+
+                <!-- BOTÓN HAMBURGUESA -->
+                <div class="burger cursor-pointer relative z-50">
+                    <i id="icon-menu" data-feather="menu"></i>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MENU DESPLEGADO -->
+        <div id="menu-mov" class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center">
+
+            <ul class="flex flex-col items-center justify-center gap-8 text-center">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                <li><a href="#productos">NUESTROS PRODUCTOS</a></li>
+                <li><a href="#informacion">INFORMACIÓN</a></li>
+                <li><a href="#reserva">RESERVA</a></li>
+            </ul>
+
+        </div>
+
+        <!-- RESERVA ORDENADOR -->
+        <div class="reserva hidden">
+            <p>RESERVA</p>
+        </div>
+
+    </nav>
+
+
+   
+
+
+
+
+
+
+
+
+    
+
+    <!-- FOOTER -->
+    <footer class="nav bg-nav text-darktext px-6 py-8 flex flex-col text-center justify-between">
+
+        <div class="footer-top flex flex-col gap-3">
+
+            <p>Suscríbete a nuestra newsletter</p>
+
+            <div class="newsletter">
+
+                <label class="block text-2xl py-4" for="email">NEWSLETTER</label>
+
+                <div class="newslettertype">
+                    <input class="rounded-full border px-3 py-2" id="email" type="email" placeholder="Your email">
+                    <button class="rounded-full border px-3 py-2" type="button">Suscríbete</button>
+                </div>
+
+            </div>
+
+            <h1 class="pb-20">CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h1>
+
+        </div>
+
+
+        <div class="footer-bottom flex flex-col gap-8">
+            <div class="rrss">
+                <div class="rrss-icon flex justify-center items-center">
+                    <i data-feather="phone"></i>
+                    <i data-feather="mail"></i>
+                    <i data-feather="instagram"></i>
+                </div>
+                <div class="rrss-info">
+                    <p>+67 676767676</p>
+                    <p>Hanakotoba@gmail.com</p>
+                    <p>IG: @hanakotoba</p>
+                </div>
+            </div>
+
+            <div>
+                <a class="text-9xl" href="index.html">花言葉</a>
+            </div>
+
+            <div class="copyright">
+                <p>Copyright © 2018-2026 Hanakotoba.</p>
+                <p>Peiqi - Claudia. Todos los derechos reservados.</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JQuery  -->
+     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <!-- FEATHER ICONS -->
+    <script>
+        feather.replace();
+    </script>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

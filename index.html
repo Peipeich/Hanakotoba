@@ -6,7 +6,7 @@
     <title>Hanakotoba</title>
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.icon">
 
     <!-- EMOJIS -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -40,13 +40,12 @@
 
             /* COLORES */
             --color-bg: #D9DFFF;
-            --color-deg: #FDF5C8;
             --color-flower: #FDF5C8;
             --color-tarjeta: #82783F;
             --color-tarjeta2: #434037;
             --color-darktext: #434037;
             --color-lighttext: #FDF5C8;
-            --color-nav: #82783F;
+            --color-nav: #FDF5C8;
 
             /* FUENTES */
             --font-lato: "Lato", sans-serif;
@@ -56,10 +55,10 @@
     </style>
 </head>
 
-<body class="bg-linear-to-b from-bg via-deg to-bg">
+<body class="bg-linear-to-b from-bg via-nav to-bg">
 
     <!-- NAV -->
-    <nav class="nav w-full fixed top-0 left-0 bg-nav text-lighttext p-5 z-50">
+    <nav class="nav w-full fixed top-0 left-0 bg-nav text-darktext p-5 z-50">
 
         <div class="flex w-full items-center justify-between">
 
@@ -75,7 +74,7 @@
                     id="boton-tema"
                     type="button"
                     aria-pressed="false"
-                    class="rounded-full border px-3 py-2 text-sm font-semibold">
+                    class="rounded-full border px-3 py-2 text-sm font-semibold hover:bg-darktext hover:text-nav">
                     Modo oscuro
                 </button>
 
@@ -88,14 +87,14 @@
         </div>
 
         <!-- MENU DESPLEGADO -->
-        <div id="menu-mov" class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-lighttext flex flex-col items-center justify-center">
+        <div id="menu-mov" class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center">
 
             <ul class="flex flex-col items-center justify-center gap-8 text-center">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
-                <li><a href="#productos">NUESTROS PRODUCTOS</a></li>
+                <li><a href="productos.html">NUESTROS PRODUCTOS</a></li>
                 <li><a href="#informacion">INFORMACIÓN</a></li>
-                <li><a href="#reserva">RESERVA</a></li>
+                <li><a href="reserva.html">RESERVA</a></li>
             </ul>
 
         </div>
@@ -196,52 +195,68 @@
 
 
     <!-- HORARIO -->
-    <section class="horario">
+    <!-- HORARIO -->
+<section id="informacion" class="w-full flex justify-center py-16 px-5">
 
-        <div>
-            <h2>HORARIO</h2>
+    <!-- ÓVALO -->
+    <div class="w-[280px] h-[400px] bg-darktext rounded-[50%] rotate-[12deg] flex flex-col items-center justify-center text-center text-lighttext p-10">
 
-            <div class="horas">
+        <!-- CONTENIDO -->
+        <div class="-rotate-[12deg] flex flex-col items-center">
+
+            <h2 class="font-asul text-2xl mb-5">
+                HORARIO
+            </h2>
+
+            <div class="font-lato text-xs leading-relaxed">
                 <p>LUNES A VIERNES</p>
-                <p>10:00-14:00 -16:00-20:00</p>
-                <p>SÁBADOS</p>
+                <p>10:00-14:00 - 16:00-20:00</p>
+
+                <p class="mt-2">SÁBADOS</p>
                 <p>11:00-14:00</p>
-                <p>DOMINGO Y FESTIVOS</p>
+
+                <p class="mt-2">DOMINGO Y FESTIVOS</p>
                 <p>CERRADO</p>
             </div>
 
-            <a href="#">Más info</a>
+            <!-- BOTÓN -->
+            <a href="#reserva"
+               class="mt-7 rounded-full bg-lighttext text-darktext px-6 py-3 text-xs">
+                Llama y reserva
+            </a>
+
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
     <!-- MAPA -->
-    <section class="mapa">
+    <section class="mapa flex">
 
         <div>
             <h2>Donde nos encontramos</h2>
 
             <div>
-                <p>LUNES A VIERNES</p>
-                <p>10:00-14:00 -16:00-20:00</p>
-                <p>SÁBADOS</p>
-                <p>11:00-14:00</p>
-                <p>DOMINGO Y FESTIVOS</p>
-                <p>CERRADO</p>
+            <p>
+                C/ NUESTRA CALLE 23<br>
+                METROS LINEA 2, 3, 4<br>
+                AUTOBÚS 345 23
+            </p>
             </div>
 
         </div>
 
-        <div>
-            <iframe src="" frameborder="0"></iframe>
+        <div class="mapa-ovalo w-[170px] h-[245px] rounded-[50%] overflow-hidden border border-darktext rotate-[12deg]">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d457.2909218040544!2d-3.702402414141447!3d40.425694860730054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42288834a1b43f%3A0x18dac6a98c5a8cd7!2zQXDDqXJpdGlm!5e0!3m2!1ses!2ses!4v1793745118689!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
 
     </section>
 
 
     <!-- FOOTER -->
-    <footer class="nav bg-nav text-lighttext px-6 py-8 flex flex-col text-center justify-between">
+    <footer class="nav bg-nav text-darktext px-6 py-8 flex flex-col text-center justify-between">
 
         <div class="footer-top flex flex-col gap-3">
 
@@ -283,7 +298,7 @@
 
             <div class="copyright">
                 <p>Copyright © 2018-2026 Hanakotoba.</p>
-                <p>Peiqi,Claudia. Todos los derechos reservados.</p>
+                <p>Peiqi - Claudia. Todos los derechos reservados.</p>
             </div>
 
         </div>
