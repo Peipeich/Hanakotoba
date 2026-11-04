@@ -7,11 +7,12 @@
 
 /* Los selectores por clase (.class), iran en "components" */
 
-/* APARTADO DE CSS  */
-
+/* APARTADO DE CSS */
+/* FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Lato:wght@300;400;700;900&display=swap');
 
 @import "tailwindcss";
+
 
 /* THEME: MODO OSCURO */
 .dark {
@@ -22,84 +23,117 @@
     --color-darktext: #F6EFE9;
     --color-lighttext: #434037;
     --color-nav: #82783F;
+    --color-blue: #434037;
+    --color-dark: #D9DFFF;
 
     color-scheme: dark;
 }
 
+
 /* ESTILOS GENERALES */
 @layer base {
+
+    * {
+        box-sizing: border-box;
+    }
 
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 5rem;
+        width: 100%;
+        overflow-y: scroll;
+        scrollbar-gutter: auto;
     }
+    
 
     body {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
         font-family: var(--font-lato);
+        overflow-x: clip;
     }
 
     h1, h2 {
         font-family: var(--font-asul);
     }
 
-    h1,h2{
-     font-family: var(--font-asul);
-    }
-
     p {
         font-family: var(--font-lato);
     }
 
+    img, iframe {
+        max-width: 100%;
+    }
+
 }
+
+
+/* COMPONENTES */
 @layer components {
-    
+
     /* MOST POPULAR */
     .most-popular {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    padding: 80px 20px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 80px 20px;
     }
-    
+
+
     /* TARJETAS MÓVIL */
     .tarjetas-popu {
-    width: 100%;
-    position: relative;
-    align-items: center;
+        width: 100%;
+        position: relative;
+        align-items: center;
     }
-    
+
+
     /* TARJETAS ORDENADOR */
     .tarjetas-popu-extra {
-    display: none;
+        display: none;
     }
-    
+
+
     /* CATÁLOGO */
     .tarjetas-cata,
     .tarjetas-cata-extra {
-    width: 100%;
-    position: relative;
-    }
-    
-    
-    
-    .marquesina {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    }
-    
-    .marquesina-contenido {
-    display: flex;
-    width: max-content;
-    }
-    
-    .marquesina-contenido p {
-    flex-shrink: 0;
-    padding-right: 20px;
+        width: 100%;
+        position: relative;
     }
 
+
+    /* MARQUESINA */
+    .marquesina {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .marquesina-contenido {
+        display: flex;
+        width: max-content;
+    }
+
+    .marquesina-contenido p {
+        flex-shrink: 0;
+        padding-right: 20px;
+    }
+
+
+    /* MAPA */
+    .mapa {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        overflow: hidden;
+    }
+
+    .mapa-ovalo {
+        overflow: hidden;
+    }
 
 }
-
-
 

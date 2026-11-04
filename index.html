@@ -46,6 +46,8 @@
             --color-darktext: #434037;
             --color-lighttext: #FDF5C8;
             --color-nav: #FDF5C8;
+            --color-blue: #D9DFFF;
+            --color-dark:#434037;
 
             /* FUENTES */
             --font-lato: "Lato", sans-serif;
@@ -117,24 +119,25 @@
 
 
     <!-- MOST POPULAR -->
-    <section class="flex flex-col items-center justify-center">
+    <section class="most-popular flex flex-col items-center justify-center">
 
         <h2 class="text-5xl pb-10 text-darktext">Most Popular</h2>
 
-        <div class="w-full min-h-[1000px] flex flex-col items-center justify-around gap-10">
+        <div class="w-full flex flex-col items-center justify-around gap-10">
 
             <!-- Óvalo superior -->
-            <div class="w-[300px] h-[450px] shrink-0 rounded-full bg-tarjeta2 rotate-[15deg]">
+            <div class="w-[280px] h-[400px]  rounded-[50%]   bg-tarjeta2 rotate-[15deg]">
             </div>
 
             <!-- Óvalo inferior -->
-            <div class="w-[300px] h-[450px] shrink-0 rounded-full bg-tarjeta rotate-[-12deg]">
+            <div class="w-[280px] h-[400px]  rounded-[50%] bg-tarjeta rotate-[-12deg]">
             </div>
 
             <!-- Botón -->
-            <div class="boton-popu">
-                <a class="rounded-full bg-darktext text-bg px-3 py-2" href="#">Ver más</a>
+            <div class="boton-popu mb-10">
+                <a class="rounded-full border px-6 py-4 text-xl font-semibold bg-darktext text-nav  hover:bg-lighttext hover:darktext" href="productos.html">Ver más</a>
             </div>
+            <!-- arregla los colores del hover  -->
 
         </div>
 
@@ -160,19 +163,82 @@
 
 
     <!-- CATÁLOGO -->
-    <section>
+    <section  id="productos" class="w-full flex flex-col items-center mt-10 py-16 px-6 gap-12">
 
-        <h2>Nuestro catálogo</h2>
+        <h2 class="text-5xl pb-10 text-darktext text-center">NUESTRO CATÁLOGO</h2>
 
-        <div class="tarjetas-cata">
-            <div class="tar-red"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
+        <article class="w-full max-w-[220px] flex flex-col items-center text-center">
 
-            <div class="boton-cata">
-                <a href="#">Ver más</a>
-            </div>
+        <!-- IMAGEN OVALADA -->
+        <div class="w-[280px] h-[400px]  rounded-[50%]   bg-tarjeta2 rotate-[15deg]">
         </div>
+
+        <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
+            TÍTULO
+        </h2>
+
+        <p class=" font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
+            Inicia<br>
+            productos más famosos<br>
+            catálogo<br>
+            servicios que ofrecemos<br>
+            horario-mapa<br>
+            footer
+        </p>
+
+        <!-- IMAGEN CUADRADA -->
+        <div class="w-[280px] h-[400px]  bg-tarjeta mt-6">
+        </div>
+
+    </article>
+
+
+    <!-- PRODUCTO 2 -->
+    <article class="w-full max-w-[220px] flex flex-col items-center text-center">
+
+        <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
+            TÍTULO
+        </h2>
+
+        <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
+            Inicia<br>
+            productos más famosos<br>
+            catálogo<br>
+            servicios que ofrecemos<br>
+            horario-mapa<br>
+            footer
+        </p>
+
+        <div class="w-[280px] h-[400px] bg-tarjeta mt-6">
+        </div>
+
+    </article>
+
+
+    <!-- PRODUCTO 3 -->
+    <article class="w-full max-w-[220px] flex flex-col items-center text-center">
+
+        <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
+            TÍTULO
+        </h2>
+
+        <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
+            Inicia<br>
+            productos más famosos<br>
+            catálogo<br>
+            servicios que ofrecemos<br>
+            horario-mapa<br>
+            footer
+        </p>
+
+    </article>
+
+
+    <!-- BOTÓN -->
+    <a href="#catalogo-completo"
+       class="rounded-full border px-6 py-4 text-xl font-semibold ">
+        look more
+    </a>
 
         <!-- PARA ORDENADOR -->
         <div class="tarjetas-cata-extra">
@@ -195,20 +261,19 @@
 
 
     <!-- HORARIO -->
-    <!-- HORARIO -->
 <section id="informacion" class="w-full flex justify-center py-16 px-5">
 
     <!-- ÓVALO -->
-    <div class="w-[280px] h-[400px] bg-darktext rounded-[50%] rotate-[12deg] flex flex-col items-center justify-center text-center text-lighttext p-10">
+    <div class="w-[400px] h-[520px] bg-darktext rounded-[50%] rotate-[12deg] flex flex-col items-center justify-center text-center text-lighttext p-10">
 
         <!-- CONTENIDO -->
         <div class="-rotate-[12deg] flex flex-col items-center">
 
-            <h2 class="font-asul text-2xl mb-5">
+            <h2 class="font-asul text-5xl mb-5 ">
                 HORARIO
             </h2>
 
-            <div class="font-lato text-xs leading-relaxed">
+            <div class="font-lato text-xl leading-relaxed">
                 <p>LUNES A VIERNES</p>
                 <p>10:00-14:00 - 16:00-20:00</p>
 
@@ -221,7 +286,7 @@
 
             <!-- BOTÓN -->
             <a href="#reserva"
-               class="mt-7 rounded-full bg-lighttext text-darktext px-6 py-3 text-xs">
+               class="mt-7 rounded-full border px-6 py-4 text-xl font-semibold ">
                 Llama y reserva
             </a>
 
@@ -233,13 +298,13 @@
 
 
     <!-- MAPA -->
-    <section class="mapa flex">
+    <section class="mapa pt-16 flex flex-col items-center gap-10">
 
         <div>
-            <h2>Donde nos encontramos</h2>
+            <h2 class="text-5xl pb-10 text-darktext text-center">Donde nos encontramos</h2>
 
             <div>
-            <p>
+            <p class="font-lato text-xs text-center" >
                 C/ NUESTRA CALLE 23<br>
                 METROS LINEA 2, 3, 4<br>
                 AUTOBÚS 345 23
@@ -248,15 +313,15 @@
 
         </div>
 
-        <div class="mapa-ovalo w-[170px] h-[245px] rounded-[50%] overflow-hidden border border-darktext rotate-[12deg]">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d457.2909218040544!2d-3.702402414141447!3d40.425694860730054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42288834a1b43f%3A0x18dac6a98c5a8cd7!2zQXDDqXJpdGlm!5e0!3m2!1ses!2ses!4v1793745118689!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="mapa-ovalo w-[280px] h-[400px] rounded-[50%] overflow-hidden border border-darktext rotate-[12deg]">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d457.2909218040544!2d-3.702402414141447!3d40.425694860730054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1793747624258!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
 
     </section>
 
 
     <!-- FOOTER -->
-    <footer class="nav bg-nav text-darktext px-6 py-8 flex flex-col text-center justify-between">
+    <footer class="nav bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
 
         <div class="footer-top flex flex-col gap-3">
 
@@ -266,7 +331,7 @@
 
                 <div class="newslettertype">
                     <input class="rounded-full border px-3 py-2" id="email" type="email" placeholder="Email">
-                    <button class="rounded-full border px-3 py-2" type="button">Suscríbete</button>
+                    <button class="rounded-full border px-3 py-2 hover:bg-darktext hover:text-nav" type="button">Suscríbete</button>
                 </div>
 
             </div>
@@ -295,7 +360,7 @@
 
             <div class="copyright">
                 <p>Copyright © 2018-2026 Hanakotoba.</p>
-                <p>Peiqi - Claudia. Todos los derechos reservados.</p>
+                <p>Web - Peiqi/Claudia. Imágenes - Paul Lange. Todos los derechos reservados.</p>
             </div>
 
         </div>
