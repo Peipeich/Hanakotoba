@@ -30,13 +30,13 @@
         /* THEME: MODO CLARO */
         @theme static {
             /* COLORES */
-            --color-periwinkle: #D9DFFF;
+            /* --color-periwinkle: #D9DFFF;
             --color-beige: #F6EFE9;
             --color-yellow: #FDF5C8;
             --color-green: #BDC2AC;
             --color-darkyellow: #82783F;
             --color-darkgreen: #535841;
-            --color-black: #434037;
+            --color-black: #434037; */
 
             /* COLORES */
             --color-bg: #D9DFFF;
@@ -193,97 +193,411 @@
 
         <h2 class="text-5xl pb-10 text-darktext text-center">NUESTRO CATÁLOGO</h2>
 
+        <div class="catalogo-movil">
+            <article class="w-full max-w-[220px] flex flex-col items-center text-center">
+    
+            <!-- IMAGEN OVALADA -->
+            <div class="w-[280px] h-[400px]  rounded-[50%]   bg-tarjeta2 rotate-[15deg]">
+            </div>
+    
+            <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
+                TÍTULO
+            </h2>
+    
+            <p class=" font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+    
+            <!-- IMAGEN CUADRADA -->
+            <div class="w-[280px] h-[400px]  bg-tarjeta mt-6">
+            </div>
+    
+        </article>
+    
+    
+        <!-- PRODUCTO 2 -->
         <article class="w-full max-w-[220px] flex flex-col items-center text-center">
-
-        <!-- IMAGEN OVALADA -->
-        <div class="w-[280px] h-[400px]  rounded-[50%]   bg-tarjeta2 rotate-[15deg]">
+    
+            <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
+                TÍTULO
+            </h2>
+    
+            <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+    
+            <div class="w-[280px] h-[400px] bg-tarjeta mt-6">
+            </div>
+    
+        </article>
+    
+    
+        <!-- PRODUCTO 3 -->
+        <article class="w-full max-w-[220px] flex flex-col items-center text-center">
+    
+            <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
+                TÍTULO
+            </h2>
+    
+            <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+    
+        </article>
         </div>
 
-        <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
-            TÍTULO
-        </h2>
 
-        <p class=" font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
-            Inicia<br>
-            productos más famosos<br>
-            catálogo<br>
-            servicios que ofrecemos<br>
-            horario-mapa<br>
-            footer
-        </p>
+<!-- PARA ORDENADOR -->
+<div class="catalogo-extra hidden lg:grid
+            w-full max-w-[1050px] mx-auto
+            grid-cols-5 grid-rows-3
+            gap-4 items-center ">
 
-        <!-- IMAGEN CUADRADA -->
-        <div class="w-[280px] h-[400px]  bg-tarjeta mt-6">
+
+    <!-- FILA 1 - COLUMNA 2: ÓVALO -->
+    <article class="group relative col-start-2 row-start-1
+                    aspect-[3/4] w-full rounded-[50%]
+                    rotate-[12deg] bg-darktext
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <div class="rotate-[-12deg] flex flex-col items-center">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+
+                <p class="font-lato text-sm leading-relaxed">
+                    Inicia<br>
+                    productos más famosos<br>
+                    catálogo<br>
+                    servicios que ofrecemos<br>
+                    horario-mapa<br>
+                    footer
+                </p>
+            </div>
         </div>
-
     </article>
 
 
-    <!-- PRODUCTO 2 -->
-    <article class="w-full max-w-[220px] flex flex-col items-center text-center">
+    <!-- FILA 1 - COLUMNA 3: CUADRADO -->
+    <article class="group relative col-start-3 row-start-1
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
 
-        <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
-            TÍTULO
-        </h2>
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
 
-        <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
-            Inicia<br>
-            productos más famosos<br>
-            catálogo<br>
-            servicios que ofrecemos<br>
-            horario-mapa<br>
-            footer
-        </p>
-
-        <div class="w-[280px] h-[400px] bg-tarjeta mt-6">
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
         </div>
-
     </article>
 
 
-    <!-- PRODUCTO 3 -->
-    <article class="w-full max-w-[220px] flex flex-col items-center text-center">
+    <!-- FILA 1 - COLUMNA 4: CUADRADO -->
+    <article class="group relative col-start-4 row-start-1
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
 
-        <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
-            TÍTULO
-        </h2>
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
 
-        <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
-            Inicia<br>
-            productos más famosos<br>
-            catálogo<br>
-            servicios que ofrecemos<br>
-            horario-mapa<br>
-            footer
-        </p>
-
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
     </article>
 
+
+    <!-- FILA 1 - COLUMNA 5: CUADRADO -->
+    <article class="group relative col-start-5 row-start-1
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+    </article>
+
+
+    <!-- FILA 2 - COLUMNA 1: CUADRADO -->
+    <article class="group relative col-start-1 row-start-2
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+    </article>
+
+
+    <!-- FILA 2 - COLUMNA 2: CUADRADO -->
+    <article class="group relative col-start-2 row-start-2
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+    </article>
+
+
+    <!-- FILA 2 - COLUMNA 3: CUADRADO -->
+    <article class="group relative col-start-3 row-start-2
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+    </article>
+
+
+    <!-- FILA 2 - COLUMNA 4: CUADRADO -->
+    <article class="group relative col-start-4 row-start-2
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+    </article>
+
+
+    <!-- FILA 2 - COLUMNA 5: ÓVALO -->
+    <article class="group relative col-start-5 row-start-2
+                    aspect-[3/4] w-full rounded-[50%]
+                    rotate-[12deg] bg-darktext
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <div class="rotate-[-12deg] flex flex-col items-center">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+
+                <p class="font-lato text-sm leading-relaxed">
+                    Inicia<br>
+                    productos más famosos<br>
+                    catálogo<br>
+                    servicios que ofrecemos<br>
+                    horario-mapa<br>
+                    footer
+                </p>
+            </div>
+        </div>
+    </article>
+
+
+    <!-- FILA 3 - COLUMNA 2: CUADRADO -->
+    <article class="group relative col-start-2 row-start-3
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+        </article>
+
+    <!-- FILA 3 - COLUMNA 3: ÓVALO -->
+    <article class="group relative col-start-3 row-start-3
+                    aspect-[3/4] w-full rounded-[50%]
+                    rotate-[-12deg] bg-darktext
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <div class="rotate-[12deg] flex flex-col items-center">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+
+                <p class="font-lato text-sm leading-relaxed">
+                    Inicia<br>
+                    productos más famosos<br>
+                    catálogo<br>
+                    servicios que ofrecemos<br>
+                    horario-mapa<br>
+                    footer
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <!-- FILA 3 - COLUMNA 4: CUADRADO -->
+    <article class="group relative col-start-4 row-start-3
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+    </article>
+
+    <!-- FILA 3 - COLUMNA 5: CUADRADO -->
+    <article class="group relative col-start-5 row-start-3
+                    aspect-[3/4] w-full bg-tarjeta
+                    overflow-hidden cursor-pointer"
+             tabindex="0">
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center
+                    bg-darktext text-lighttext text-center p-3
+                    opacity-0 transition-opacity duration-500
+                    group-hover:opacity-100 group-focus:opacity-100">
+
+            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+            <p class="font-lato text-sm leading-relaxed">
+                Inicia<br>
+                productos más famosos<br>
+                catálogo<br>
+                servicios que ofrecemos<br>
+                horario-mapa<br>
+                footer
+            </p>
+        </div>
+    </article>
+
+</div>
 
     <!-- BOTÓN -->
-    <a href="#catalogo-completo"
-       class="rounded-full border px-6 py-4 text-xl font-semibold ">
-        look more
-    </a>
+        <a href="#catalogo-completo" class="rounded-full  border px-6 py-4 text-xl font-semibold mb-20 text-center">
+        look more
+        </a>
+</div>
+</section>
 
-        <!-- PARA ORDENADOR -->
-        <div class="tarjetas-cata-extra hidden">
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-red"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-red"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-            <div class="tar-cuad"></div>
-        </div>
-
-    </section>
 
 
     <!-- HORARIO -->
@@ -347,7 +661,7 @@
 
 
     <!-- FOOTER -->
-    <footer class="nav bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
+    <footer class="bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
 
         <div class="footer-top flex flex-col gap-3">
 
@@ -395,6 +709,7 @@
 
     <!-- JQuery  -->
      <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
     <!-- FEATHER ICONS -->
     <script>
         feather.replace();

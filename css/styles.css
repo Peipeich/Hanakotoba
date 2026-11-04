@@ -256,12 +256,7 @@
     }
 
     .tarjetas-cata-extra {
-        display: grid;
-        width: 100%;
-        max-width: 1200px;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        margin: 50px auto;
+       
     }
 
 
@@ -319,12 +314,17 @@
 
 
     /* CATÁLOGO */
-    #productos {
-        max-width: 1600px;
-        margin-left: auto;
-        margin-right: auto;
+   
+    .catalogo-movil{
+        display:none;
     }
 
+    .catalogo-extra{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+    }
+  
 
     /* HORARIO Y MAPA */
     
