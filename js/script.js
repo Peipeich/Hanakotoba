@@ -40,19 +40,26 @@ $(function () {
 });
 
 // MARQUESINA 
+
 $(document).ready(function () {
 
     function animarMarquesina() {
+
         const marquesina = $('.marquesina-contenido');
         const ancho = marquesina.children('p').first().outerWidth(true);
 
         marquesina.animate(
-            { marginLeft: -ancho },
+            {
+                marginLeft: -ancho
+            },
             15000,
             'linear',
             function () {
+
                 marquesina.css('margin-left', '0');
+
                 animarMarquesina();
+
             }
         );
     }

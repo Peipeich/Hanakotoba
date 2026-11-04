@@ -91,7 +91,7 @@
 
     /* TARJETAS ORDENADOR */
     .tarjetas-popu-extra {
-        display: none;
+        display: block;
     }
 
 
@@ -103,22 +103,21 @@
     }
 
 
-    /* MARQUESINA */
     .marquesina {
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-    }
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-    .marquesina-contenido {
-        display: flex;
-        width: max-content;
-    }
+.marquesina-contenido {
+    display: flex;
+    width: max-content;
+}
 
-    .marquesina-contenido p {
-        flex-shrink: 0;
-        padding-right: 20px;
-    }
+.marquesina-contenido p {
+    flex-shrink: 0;
+    padding-right: 20px;
+}
 
 
     /* MAPA */
@@ -136,4 +135,205 @@
     }
 
 }
+
+
+/* ========================================= */
+/* TABLET */
+/* ========================================= */
+
+@media (min-width: 768px) {
+
+    /* NAV */
+    .nav {
+        padding: 20px 40px;
+    }
+
+
+    /* MAIN */
+    main {
+        padding: 40px 30px;
+    }
+
+
+    /* MOST POPULAR */
+    .most-popular {
+        padding: 100px 40px;
+    }
+
+    
+
+
+    /* CATÁLOGO */
+    #productos {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    #productos article {
+        max-width: 300px;
+    }
+
+
+    /* HORARIO Y MAPA */
+    
+
+    /* FOOTER */
+    footer {
+        padding: 50px 40px;
+    }
+
+}
+
+
+/* ========================================= */
+/* ORDENADOR */
+/* ========================================= */
+
+@media (min-width: 1024px) {
+
+    /* NAV */
+    .nav {
+        padding: 20px 60px;
+    }
+
+    .menu-desktop {
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
+        
+    }
+
+    .burger {
+        display: none;
+    }
+
+    #menu-mov {
+        display: none;
+    }
+
+    .reserva {
+        display: block;
+    }
+
+
+    /* MAIN */
+    main {
+        padding: 60px 8%;
+    }
+
+    main h1 {
+        font-size: 9rem;
+    }
+
+
+    /* MOST POPULAR */
+    .most-popular {
+        padding: 100px 8%;
+    }
+
+    .tarjetas-popu{
+        display: none;
+    }
+
+    .ovalo-medio{
+        width: 350px;
+        height: 470px;
+    }
+
+    .tarjetas-popu-extra {
+        display: flex;
+        gap: 30px;
+    }
+
+
+    /* CATÁLOGO */
+    #productos {
+        padding: 100px 8%;
+    }
+
+    #productos article {
+        max-width: 300px;
+    }
+
+    .tarjetas-cata-extra {
+        display: grid;
+        width: 100%;
+        max-width: 1200px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin: 50px auto;
+    }
+
+
+    /* HORARIO Y MAPA */
+    .info-mapa {
+        
+    }
+
+    
+
+    #informacion {
+        padding: 0;
+    }
+
+    .mapa {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-around;
+    }
+
+    .mapa-ovalo{
+         
+    }
+
+    /* FOOTER */
+    footer {
+       
+    }
+
+    
+
+}
+
+
+/* ========================================= */
+/* PANTALLAS GRANDES */
+/* ========================================= */
+
+@media (min-width: 1440px) {
+
+    /* MAIN */
+    main {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* MOST POPULAR */
+    .most-popular {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+
+    /* CATÁLOGO */
+    #productos {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* HORARIO Y MAPA */
+    
+
+    /* FOOTER */
+    footer {
+       
+    }
+
+}
+
 
