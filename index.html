@@ -1,36 +1,35 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Hanakotoba</title>
 
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="media/img/Flor Redonda 4.png">
 
-    <!-- EMOJIS -->
-    <script src="https://unpkg.com/feather-icons"></script>
-
-    <!-- JS -->
+    <!-- LIBRERÍAS CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    
 
-    <!-- Nuestro CSS propio -->
+    <!-- CSS PROPIO -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Tailwind desde el CDN -->
+    <!-- TAILWIND CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Variables -->
+    <!-- VARIABLES Y TEMA -->
     <style type="text/tailwindcss">
 
-        /* Variante dark personalizada */
+        /* VARIANTE DARK PERSONALIZADA */
         @custom-variant dark (&:where(.dark, .dark *));
 
-        /* THEME: MODO CLARO */
+        /* MODO CLARO */
         @theme static {
-            /* COLORES */
+             /* COLORES */
             /* --color-periwinkle: #D9DFFF;
             --color-beige: #F6EFE9;
             --color-yellow: #FDF5C8;
@@ -48,7 +47,7 @@
             --color-lighttext: #FDF5C8;
             --color-nav: #FDF5C8;
             --color-blue: #D9DFFF;
-            --color-dark:#434037;
+            --color-dark: #434037;
 
             /* FUENTES */
             --font-lato: "Lato", sans-serif;
@@ -58,695 +57,819 @@
     </style>
 </head>
 
+
 <body class="bg-linear-to-b from-bg via-nav to-bg">
 
-<!-- NAV -->
-<nav class="nav w-full fixed top-0 left-0 bg-nav text-darktext p-5 z-50">
 
-    <div class="flex w-full items-center justify-between">
+    <!-- ====================================== -->
+    <!-- NAVEGACIÓN -->
+    <!-- ====================================== -->
 
-        <!-- LOGO -->
-        <div class="menu-logo text-2xl">
-            <a href="index.html">花言葉</a>
-        </div>
+    <nav class="nav w-full fixed top-0 left-0 bg-nav text-darktext p-5 z-50">
 
-        <div class="flex items-center gap-6">
+        <div class="flex w-full items-center justify-between">
 
-             <!-- MENU ORDENADOR -->
-             <div>
-                <ul class="menu-desktop hidden">
-                    <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
-                    <li><a href="productos.html">NUESTROS PRODUCTOS</a></li>
-                    <li><a href="#informacion">INFORMACIÓN</a></li>
-                </ul>
+            <!-- LOGO -->
+            <div class="menu-logo text-2xl">
+                <a href="index.html">花言葉</a>
             </div>
 
-            <!-- BOTÓN MODO OSCURO -->
-            <button
+
+            <div class="flex items-center gap-6">
+
+                <!-- MENÚ ORDENADOR -->
+                <div>
+                    <ul class="menu-desktop hidden">
+                        <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                        <li><a href="productos.html">NUESTROS PRODUCTOS</a></li>
+                        <li><a href="#informacion">INFORMACIÓN</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- BOTÓN MODO OSCURO -->
+                <button
                     id="boton-tema"
                     type="button"
                     aria-pressed="false"
                     class="rounded-full border px-3 py-2 text-sm hover:bg-darktext hover:text-nav">
+
                     Modo oscuro
-            </button>
 
-            <!-- BOTÓN HAMBURGUESA -->
-            <div class="burger cursor-pointer relative z-50">
-                <i id="icon-menu" data-feather="menu"></i>
-            </div>
+                </button>
 
-            <!-- RESERVA ORDENADOR -->
-            <div class="reserva rounded-full border px-3 py-2 text-sm hidden">
-                <p>RESERVA</p>
+
+                <!-- BOTÓN HAMBURGUESA -->
+                <div class="burger cursor-pointer relative z-50">
+                    <i id="icon-menu" data-feather="menu"></i>
+                </div>
+
+
+                <!-- RESERVA ORDENADOR -->
+                <div class="reserva rounded-full border px-3 py-2 text-sm hover:bg-darktext hover:text-nav hidden">
+                    <p>RESERVA</p>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
 
-    <!-- MENU DESPLEGADO -->
-    <div id="menu-mov" class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center">
+        <!-- MENÚ MÓVIL DESPLEGADO -->
+        <div
+            id="menu-mov"
+            class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center">
 
-        <ul class="flex flex-col items-center justify-center gap-8 text-center">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
-            <li><a href="productos.html">NUESTROS PRODUCTOS</a></li>
-            <li><a href="#informacion">INFORMACIÓN</a></li>
-            <li><a href="reserva.html">RESERVA</a></li>
-        </ul>
+            <ul class="flex flex-col items-center justify-center gap-8 text-center">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                <li><a href="productos.html">NUESTROS PRODUCTOS</a></li>
+                <li><a href="#informacion">INFORMACIÓN</a></li>
+                <li><a href="reserva.html">RESERVA</a></li>
+            </ul>
 
-     </div>
-
-</nav>
-
-
-    <!-- MAIN -->
-   <!-- MAIN -->
-<main class="my-50">
-    <div class="titulo-principal flex justify-center items-center text-7xl md:text-9xl text-darktext">
-
-        <h1>花</h1>
-
-        <!-- CARRUSEL DE FLORES -->
-        <div class="carrusel-flores">
-            <div><img src="media/img/Flor Redonda 4.png" alt=""></div>
-            <div><img src="media/img/Flor Redonda 2.png" alt=""></div>
-            <div><img src="media/img/Flor Redonda 3.png" alt=""></div>
-            <div><img src="media/img/Flor Redonda 1.png" alt=""></div>
-            <div><img src="media/img/Flor Redonda 5.png" alt=""></div>
-            <div><img src="media/img/Flor Redonda 6.png" alt=""></div>
         </div>
 
-        <h1>言葉</h1>
-
-    </div>
-</main>
+    </nav>
 
 
+
+    <!-- ====================================== -->
+    <!-- MAIN / TÍTULO PRINCIPAL -->
+    <!-- ====================================== -->
+
+    <main class="my-40">
+
+        <div class="titulo-principal flex flex-col justify-center items-center text-9xl text-darktext">
+            
+            <h1 class="maintext text-darktext">花</h1>
+
+
+            <!-- CARRUSEL DE FLORES -->
+            <div class="carrusel-flores">
+
+                <div>
+                    <img src="media/img/Flor Redonda 4.png" alt="Flor azul">
+                </div>
+
+                <div>
+                    <img src="media/img/Flor Redonda 2.png" alt="Flor">
+                </div>
+
+                <div>
+                    <img src="media/img/Flor Redonda 3.png" alt="Flor">
+                </div>
+
+                <div>
+                    <img src="media/img/Flor Redonda 1.png" alt="Flor">
+                </div>
+
+                <div>
+                    <img src="media/img/Flor Redonda 5.png" alt="Flor">
+                </div>
+
+                <div>
+                    <img src="media/img/Flor Redonda 6.png" alt="Flor">
+                </div>
+
+            </div>
+
+            <h1 class="maintext text-darktext">言</h1>
+            <h1 class="maintext text-darktext">葉</h1>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ====================================== -->
     <!-- MOST POPULAR -->
+    <!-- ====================================== -->
+
     <section class="most-popular flex flex-col items-center justify-center">
 
-        <h2 class="text-5xl pb-10 text-darktext">Most Popular</h2>
+        <h2 class="text-5xl pb-10 text-darktext">
+            Most Popular
+        </h2>
+
+
+        <!-- TARJETAS MÓVIL -->
 
         <div class="tarjetas-popu w-full flex flex-col items-center justify-around gap-10">
 
-            <!-- Óvalo superior -->
-            <div class="w-[280px] h-[400px]  rounded-[50%]   bg-tarjeta2 rotate-[15deg]">
-                <img src="media/img/Flor 1.png" alt="">
+            <!-- ÓVALO SUPERIOR -->
+            <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta2 rotate-[15deg]">
+                <img src="media/img/Flor 1.png" alt="Flor destacada">
             </div>
 
-            <!-- Óvalo inferior -->
-            <div class="w-[280px] h-[400px]  rounded-[50%] bg-tarjeta rotate-[-12deg]">
-                <img src="media/img/Flor 2.png" alt="">
+
+            <!-- ÓVALO INFERIOR -->
+            <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+                <img src="media/img/Flor 2.png" alt="Flor destacada">
             </div>
-            
+
         </div>
-        
-        <!-- PARA ORDENADOR -->
+
+
+        <!-- TARJETAS ORDENADOR -->
+
         <div class="tarjetas-popu-extra hidden">
-            <!-- Óvalo inferior -->
-            <div class="w-[280px] h-[400px]  rounded-[50%] bg-tarjeta rotate-[-12deg]">
-                <img src="media/img/Flor 2.png" alt="">
-            </div>
-            <!-- Óvalo inferior -->
-            <div class="w-[280px] h-[400px]  rounded-[50%] bg-tarjeta rotate-[-12deg]">
-                <img src="media/img/Flor 3.png" alt="">
-            </div>
-            <!-- Óvalo superior -->
-            <div class="ovalo-medio w-[280px] h-[400px]  rounded-[50%]   bg-tarjeta2 rotate-[15deg]">
-                <img src="media/img/Flor 1.png" alt="">
+
+            <!-- TARJETA 1 -->
+            <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+                <img src="media/img/Flor 2.png" alt="Flor">
             </div>
 
-            <!-- Óvalo inferior -->
-            <div class="w-[280px] h-[400px]  rounded-[50%] bg-tarjeta rotate-[-12deg]"> 
-                <img src="media/img/Flor 4.png" alt="">  
+
+            <!-- TARJETA 2 -->
+            <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+                <img src="media/img/Flor 3.png" alt="Flor">
             </div>
 
-            <!-- Óvalo inferior -->
-        <div class="w-[280px] h-[400px]  rounded-[50%] bg-tarjeta rotate-[-12deg]">
-            <img src="media/img/Flor 5.png" alt="">
-        </div>
-    </div>
 
-    <!-- Botón -->
-    <!-- arregla los colores del hover  -->
-    <div class="boton-popu mt-20">
-        <a class="rounded-full border px-6 py-4 text-xl font-semibold bg-darktext text-nav  hover:bg-lighttext hover:darktext" href="productos.html">Ver más</a>
-    </div>
-
-    </section>
-
-
-   <!-- MARQUESINA -->
-<div class="marquesina bg-darktext text-lighttext my-5 py-3 text-2xl">
-
-    <div class="marquesina-contenido">
-        <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
-        <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
-        <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
-    </div>
-
-</div>
-
-</div>
-
-
-    <!-- CATÁLOGO -->
-    <section  id="productos" class="w-full flex flex-col items-center mt-10 py-16 px-6 gap-12">
-
-        <h2 class="text-5xl pb-10 text-darktext text-center">NUESTRO CATÁLOGO</h2>
-
-        <div class="catalogo-movil">
-            <article class="w-full max-w-[220px] flex flex-col items-center text-center">
-    
-            <!-- IMAGEN OVALADA -->
-            <div class="w-[280px] h-[400px]  rounded-[50%]   bg-tarjeta2 rotate-[15deg]">
-                <img src="media/img/Flor 6.png" alt="">
-            </div>
-    
-            <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
-                TÍTULO
-            </h2>
-    
-            <p class=" font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-    
-            <!-- IMAGEN CUADRADA -->
-            <div class="w-[280px] h-[400px]  bg-tarjeta mt-6">
-                 <img src="media/img/Flor 7.png" alt="">
-            </div>
-    
-        </article>
-    
-    
-        <!-- PRODUCTO 2 -->
-        <article class="w-full max-w-[220px] flex flex-col items-center text-center">
-    
-            <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
-                TÍTULO
-            </h2>
-    
-            <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-    
-            <div class="w-[280px] h-[400px] bg-tarjeta mt-6">
-                <img src="media/img/Flor 8.png" alt="">
-            </div>
-    
-        </article>
-    
-    
-        <!-- PRODUCTO 3 -->
-        <article class="w-full max-w-[220px] flex flex-col items-center text-center">
-    
-            <h2 class="pt-5 font-asul text-4xl text-darktext mb-4">
-                TÍTULO
-            </h2>
-    
-            <p class="font-lato text-xl text-darktext leading-relaxed max-w-[160px]">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-    
-        </article>
-        </div>
-
-
-<!-- PARA ORDENADOR -->
-<div class="catalogo-extra hidden lg:grid
-            w-full max-w-[1050px] mx-auto
-            grid-cols-5 grid-rows-3
-            gap-4 items-center ">
-
-
-    <!-- FILA 1 - COLUMNA 2: ÓVALO -->
-    <article class="group relative col-start-2 row-start-1
-                    aspect-[3/4] w-full rounded-[50%]
-                    rotate-[12deg] bg-darktext
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-        <img src="media/img/Flor 6.png" alt="">
-        <div class="absolute inset-0 flex items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <div class="rotate-[-12deg] flex flex-col items-center">
-                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-
-                <p class="font-lato text-sm leading-relaxed">
-                    Inicia<br>
-                    productos más famosos<br>
-                    catálogo<br>
-                    servicios que ofrecemos<br>
-                    horario-mapa<br>
-                    footer
-                </p>
-            </div>
-        </div>
-    </article>
-
-
-    <!-- FILA 1 - COLUMNA 3: CUADRADO -->
-    <article class="group relative col-start-3 row-start-1
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 7.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-
-    <!-- FILA 1 - COLUMNA 4: CUADRADO -->
-    <article class="group relative col-start-4 row-start-1
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-<img src="media/img/Flor 8.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-
-    <!-- FILA 1 - COLUMNA 5: CUADRADO -->
-    <article class="group relative col-start-5 row-start-1
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 9.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-
-    <!-- FILA 2 - COLUMNA 1: CUADRADO -->
-    <article class="group relative col-start-1 row-start-2
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 10.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-
-    <!-- FILA 2 - COLUMNA 2: CUADRADO -->
-    <article class="group relative col-start-2 row-start-2
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 11.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-
-    <!-- FILA 2 - COLUMNA 3: CUADRADO -->
-    <article class="group relative col-start-3 row-start-2
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 12.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-
-    <!-- FILA 2 - COLUMNA 4: CUADRADO -->
-    <article class="group relative col-start-4 row-start-2
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 13.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-
-    <!-- FILA 2 - COLUMNA 5: ÓVALO -->
-    <article class="group relative col-start-5 row-start-2
-                    aspect-[3/4] w-full rounded-[50%]
-                    rotate-[12deg] bg-darktext
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 14.png" alt="">
-        <div class="absolute inset-0 flex items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <div class="rotate-[-12deg] flex flex-col items-center">
-                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-
-                <p class="font-lato text-sm leading-relaxed">
-                    Inicia<br>
-                    productos más famosos<br>
-                    catálogo<br>
-                    servicios que ofrecemos<br>
-                    horario-mapa<br>
-                    footer
-                </p>
-            </div>
-        </div>
-    </article>
-
-
-    <!-- FILA 3 - COLUMNA 2: CUADRADO -->
-    <article class="group relative col-start-2 row-start-3
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 15.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-        </article>
-
-    <!-- FILA 3 - COLUMNA 3: ÓVALO -->
-    <article class="group relative col-start-3 row-start-3
-                    aspect-[3/4] w-full rounded-[50%]
-                    rotate-[-12deg] bg-darktext
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-        <img src="media/img/Flor 16.png" alt="">
-        <div class="absolute inset-0 flex items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <div class="rotate-[12deg] flex flex-col items-center">
-                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-
-                <p class="font-lato text-sm leading-relaxed">
-                    Inicia<br>
-                    productos más famosos<br>
-                    catálogo<br>
-                    servicios que ofrecemos<br>
-                    horario-mapa<br>
-                    footer
-                </p>
-            </div>
-        </div>
-    </article>
-
-    <!-- FILA 3 - COLUMNA 4: CUADRADO -->
-    <article class="group relative col-start-4 row-start-3
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 17.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-    <!-- FILA 3 - COLUMNA 5: CUADRADO -->
-    <article class="group relative col-start-5 row-start-3
-                    aspect-[3/4] w-full bg-tarjeta
-                    overflow-hidden cursor-pointer"
-             tabindex="0">
-    <img src="media/img/Flor 18.png" alt="">
-        <div class="absolute inset-0 flex flex-col items-center justify-center
-                    bg-darktext text-lighttext text-center p-3
-                    opacity-0 transition-opacity duration-500
-                    group-hover:opacity-100 group-focus:opacity-100">
-
-            <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
-            <p class="font-lato text-sm leading-relaxed">
-                Inicia<br>
-                productos más famosos<br>
-                catálogo<br>
-                servicios que ofrecemos<br>
-                horario-mapa<br>
-                footer
-            </p>
-        </div>
-    </article>
-
-</div>
-
-    <!-- BOTÓN -->
-        <a href="#catalogo-completo" class="rounded-full  border px-6 py-4 text-xl font-semibold mb-20 text-center">
-        look more
-        </a>
-</div>
-</section>
-
-
-
-    <!-- HORARIO -->
-<section id="informacion" class="w-full flex justify-center py-16 px-5">
-
-    <!-- ÓVALO -->
-    <div class="w-[400px] h-[520px] bg-darktext rounded-[50%] rotate-[12deg] flex flex-col items-center justify-center text-center text-lighttext p-10">
-
-        <!-- CONTENIDO -->
-        <div class="-rotate-[12deg] flex flex-col items-center">
-
-            <h2 class="font-asul text-5xl mb-5 ">
-                HORARIO
-            </h2>
-
-            <div class="font-lato text-xl leading-relaxed">
-                <p>LUNES A VIERNES</p>
-                <p>10:00-14:00 - 16:00-20:00</p>
-
-                <p class="mt-2">SÁBADOS</p>
-                <p>11:00-14:00</p>
-
-                <p class="mt-2">DOMINGO Y FESTIVOS</p>
-                <p>CERRADO</p>
+            <!-- TARJETA 3 -->
+            <div class="ovalo-medio w-[280px] h-[400px] rounded-[50%] bg-tarjeta2 rotate-[15deg]">
+                <img src="media/img/Flor 1.png" alt="Flor">
             </div>
 
-            <!-- BOTÓN -->
-            <a href="#reserva"
-               class="mt-7 rounded-full border px-6 py-4 text-xl font-semibold ">
-                Llama y reserva
+
+            <!-- TARJETA 4 -->
+            <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+                <img src="media/img/Flor 4.png" alt="Flor">
+            </div>
+
+
+            <!-- TARJETA 5 -->
+            <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+                <img src="media/img/Flor 5.png" alt="Flor">
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN VER MÁS -->
+
+        <div class="boton-popu mt-20">
+
+            <a
+                class="rounded-full border px-6 py-4 text-xl font-semibold bg-darktext text-nav hover:bg-lighttext"
+                href="productos.html">
+
+                Ver más
+
             </a>
 
         </div>
 
+    </section>
+
+
+
+    <!-- ====================================== -->
+    <!-- MARQUESINA -->
+    <!-- ====================================== -->
+
+    <div class="marquesina bg-darktext text-lighttext my-5 py-3 text-2xl">
+
+        <div class="marquesina-contenido">
+
+            <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
+            <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
+            <p>NUEVO · NUEVO · NUEVO · NUEVO · NUEVO · NUEVO ·</p>
+
+        </div>
+
     </div>
+
+
+
+    <!-- ====================================== -->
+    <!-- CATÁLOGO -->
+    <!-- ====================================== -->
+     
+<section id="productos"
+    class="w-full flex flex-col items-center mt-10 py-16 px-6 gap-12">
+
+    <h2 class="text-5xl pb-10 text-darktext text-center">
+        NUESTRO CATÁLOGO
+    </h2>
+
+    <!-- CATÁLOGO MÓVIL -->
+    <div class="catalogo-movil flex flex-col items-center gap-16 w-full">
+
+        <!-- PRODUCTO 1 -->
+        <article class="w-full max-w-[280px] flex flex-col items-center text-center">
+
+            <div class="w-[280px] h-[400px] rounded-[50%] rotate-[15deg] bg-tarjeta2 overflow-hidden">
+                <img class="w-full h-full object-cover"
+                     src="media/img/Flor 6.png" alt="Flor 6">
+            </div>
+
+            <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">
+                TÍTULO
+            </h2>
+
+            <p class="font-lato text-xl text-darktext leading-relaxed">
+                Descripción del producto
+            </p>
+
+        </article>
+
+        <!-- PRODUCTO 2 -->
+        <article class="w-full max-w-[280px] flex flex-col items-center text-center">
+
+            <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                <img class="w-full h-full object-cover"
+                     src="media/img/Flor 7.png" alt="Flor 7">
+            </div>
+
+            <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">
+                TÍTULO
+            </h2>
+
+            <p class="font-lato text-xl text-darktext leading-relaxed">
+                Descripción del producto
+            </p>
+
+        </article>
+
+        <!-- PRODUCTO 3 -->
+        <article class="w-full max-w-[280px] flex flex-col items-center text-center">
+
+            <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden">
+                <img class="w-full h-full object-cover"
+                     src="media/img/Flor 8.png" alt="Flor 8">
+            </div>
+
+            <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">
+                TÍTULO
+            </h2>
+
+            <p class="font-lato text-xl text-darktext leading-relaxed">
+                Descripción del producto
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <!-- CATÁLOGO ORDENADOR -->
+    <div class="catalogo-extra hidden lg:grid
+                w-full max-w-[1400px] mx-auto
+                grid-cols-5 grid-rows-3
+                gap-x-8 gap-y-12 items-center">
+
+        <!-- FILA 1 - COLUMNA 2: ÓVALO -->
+        <article class="group relative col-start-2 row-start-1 aspect-[3/4]
+                        rounded-[50%] rotate-[12deg] bg-darktext
+                        overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 6.png" alt="Flor 6">
+
+            <div class="absolute inset-0 flex items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+
+                <div class="rotate-[-12deg] flex flex-col items-center">
+                    <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                    <p class="font-lato text-sm leading-relaxed">
+                        Descripción del producto
+                    </p>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- FILA 1 - COLUMNA 3 -->
+        <article class="group relative col-start-3 row-start-1 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 7.png" alt="Flor 7">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 1 - COLUMNA 4 -->
+        <article class="group relative col-start-4 row-start-1 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 8.png" alt="Flor 8">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 1 - COLUMNA 5 -->
+        <article class="group relative col-start-5 row-start-1 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 9.png" alt="Flor 9">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 2 - COLUMNA 1 -->
+        <article class="group relative col-start-1 row-start-2 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 10.png" alt="Flor 10">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 2 - COLUMNA 2 -->
+        <article class="group relative col-start-2 row-start-2 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 11.png" alt="Flor 11">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 2 - COLUMNA 3 -->
+        <article class="group relative col-start-3 row-start-2 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 12.png" alt="Flor 12">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 2 - COLUMNA 4 -->
+        <article class="group relative col-start-4 row-start-2 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 13.png" alt="Flor 13">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 2 - COLUMNA 5: ÓVALO -->
+        <article class="group relative col-start-5 row-start-2 aspect-[3/4]
+                        rounded-[50%] rotate-[12deg] bg-darktext
+                        overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 14.png" alt="Flor 14">
+
+            <div class="absolute inset-0 flex items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+
+                <div class="rotate-[-12deg] flex flex-col items-center">
+                    <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                    <p class="font-lato text-sm leading-relaxed">
+                        Descripción del producto
+                    </p>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- FILA 3 - COLUMNA 2 -->
+        <article class="group relative col-start-2 row-start-3 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 15.png" alt="Flor 15">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 3 - COLUMNA 3: ÓVALO -->
+        <article class="group relative col-start-3 row-start-3 aspect-[3/4]
+                        rounded-[50%] rotate-[-12deg] bg-darktext
+                        overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 16.png" alt="Flor 16">
+
+            <div class="absolute inset-0 flex items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+
+                <div class="rotate-[12deg] flex flex-col items-center">
+                    <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                    <p class="font-lato text-sm leading-relaxed">
+                        Descripción del producto
+                    </p>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- FILA 3 - COLUMNA 4 -->
+        <article class="group relative col-start-4 row-start-3 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 17.png" alt="Flor 17">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+
+        <!-- FILA 3 - COLUMNA 5 -->
+        <article class="group relative col-start-5 row-start-3 aspect-[3/4]
+                        bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+
+            <img class="w-full h-full object-cover"
+                 src="media/img/Flor 18.png" alt="Flor 18">
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center
+                        bg-darktext text-lighttext text-center p-3
+                        opacity-0 transition-opacity duration-500
+                        group-hover:opacity-100 group-focus:opacity-100">
+                <h2 class="font-asul text-2xl mb-3">TÍTULO</h2>
+                <p class="font-lato text-sm leading-relaxed">
+                    Descripción del producto
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- BOTÓN -->
+    <a href="#catalogo-completo"
+       class="rounded-full border px-6 py-4 text-xl font-semibold mb-10 text-center
+              text-darktext hover:bg-darktext hover:text-lighttext">
+        Look more
+    </a>
 
 </section>
 
 
-    <!-- MAPA -->
-    <section class="mapa mt-20 pt-16 flex flex-col items-center gap-10">
+    <!-- ====================================== -->
+    <!-- HORARIO -->
+    <!-- ====================================== -->
 
-        <div class="info-mapa">
-            <h2 class="text-5xl pb-10 text-darktext text-center">Donde nos encontramos</h2>
+    <section id="informacion" class="w-full flex justify-center py-16 px-5">
 
-            <div>
-            <p class="font-lato text-xs text-center" >
-                C/ NUESTRA CALLE 23<br>
-                METROS LINEA 2, 3, 4<br>
-                AUTOBÚS 345 23
-            </p>
+        <!-- ÓVALO -->
+
+        <div
+            class="w-[400px] h-[520px] bg-darktext rounded-[50%]
+                   rotate-[12deg] flex flex-col items-center justify-center
+                   text-center text-lighttext p-10">
+
+
+            <!-- CONTENIDO -->
+
+            <div class="-rotate-[12deg] flex flex-col items-center">
+
+                <h2 class="font-asul text-5xl mb-5">
+                    HORARIO
+                </h2>
+
+
+                <div class="font-lato text-xl leading-relaxed">
+
+                    <p>LUNES A VIERNES</p>
+                    <p>10:00-14:00 - 16:00-20:00</p>
+
+                    <p class="mt-2">SÁBADOS</p>
+                    <p>11:00-14:00</p>
+
+                    <p class="mt-2">DOMINGO Y FESTIVOS</p>
+                    <p>CERRADO</p>
+
+                </div>
+
+
+                <!-- BOTÓN RESERVA -->
+
+                <a
+                    href="#reserva"
+                    class="mt-7 rounded-full border px-6 py-4 text-xl font-semibold">
+
+                    Llama y reserva
+
+                </a>
+
             </div>
 
-        </div>
-
-        <div class="mapa-ovalo w-[280px] h-[400px] rounded-[50%] overflow-hidden border border-darktext rotate-[12deg]">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d457.2909218040544!2d-3.702402414141447!3d40.425694860730054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1793747624258!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
 
     </section>
 
 
-    <!-- FOOTER -->
-    <footer class="bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
 
-        <div class="footer-top flex flex-col gap-3">
+    <!-- ====================================== -->
+    <!-- MAPA -->
+    <!-- ====================================== -->
 
-            <div class="newsletter">
+    <section class="mapa mt-20 pt-16 flex flex-col items-center gap-10">
 
-                <label class="block text-2xl py-4" for="email">NEWSLETTER</label>
 
-                <div class="newslettertype">
-                    <input class="rounded-full border px-3 py-2" id="email" type="email" placeholder="Email">
-                    <button class="rounded-full border px-3 py-2 hover:bg-darktext hover:text-nav" type="button">Suscríbete</button>
-                </div>
+        <!-- INFORMACIÓN DE UBICACIÓN -->
+
+        <div class="info-mapa">
+
+            <h2 class="text-5xl pb-10 text-darktext text-center">
+                Donde nos encontramos
+            </h2>
+
+
+            <div>
+
+                <p class="font-lato text-xs text-center">
+                    C/ NUESTRA CALLE 23<br>
+                    METROS LINEA 2, 3, 4<br>
+                    AUTOBÚS 345 23
+                </p>
 
             </div>
-
-            <h1 class="pb-15">CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h1>
 
         </div>
 
 
+        <!-- MAPA OVALADO -->
+
+        <div
+            class="mapa-ovalo w-[280px] h-[400px]
+                   rounded-[50%] overflow-hidden
+                   border border-darktext rotate-[12deg]">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d457.2909218040544!2d-3.702402414141447!3d40.425694860730054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1s-es!2ses!4v1793747624258!5m2!1ses!2ses"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
+
+    <footer class="bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
+
+
+        <!-- PARTE SUPERIOR -->
+
+        <div class="footer-top flex flex-col gap-3">
+
+
+            <!-- NEWSLETTER -->
+
+            <div class="newsletter">
+
+                <label class="block text-2xl py-4" for="email">
+                    NEWSLETTER
+                </label>
+
+
+                <div class="newslettertype">
+
+                    <input
+                        class="rounded-full border px-3 py-2"
+                        id="email"
+                        type="email"
+                        placeholder="Email">
+
+
+                    <button
+                        class="rounded-full border px-3 py-2 hover:bg-darktext hover:text-nav"
+                        type="button">
+
+                        Suscríbete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <h2 class="pb-15">
+                CONSIGUE TU RAMO MÁS BONITO Y FRESCO
+            </h2>
+
+        </div>
+
+
+
+        <!-- PARTE INFERIOR -->
+
         <div class="footer-bottom flex flex-col gap-8">
+
+
+            <!-- CONTACTO Y REDES SOCIALES -->
+
             <div class="rrss">
+
                 <div class="rrss-icon flex justify-center items-center gap-6 mb-5">
+
                     <i data-feather="phone"></i>
                     <i data-feather="mail"></i>
                     <i data-feather="instagram"></i>
+
                 </div>
+
+
                 <div class="rrss-info">
+
                     <p>+34 676767676</p>
                     <p>hanakotoba@atelier.com</p>
+
                 </div>
+
             </div>
+
+
+
+            <!-- LOGO FOOTER -->
 
             <div>
-                <a class="text-8xl" href="index.html">花言葉</a>
+
+                <a class="text-8xl" href="index.html">
+                    花言葉
+                </a>
+
             </div>
 
+
+
+            <!-- COPYRIGHT -->
+
             <div class="copyright">
+
                 <p>Copyright © 2018-2026 Hanakotoba.</p>
-                <p>Web - Peiqi/Claudia. Imágenes - Paul Lange. Todos los derechos reservados.</p>
+
+                <p>
+                    Web - Peiqi/Claudia. Imágenes - Paul Lange.
+                    Todos los derechos reservados.
+                </p>
+
             </div>
 
         </div>
 
     </footer>
 
+
+
+    <!-- ====================================== -->
+    <!-- SCRIPTS -->
+    <!-- ====================================== -->
+
+    <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- JQuery  -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
 
-     
+    <!-- SLICK CAROUSEL -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
     <!-- FEATHER ICONS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <script>
         feather.replace();
     </script>
 
-    <!-- JS -->
+
+    <!-- JAVASCRIPT PROPIO -->
     <script src="js/script.js"></script>
 
 </body>

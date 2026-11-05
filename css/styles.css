@@ -1,18 +1,34 @@
-/* TEORIA */
-@layer theme, base, components, utilities;
+
+/* ========================================= */
+/* TEORÍA Y ORGANIZACIÓN */
+/* ========================================= */
 
 /* ID >> CLASS >> TAG */
 
-/* Los selectores o estilos de etiqueta (tag, h1, div), se colocan en "base" */
-/* Los selectores por clase (.class), iran en "components" */
+/* Los selectores de etiqueta (h1, div, p...) van en base */
+/* Los selectores de clase (.class) van en components */
 
-/* APARTADO DE CSS */
-/* FUENTES */
+
+/* ========================================= */
+/* IMPORTACIONES */
+/* ========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Lato:wght@300;400;700;900&display=swap');
 
 @import "tailwindcss";
 
-/* THEME: MODO OSCURO */
+
+/* ========================================= */
+/* ORDEN DE CAPAS */
+/* ========================================= */
+
+@layer theme, base, components, utilities;
+
+
+/* ========================================= */
+/* MODO OSCURO */
+/* ========================================= */
+
 .dark {
     --color-bg: #535841;
     --color-deg: #82783F;
@@ -28,7 +44,11 @@
     color-scheme: dark;
 }
 
+
+/* ========================================= */
 /* ESTILOS GENERALES */
+/* ========================================= */
+
 @layer base {
 
     * {
@@ -65,10 +85,61 @@
 
 }
 
+
+/* ========================================= */
 /* COMPONENTES */
+/* ========================================= */
+
 @layer components {
 
+
+    /* ----------------------------------------- */
+    /* MAIN */
+    /* ----------------------------------------- */
+
+    .titulo-principal {
+        white-space: nowrap;
+    }
+
+     /* Carrusel de flores */
+
+    .carrusel-flores {
+        width: 10rem;
+        height: 10rem;
+        margin: 0 -5rem;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+    }
+
+    .carrusel-flores img {
+        width: 10rem;
+        height: 10rem;
+        object-fit: contain;
+    }
+
+
+    /* ----------------------------------------- */
+    /* PRESENTACIÓN */
+    /* ----------------------------------------- */
+
+    .presentacion-contenido {
+        min-height: 210px;
+    }
+
+    .figura-oval {
+        flex-shrink: 0;
+    }
+
+    .presentacion-texto {
+        flex-shrink: 0;
+    }
+
+
+    /* ----------------------------------------- */
     /* MOST POPULAR */
+    /* ----------------------------------------- */
+
     .most-popular {
         width: 100%;
         position: relative;
@@ -76,43 +147,81 @@
         padding: 80px 20px;
     }
 
-    /* TARJETAS MÓVIL */
+    /* Tarjetas móvil */
+
     .tarjetas-popu {
         width: 100%;
         position: relative;
         align-items: center;
     }
 
-    /* TARJETAS ORDENADOR */
+    /* Tarjetas ordenador */
+
     .tarjetas-popu-extra {
         display: block;
-        display: block;
     }
 
-    /* CATÁLOGO */
-    .tarjetas-cata,
-    .tarjetas-cata-extra {
+   /* ========================================= */
+/* CATÁLOGO */
+/* ========================================= */
+
+@media (min-width: 1440px) {
+
+    #productos {
         width: 100%;
-        position: relative;
+        max-width: none;
+        min-height: 100svh;
+        margin: 0;
+        padding: 80px 3%;
     }
+
+    .catalogo-movil {
+        display: none;
+    }
+
+    .catalogo-extra {
+        display: grid;
+        width: 100%;
+        max-width: none;
+
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    #productos article {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+}
+
+
+    /* ----------------------------------------- */
+    /* MARQUESINA */
+    /* ----------------------------------------- */
 
     .marquesina {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
 
-.marquesina-contenido {
-    display: flex;
-    width: max-content;
-}
+    .marquesina-contenido {
+        display: flex;
+        width: max-content;
+    }
 
     .marquesina-contenido p {
         flex-shrink: 0;
         padding-right: 20px;
     }
 
+
+    /* ----------------------------------------- */
     /* MAPA */
+    /* ----------------------------------------- */
+
     .mapa {
         width: 100%;
         display: flex;
@@ -128,46 +237,84 @@
 
 }
 
+
 /* ========================================= */
 /* TABLET */
 /* ========================================= */
 
 @media (min-width: 768px) {
 
+
+    /* ----------------------------------------- */
     /* NAV */
+    /* ----------------------------------------- */
+
     .nav {
         padding: 20px 40px;
     }
 
+
+    /* ----------------------------------------- */
     /* MAIN */
+    /* ----------------------------------------- */
+
     main {
         padding: 40px 30px;
     }
 
+     /* Carrusel de flores */
+
+    .carrusel-flores {
+        width: 20rem;
+        height: 20rem;
+        margin: 0 -5rem;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+    }
+
+    .carrusel-flores img {
+        width: 20rem;
+        height: 20rem;
+        object-fit: contain;
+    }
+
+
+    /* ----------------------------------------- */
     /* MOST POPULAR */
+    /* ----------------------------------------- */
+
     .most-popular {
         padding: 100px 40px;
     }
 
+
+    /* ----------------------------------------- */
     /* CATÁLOGO */
+    /* ----------------------------------------- */
+
     #productos {
-        padding-left: 40px;
-        padding-right: 40px;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     #productos article {
-        max-width: 300px;
+        width: 100%;
+        max-width: none;
     }
 
-    /* HORARIO Y MAPA */
 
-
+    /* ----------------------------------------- */
     /* FOOTER */
+    /* ----------------------------------------- */
+
     footer {
         padding: 50px 40px;
     }
 
 }
+
 
 /* ========================================= */
 /* ORDENADOR */
@@ -175,7 +322,11 @@
 
 @media (min-width: 1024px) {
 
+
+    /* ----------------------------------------- */
     /* NAV */
+    /* ----------------------------------------- */
+
     .nav {
         padding: 20px 60px;
     }
@@ -198,16 +349,44 @@
         display: block;
     }
 
+
+    /* ----------------------------------------- */
     /* MAIN */
+    /* ----------------------------------------- */
+
     main {
         padding: 60px 8%;
     }
 
     main h1 {
-        font-size: 9rem;
+        font-size: 14rem;
     }
 
+    .titulo-principal{
+        flex-direction: row;
+    }
+
+     /* Carrusel de flores */
+
+    .carrusel-flores {
+        width: 25rem;
+        height: 25rem;
+        margin: 0 -5rem;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+    }
+
+    .carrusel-flores img {
+        width: 25rem;
+        height: 25rem;
+        object-fit: contain;
+    }
+
+    /* ----------------------------------------- */
     /* MOST POPULAR */
+    /* ----------------------------------------- */
+
     .most-popular {
         padding: 100px 8%;
     }
@@ -223,25 +402,31 @@
 
     .tarjetas-popu-extra {
         display: flex;
+        align-items: center;
         gap: 30px;
     }
 
+
+    /* ----------------------------------------- */
     /* CATÁLOGO */
+    /* ----------------------------------------- */
+
     #productos {
-        padding: 100px 8%;
+        width: 100%;
+        padding: 100px 5%;
     }
 
     #productos article {
-        max-width: 300px;
+        width: 100%;
+        max-width: none;
     }
 
-    .tarjetas-cata-extra {
 
-    }
-
+    /* ----------------------------------------- */
     /* HORARIO Y MAPA */
-    .info-mapa {
+    /* ----------------------------------------- */
 
+    .info-mapa {
     }
 
     #informacion {
@@ -256,15 +441,18 @@
     }
 
     .mapa-ovalo {
-
     }
 
-    /* FOOTER */
-    footer {
 
+    /* ----------------------------------------- */
+    /* FOOTER */
+    /* ----------------------------------------- */
+
+    footer {
     }
 
 }
+
 
 /* ========================================= */
 /* PANTALLAS GRANDES */
@@ -272,101 +460,112 @@
 
 @media (min-width: 1440px) {
 
+
+    /* ----------------------------------------- */
     /* MAIN */
+    /* ----------------------------------------- */
+
     main {
         max-width: 1600px;
-        margin-left: auto;
-        margin-right: auto;
+        margin:5rem 0;
+        padding: 60px 8%;
     }
 
+    .maintext {
+        font-size: 20rem;
+    }
+
+
+    /* ----------------------------------------- */
     /* MOST POPULAR */
+    /* ----------------------------------------- */
+
     .most-popular {
         max-width: 1600px;
         margin: 0 auto;
     }
 
+
+    /* ----------------------------------------- */
     /* CATÁLOGO */
+    /* ----------------------------------------- */
+
+    #productos {
+        width: 100%;
+        max-width: none;
+        min-height: 100svh;
+        margin: 0;
+        padding: 80px 3%;
+    }
+
     .catalogo-movil {
         display: none;
     }
 
-    .catalogo-extra {
+    .catalogo-extra,
+    .tarjetas-cata-extra {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+        max-width: none;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 30px;
     }
 
+    #productos article {
+        width: 100%;
+        max-width: none;
+    }
+
+
+    /* ----------------------------------------- */
     /* HORARIO Y MAPA */
+    /* ----------------------------------------- */
 
 
+    /* ----------------------------------------- */
     /* FOOTER */
+    /* ----------------------------------------- */
+
     footer {
-
     }
 
 }
 
-.presentacion-contenido {
-    min-height: 210px;
-}
 
-.figura-oval {
-    flex-shrink: 0;
-}
-
-.presentacion-texto {
-    flex-shrink: 0;
-}
-
+/* ========================================= */
 /* MÓVIL */
+/* ========================================= */
+
 @media (max-width: 767px) {
 
-    .presentacion-contenido {
-        min-height: 400px;
-        justify-content: center;
-    }
 
-}
-/* TÍTULO PRINCIPAL */
-
-.titulo-principal {
-    white-space: nowrap;
-}
-
-/* CARRUSEL DE FLORES */
-
-.carrusel-flores {
-    width: 130px;
-    height: 130px;
-    margin: 0 -25px;
-    position: relative;
-    z-index: 10;
-    flex-shrink: 0;
-}
-
-.carrusel-flores img {
-    width: 130px;
-    height: 130px;
-    object-fit: contain;
-}
-
-/* MÓVIL */
-
-@media (max-width: 767px) {
+    /* ----------------------------------------- */
+    /* MAIN */
+    /* ----------------------------------------- */
 
     .titulo-principal {
-        font-size: 4rem;
+        font-size: 8rem;
     }
 
     .carrusel-flores {
-        width: 75px;
-        height: 75px;
+        width: 15rem;
+        height: 15rem;
         margin: 0 -15px;
     }
 
     .carrusel-flores img {
-        width: 75px;
-        height: 75px;
+        width: 15rem;
+        height: 15rem;
+    }
+
+
+    /* ----------------------------------------- */
+    /* PRESENTACIÓN */
+    /* ----------------------------------------- */
+
+    .presentacion-contenido {
+        min-height: 400px;
+        justify-content: center;
     }
 
 }
