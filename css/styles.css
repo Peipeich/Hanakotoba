@@ -219,6 +219,47 @@
 
 }
 
+/* ========================================= */
+/* ANIMACIONES DE ENTRADA */
+/* ========================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        translate: 0 35px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.animacion-aparecer {
+    opacity: 0;
+}
+
+.animacion-aparecer.visible {
+    animation: aparecer 1s ease-out forwards;
+}
+
+/* ========================================= */
+/* ANIMACIÓN DE PULSACIÓN */
+/* ========================================= */
+
+@keyframes pulsar {
+    0%, 100% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.08;
+    }
+}
+
+.carrusel-flores img {
+    animation: pulsar 3s ease-in-out infinite;
+}
 
 /* ========================================= */
 /* TABLET */
@@ -594,4 +635,63 @@
         justify-content: center;
     }
 
+}
+
+/* ========================================= */
+/* HOVER INDIVIDUAL DE LAS TARJETAS */
+/* ========================================= */
+
+/* Tarjetas de ordenador */
+.tarjetas-popu-extra > div {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-origin: center;
+}
+
+/* Efecto al pasar el ratón */
+.tarjetas-popu-extra > div:hover {
+    transform: scale(1.07) translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+    position: relative;
+}
+
+/* TARJETA CENTRAL MÁS GRANDE */
+
+.tarjetas-popu-extra .ovalo-medio {
+    width: clamp(190px, 22vw, 320px);
+    height: auto;
+    aspect-ratio: 7 / 10;
+    flex: 0 1 320px;
+    z-index: 2;
+}
+
+/* ========================================= */
+/* HOVER INDIVIDUAL - CATÁLOGO */
+/* ========================================= */
+
+/* TARJETAS DE ORDENADOR */
+.catalogo-extra article {
+    position: relative;
+    transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
+}
+
+.catalogo-extra article:hover {
+    scale: 1.05;
+    translate: 0 -8px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+}
+
+
+/* TARJETAS DE MÓVIL Y TABLET */
+.catalogo-movil article > div:first-child {
+    position: relative;
+    transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
+}
+
+.catalogo-movil article > div:first-child:hover {
+    scale: 1.05;
+    translate: 0 -8px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    z-index: 10;
 }

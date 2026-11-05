@@ -89,6 +89,8 @@ $(document).ready(function () {
 
 });
 
+// CARRUSEL DE FLORE MAIN
+
 $(document).ready(function () {
 
     $('.carrusel-flores').slick({
@@ -111,4 +113,34 @@ $(document).ready(function () {
 
     });
 
+});
+
+// ANIMACIONES
+
+// =========================================
+// ANIMACIONES AL HACER SCROLL
+// =========================================
+
+const elementosAnimados = document.querySelectorAll('.animacion-aparecer');
+
+const observador = new IntersectionObserver((entradas) => {
+
+    entradas.forEach((entrada) => {
+
+        if (entrada.isIntersecting) {
+
+            entrada.target.classList.add('visible');
+
+            observador.unobserve(entrada.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+elementosAnimados.forEach((elemento) => {
+    observador.observe(elemento);
 });
