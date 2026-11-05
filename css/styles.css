@@ -327,3 +327,46 @@
     }
 
 }
+/* TÍTULO PRINCIPAL */
+
+.titulo-principal {
+    white-space: nowrap;
+}
+
+/* CARRUSEL DE FLORES */
+
+.carrusel-flores {
+    width: 130px;
+    height: 130px;
+    margin: 0 -25px;
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.carrusel-flores img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+}
+
+/* MÓVIL */
+
+@media (max-width: 767px) {
+
+    .titulo-principal {
+        font-size: 4rem;
+    }
+
+    .carrusel-flores {
+        width: 75px;
+        height: 75px;
+        margin: 0 -15px;
+    }
+
+    .carrusel-flores img {
+        width: 75px;
+        height: 75px;
+    }
+
+}

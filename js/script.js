@@ -67,3 +67,27 @@ $(document).ready(function () {
     animarMarquesina();
 
 });
+
+$(document).ready(function () {
+
+    $('.carrusel-flores').slick({
+
+        slidesToShow: 1,
+        slidesToScroll: 1,
+
+        autoplay: true,
+        autoplaySpeed: 2000,
+
+        speed: 500,
+        fade: true,
+
+        arrows: false,
+        dots: false,
+
+        infinite: true,
+        pauseOnHover: false,
+        pauseOnFocus: false
+
+    });
+
+});
