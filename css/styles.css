@@ -1,10 +1,9 @@
-/* TEORIA  */
+/* TEORIA */
 @layer theme, base, components, utilities;
 
 /* ID >> CLASS >> TAG */
 
-/* Los selectores o estilos de etiqueta (tag,h1,div), se colocan en "base" */
-
+/* Los selectores o estilos de etiqueta (tag, h1, div), se colocan en "base" */
 /* Los selectores por clase (.class), iran en "components" */
 
 /* APARTADO DE CSS */
@@ -13,10 +12,10 @@
 
 @import "tailwindcss";
 
-
 /* THEME: MODO OSCURO */
 .dark {
     --color-bg: #535841;
+    --color-deg: #82783F;
     --color-flower: #D9DFFF;
     --color-tarjeta: #BDC2AC;
     --color-tarjeta2: #D9DFFF;
@@ -28,7 +27,6 @@
 
     color-scheme: dark;
 }
-
 
 /* ESTILOS GENERALES */
 @layer base {
@@ -44,7 +42,6 @@
         overflow-y: scroll;
         scrollbar-gutter: auto;
     }
-    
 
     body {
         width: 100%;
@@ -68,7 +65,6 @@
 
 }
 
-
 /* COMPONENTES */
 @layer components {
 
@@ -80,7 +76,6 @@
         padding: 80px 20px;
     }
 
-
     /* TARJETAS MÓVIL */
     .tarjetas-popu {
         width: 100%;
@@ -88,12 +83,11 @@
         align-items: center;
     }
 
-
     /* TARJETAS ORDENADOR */
     .tarjetas-popu-extra {
         display: block;
+        display: block;
     }
-
 
     /* CATÁLOGO */
     .tarjetas-cata,
@@ -101,7 +95,6 @@
         width: 100%;
         position: relative;
     }
-
 
     .marquesina {
     width: 100%;
@@ -114,11 +107,10 @@
     width: max-content;
 }
 
-.marquesina-contenido p {
-    flex-shrink: 0;
-    padding-right: 20px;
-}
-
+    .marquesina-contenido p {
+        flex-shrink: 0;
+        padding-right: 20px;
+    }
 
     /* MAPA */
     .mapa {
@@ -136,7 +128,6 @@
 
 }
 
-
 /* ========================================= */
 /* TABLET */
 /* ========================================= */
@@ -148,20 +139,15 @@
         padding: 20px 40px;
     }
 
-
     /* MAIN */
     main {
         padding: 40px 30px;
     }
 
-
     /* MOST POPULAR */
     .most-popular {
         padding: 100px 40px;
     }
-
-    
-
 
     /* CATÁLOGO */
     #productos {
@@ -173,9 +159,8 @@
         max-width: 300px;
     }
 
-
     /* HORARIO Y MAPA */
-    
+
 
     /* FOOTER */
     footer {
@@ -183,7 +168,6 @@
     }
 
 }
-
 
 /* ========================================= */
 /* ORDENADOR */
@@ -200,7 +184,6 @@
         display: flex;
         gap: 2rem;
         flex-direction: row;
-        
     }
 
     .burger {
@@ -215,7 +198,6 @@
         display: block;
     }
 
-
     /* MAIN */
     main {
         padding: 60px 8%;
@@ -225,17 +207,16 @@
         font-size: 9rem;
     }
 
-
     /* MOST POPULAR */
     .most-popular {
         padding: 100px 8%;
     }
 
-    .tarjetas-popu{
+    .tarjetas-popu {
         display: none;
     }
 
-    .ovalo-medio{
+    .ovalo-medio {
         width: 350px;
         height: 470px;
     }
@@ -244,7 +225,6 @@
         display: flex;
         gap: 30px;
     }
-
 
     /* CATÁLOGO */
     #productos {
@@ -256,16 +236,13 @@
     }
 
     .tarjetas-cata-extra {
-       
-    }
 
+    }
 
     /* HORARIO Y MAPA */
     .info-mapa {
-        
-    }
 
-    
+    }
 
     #informacion {
         padding: 0;
@@ -278,19 +255,16 @@
         justify-content: space-around;
     }
 
-    .mapa-ovalo{
-         
+    .mapa-ovalo {
+
     }
 
     /* FOOTER */
     footer {
-       
+
     }
 
-    
-
 }
-
 
 /* ========================================= */
 /* PANTALLAS GRANDES */
@@ -305,35 +279,51 @@
         margin-right: auto;
     }
 
-
     /* MOST POPULAR */
     .most-popular {
         max-width: 1600px;
         margin: 0 auto;
     }
 
-
     /* CATÁLOGO */
-   
-    .catalogo-movil{
-        display:none;
+    .catalogo-movil {
+        display: none;
     }
 
-    .catalogo-extra{
+    .catalogo-extra {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 30px;
     }
-  
 
     /* HORARIO Y MAPA */
-    
+
 
     /* FOOTER */
     footer {
-       
+
     }
 
 }
 
+.presentacion-contenido {
+    min-height: 210px;
+}
 
+.figura-oval {
+    flex-shrink: 0;
+}
+
+.presentacion-texto {
+    flex-shrink: 0;
+}
+
+/* MÓVIL */
+@media (max-width: 767px) {
+
+    .presentacion-contenido {
+        min-height: 400px;
+        justify-content: center;
+    }
+
+}

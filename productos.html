@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,12 +71,21 @@
 
             <div class="flex items-center gap-6">
 
+                <!-- MENU ORDENADOR -->
+                <div>
+                    <ul class="menu-desktop hidden">
+                        <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                        <li><a href="productos.html">NUESTROS PRODUCTOS</a></li>
+                        <li><a href="#informacion">INFORMACIÓN</a></li>
+                    </ul>
+                </div>
+
                 <!-- BOTÓN MODO OSCURO -->
                 <button
                     id="boton-tema"
                     type="button"
                     aria-pressed="false"
-                    class="rounded-full border px-3 py-2 text-sm font-semibold">
+                    class="rounded-full border px-3 py-2 text-sm hover:bg-darktext hover:text-nav">
                     Modo oscuro
                 </button>
 
@@ -84,7 +94,13 @@
                     <i id="icon-menu" data-feather="menu"></i>
                 </div>
 
+                <!-- RESERVA ORDENADOR -->
+                <div class="reserva rounded-full border px-3 py-2 text-sm hidden">
+                    <p>RESERVA</p>
+                </div>
+
             </div>
+
         </div>
 
         <!-- MENU DESPLEGADO -->
@@ -93,84 +109,127 @@
             <ul class="flex flex-col items-center justify-center gap-8 text-center">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
-                <li><a href="#productos">NUESTROS PRODUCTOS</a></li>
+                <li><a href="productos.html">NUESTROS PRODUCTOS</a></li>
                 <li><a href="#informacion">INFORMACIÓN</a></li>
-                <li><a href="#reserva">RESERVA</a></li>
+                <li><a href="reserva.html">RESERVA</a></li>
             </ul>
 
         </div>
 
-        <!-- RESERVA ORDENADOR -->
-        <div class="reserva hidden">
-            <p>RESERVA</p>
-        </div>
-
     </nav>
 
+    <!-- SECCIÓN PRESENTACIÓN -->
+    <section class="mt-20 w-full px-6 py-10">
 
-   
+        <div class="presentacion-contenido
+                    w-full
+                    flex flex-col
+                    md:flex-row
+                    items-center
+                    justify-evenly
+                    gap-8
+                    p-8">
 
+            <!-- FIGURAS -->
+            <div class="presentacion-figuras
+                        flex flex-col
+                        items-baseline
+                        gap-4
+                        md:flex-row
+                        md:gap-6">
 
+                <div class="figura-oval
+                            w-[280px] h-[400px]
+                            rounded-[50%]
+                            bg-tarjeta2 rotate-[15deg]">
+                </div>
 
+                <div class="figura-circulos flex gap-2">
+                    <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-darkgreen"></span>
+                    <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-darkgreen"></span>
+                    <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-darkgreen"></span>
+                </div>
 
+            </div>
 
+            <!-- TEXTO -->
+            <div class="presentacion-texto
+                        flex flex-col
+                        items-center
+                        text-center
+                        md:items-start
+                        md:text-left">
 
+                <h2 class="text-2xl md:text-3xl text-darktext mb-6">
+                    TÍTULO
+                </h2>
 
+                <p class="text-sm text-darktext">
+                    inicio<br>
+                    productos más famosos<br>
+                    catálogo<br>
+                    servicios que ofrecemos<br>
+                    horario-mapa<br>
+                    footer
+                </p>
 
-    
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- FOOTER -->
-    <footer class="nav bg-nav text-darktext px-6 py-8 flex flex-col text-center justify-between">
+    <footer class="bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
 
         <div class="footer-top flex flex-col gap-3">
-
-            <p>Suscríbete a nuestra newsletter</p>
 
             <div class="newsletter">
 
                 <label class="block text-2xl py-4" for="email">NEWSLETTER</label>
 
                 <div class="newslettertype">
-                    <input class="rounded-full border px-3 py-2" id="email" type="email" placeholder="Your email">
-                    <button class="rounded-full border px-3 py-2" type="button">Suscríbete</button>
+                    <input class="rounded-full border px-3 py-2" id="email" type="email" placeholder="Email">
+                    <button class="rounded-full border px-3 py-2 hover:bg-darktext hover:text-nav" type="button">Suscríbete</button>
                 </div>
 
             </div>
 
-            <h1 class="pb-20">CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h1>
+            <h1 class="pb-15">CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h1>
 
         </div>
 
-
         <div class="footer-bottom flex flex-col gap-8">
+
             <div class="rrss">
-                <div class="rrss-icon flex justify-center items-center">
+                <div class="rrss-icon flex justify-center items-center gap-6 mb-5">
                     <i data-feather="phone"></i>
                     <i data-feather="mail"></i>
                     <i data-feather="instagram"></i>
                 </div>
+
                 <div class="rrss-info">
-                    <p>+67 676767676</p>
-                    <p>Hanakotoba@gmail.com</p>
-                    <p>IG: @hanakotoba</p>
+                    <p>+34 676767676</p>
+                    <p>hanakotoba@atelier.com</p>
                 </div>
             </div>
 
             <div>
-                <a class="text-9xl" href="index.html">花言葉</a>
+                <a class="text-8xl" href="index.html">花言葉</a>
             </div>
 
             <div class="copyright">
                 <p>Copyright © 2018-2026 Hanakotoba.</p>
-                <p>Peiqi - Claudia. Todos los derechos reservados.</p>
+                <p>Web - Peiqi/Claudia. Imágenes - Paul Lange. Todos los derechos reservados.</p>
             </div>
 
         </div>
 
     </footer>
 
-    <!-- JQuery  -->
-     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
     <!-- FEATHER ICONS -->
     <script>
         feather.replace();
