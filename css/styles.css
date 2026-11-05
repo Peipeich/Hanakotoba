@@ -443,7 +443,10 @@
         width: 100%;
         max-width: none;
     }
-
+    
+    .catalogo-movil{
+        display: none;
+    }
 
     /* ----------------------------------------- */
     /* HORARIO Y MAPA */
