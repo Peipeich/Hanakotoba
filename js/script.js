@@ -1,19 +1,40 @@
-// BOTON MODO CLARO/OSCURO 
 const raiz = document.documentElement;
 const botonTema = document.querySelector('#boton-tema');
 
-// MODO OSCURO
+// CARGAR TEMA GUARDADO
 if (localStorage.getItem('tema') === 'oscuro') {
-    raiz.classList.add('dark');
+    raiz.classList.add('dark');
 }
 
+// ACTUALIZAR ICONO
+function actualizarTema() {
+
+    const oscuro = raiz.classList.contains('dark');
+
+    botonTema.innerHTML = oscuro
+        ? '<i data-feather="sun"></i>'
+        : '<i data-feather="moon"></i>';
+
+    botonTema.setAttribute('aria-pressed', oscuro);
+
+    feather.replace();
+}
+
+// MOSTRAR ICONO INICIAL
+actualizarTema();
+
+// CAMBIAR TEMA
 botonTema.addEventListener('click', function () {
-    raiz.classList.toggle('dark');
 
-    const oscuro = raiz.classList.contains('dark');
-    localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
+    raiz.classList.toggle('dark');
+
+    const oscuro = raiz.classList.contains('dark');
+
+    localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
+
+    actualizarTema();
+
 });
-
 // MENU HAMBURGUESA
 $(function () {
 

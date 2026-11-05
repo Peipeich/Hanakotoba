@@ -92,7 +92,22 @@
 
 @layer components {
 
+   #boton-tema {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
+#boton-tema:hover {
+    transform: rotate(20deg);
+}
+
+#boton-tema svg {
+    width: 22px;
+    height: 22px;
+}
     /* ----------------------------------------- */
     /* MAIN */
     /* ----------------------------------------- */
