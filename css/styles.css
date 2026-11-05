@@ -1,3 +1,4 @@
+
 /* ========================================= */
 /* TEORÍA Y ORGANIZACIÓN */
 /* ========================================= */
@@ -37,8 +38,6 @@
     --color-darktext: #F6EFE9;
     --color-lighttext: #434037;
     --color-nav: #82783F;
-    --color-blue: #434037;
-    --color-dark: #D9DFFF;
 
     color-scheme: dark;
 }
@@ -91,22 +90,29 @@
 
 @layer components {
 
-   #boton-tema {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
 
-#boton-tema:hover {
-    transform: rotate(20deg);
-}
+    /* ----------------------------------------- */
+    /* BOTÓN MODO OSCURO */
+    /* ----------------------------------------- */
 
-#boton-tema svg {
-    width: 22px;
-    height: 22px;
-}
+    #boton-tema {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #boton-tema:hover {
+        transform: rotate(20deg);
+    }
+
+    #boton-tema svg {
+        width: 22px;
+        height: 22px;
+    }
+
+
     /* ----------------------------------------- */
     /* MAIN */
     /* ----------------------------------------- */
@@ -115,7 +121,8 @@
         white-space: nowrap;
     }
 
-     /* Carrusel de flores */
+
+    /* CARRUSEL DE FLORES */
 
     .carrusel-flores {
         width: 10rem;
@@ -141,10 +148,7 @@
         min-height: 210px;
     }
 
-    .figura-oval {
-        flex-shrink: 0;
-    }
-
+    .figura-oval,
     .presentacion-texto {
         flex-shrink: 0;
     }
@@ -161,54 +165,18 @@
         padding: 80px 20px;
     }
 
-    /* Tarjetas móvil */
-
     .tarjetas-popu {
         width: 100%;
+        flex-direction: row;
         position: relative;
         align-items: center;
     }
 
-    /* Tarjetas ordenador */
+    /* Versión ordenador oculta por defecto */
 
     .tarjetas-popu-extra {
-        display: block;
-    }
-
-   /* ========================================= */
-/* CATÁLOGO */
-/* ========================================= */
-
-@media (min-width: 1440px) {
-
-    #productos {
-        width: 100%;
-        max-width: none;
-        min-height: 100svh;
-        margin: 0;
-        padding: 80px 3%;
-    }
-
-    .catalogo-movil {
         display: none;
     }
-
-    .catalogo-extra {
-        display: grid;
-        width: 100%;
-        max-width: none;
-
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: 30px;
-    }
-
-    #productos article {
-        width: 100%;
-        max-width: none;
-        min-width: 0;
-    }
-
-}
 
 
     /* ----------------------------------------- */
@@ -276,7 +244,12 @@
         padding: 40px 30px;
     }
 
-     /* Carrusel de flores */
+    .hanakotoba {
+        padding-top: 6rem;
+    }
+
+
+    /* CARRUSEL DE FLORES */
 
     .carrusel-flores {
         width: 20rem;
@@ -300,6 +273,10 @@
 
     .most-popular {
         padding: 100px 40px;
+    }
+
+    .tarjetas-popu {
+        flex-direction: row;
     }
 
 
@@ -340,17 +317,15 @@
     /* ----------------------------------------- */
     /* NAV */
     /* ----------------------------------------- */
-    /* CONTENEDOR DEL LOGO Y MENÚ */
-
 
     .nav {
         padding: 20px 60px;
     }
 
     .nav .nav-izq {
-    display: flex;
-    align-items: center;
-}
+        display: flex;
+        align-items: center;
+    }
 
     .menu-desktop {
         display: flex;
@@ -385,11 +360,16 @@
         font-size: 14rem;
     }
 
-    .titulo-principal{
+    .titulo-principal {
         flex-direction: row;
     }
 
-     /* Carrusel de flores */
+    .hanakotoba {
+        padding-top: 3rem;
+    }
+
+
+    /* CARRUSEL DE FLORES */
 
     .carrusel-flores {
         width: 25rem;
@@ -406,27 +386,59 @@
         object-fit: contain;
     }
 
+
     /* ----------------------------------------- */
     /* MOST POPULAR */
     /* ----------------------------------------- */
 
     .most-popular {
-        padding: 100px 8%;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 100px 3%;
     }
+
+    /* Ocultar tarjetas de móvil y tablet */
 
     .tarjetas-popu {
         display: none;
     }
 
-    .ovalo-medio {
-        width: 350px;
-        height: 470px;
-    }
+    /* Mostrar tarjetas de ordenador */
 
     .tarjetas-popu-extra {
         display: flex;
+        width: 100%;
+        justify-content: space-evenly;
         align-items: center;
-        gap: 30px;
+        gap: clamp(15px, 2vw, 40px);
+    }
+
+    /* Ajustar tamaño de las cinco tarjetas */
+
+    .tarjetas-popu-extra > div {
+        width: clamp(170px, 19vw, 280px);
+        height: auto;
+        aspect-ratio: 7 / 10;
+        flex: 0 1 280px;
+        min-width: 0;
+    }
+
+    /* Tarjeta central */
+
+    .tarjetas-popu-extra .ovalo-medio {
+        width: clamp(170px, 19vw, 280px);
+        height: auto;
+        aspect-ratio: 7 / 10;
+        flex: 0 1 280px;
+    }
+
+    /* Imágenes */
+
+    .tarjetas-popu-extra img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
 
@@ -443,17 +455,15 @@
         width: 100%;
         max-width: none;
     }
-    
-    .catalogo-movil{
+
+    .catalogo-movil {
         display: none;
     }
+
 
     /* ----------------------------------------- */
     /* HORARIO Y MAPA */
     /* ----------------------------------------- */
-
-    .info-mapa {
-    }
 
     #informacion {
         padding: 0;
@@ -464,9 +474,6 @@
         flex-direction: row;
         gap: 20px;
         justify-content: space-around;
-    }
-
-    .mapa-ovalo {
     }
 
 
@@ -493,7 +500,7 @@
 
     main {
         max-width: 1600px;
-        margin:5rem 0;
+        margin: 5rem auto;
         padding: 60px 8%;
     }
 
@@ -507,8 +514,14 @@
     /* ----------------------------------------- */
 
     .most-popular {
-        max-width: 1600px;
+        max-width: 1800px;
         margin: 0 auto;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .tarjetas-popu-extra {
+        gap: 40px;
     }
 
 
@@ -540,19 +553,6 @@
     #productos article {
         width: 100%;
         max-width: none;
-    }
-
-
-    /* ----------------------------------------- */
-    /* HORARIO Y MAPA */
-    /* ----------------------------------------- */
-
-
-    /* ----------------------------------------- */
-    /* FOOTER */
-    /* ----------------------------------------- */
-
-    footer {
     }
 
 }

@@ -38,14 +38,14 @@
 
     /* COLORES */
     --color-bg: #D9DFFF;
-    --color-flower: #FDF5C8;
+    --color-deg: #FDF5C8;
+    --color-flower:  #82783F ;
     --color-tarjeta: #82783F;
     --color-tarjeta2: #434037;
     --color-darktext: #434037;
     --color-lighttext: #FDF5C8;
     --color-nav: #FDF5C8;
-    --color-blue: #D9DFFF;
-    --color-dark: #434037;
+    
     /* FUENTES */
     --font-lato: "Lato", sans-serif;
     --font-asul: "Asul", serif;
@@ -68,15 +68,15 @@
 
             <!-- LOGO -->
             <div class="menu-logo text-2xl">
-                <a href="index.html">花言葉</a>
+                <a class="hover:text-flower hover:underline" href="index.html">花言葉</a>
             </div>
 
             <!-- MENÚ ORDENADOR -->
             <div class="flex-1 text-sm">
                 <ul class="menu-desktop hidden">
-                    <li><a href="#productos.html">Catálogo</a></li>
-                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                    <li><a href="#informacion">Información</a></li>
+                    <li><a  class="hover:text-flower hover:underline" href="#productos">Catálogo</a></li>
+                    <li><a  class="hover:underline hover:text-flower" href="#sobre-nosotras">Sobre Nosotras</a></li>
+                    <li><a  class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
                 </ul>
             </div>
 
@@ -111,11 +111,11 @@
    <!-- MENÚ MÓVIL DESPLEGADO -->
    <div class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center" id="menu-mov">
     <ul class="flex flex-col items-center justify-center gap-8 text-center">
-     <li><a href="index.html">Inicio</a></li>
-     <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-     <li><a href="productos.html">Nuestros Productos</a></li>
-     <li><a href="#informacion">Información</a></li>
-     <li><a href="reserva.html">Reserva</a></li>
+     <li><a  class="hover:underline hover:text-deg"href="index.html">Inicio</a></li>
+     <li><a  class="hover:underline hover:text-flower"  class="hover:underline" href="#sobre-nosotros">Sobre Nosotras</a></li>
+     <li><a  class="hover:underline hover:text-flower" href="productos.html">Catálogo</a></li>
+     <li><a  class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
+     <li><a  class="hover:underline hover:text-flower" href="reserva.html">Reserva</a></li>
     </ul>
    </div>
 </nav>
@@ -124,7 +124,7 @@
   <!-- MAIN / TÍTULO PRINCIPAL -->
   <!-- ====================================== -->
 
-  <main class="my-40">
+  <main class="my-30">
    <div class="titulo-principal flex flex-col justify-center items-center text-9xl text-darktext">
         <h1 class="maintext text-darktext">花</h1>
         <!-- CARRUSEL DE FLORES -->
@@ -139,7 +139,7 @@
         <h1 class="maintext text-darktext">言</h1>
         <h1 class="maintext text-darktext">葉</h1>
     </div>
-    <div class="flex flex-col justify-center items-center text-darktext pt-14">
+    <div  id="sobre-nosotras" class="hanakotoba flex flex-col justify-center items-center text-darktext pt-14">
         <h2 class="text-5xl pb-4 text-darktext">Hanakotoba</h2>
         <p class="font-lato text-2xl text-darktext">El lenguaje de las flores</p>
     </div>
@@ -417,24 +417,57 @@
   <!-- MAPA -->
   <!-- ====================================== -->
 
-  <section class="mapa mt-20 pt-16 flex flex-col items-center gap-10">
+  <section class="mapa mt-20 pt-16 flex flex-col justify-center items-center gap-10">
 
    <!-- INFORMACIÓN DE UBICACIÓN -->
-   <div class="info-mapa">
-    <h2 class="text-5xl pb-10 text-darktext text-center">Donde nos encontramos</h2>
-    <div>
-     <p class="font-lato text-s text-left">
-        Calle Azucenas 124, Madrid (España)<br/><br>
-        Metro Tribunal (Líneas 1 y 10)<br/>
-        Buses 345 y 23
-     </p>
+<div class="info-mapa">
+
+    <h2 class="text-5xl pb-10 text-darktext text-center">
+        Donde nos encontramos
+    </h2>
+
+    <div class="font-lato text-darktext flex flex-col gap-6 text-center justify-center items-center">
+
+        <!-- DIRECCIÓN -->
+        <div class="flex items-center gap-4 flex-col">
+            <i data-feather="map-pin"></i>
+            <div>
+                <h3 class="font-bold">DIRECCIÓN</h3>
+                <p>Calle Azucenas 124, Madrid (España)</p>
+            </div>
+        </div>
+
+        <!-- METRO -->
+        <div class="flex gap-4">
+            <div>
+                <h3 class="font-bold">METRO</h3>
+                <p>Línea 1 — Estación de Valdeacederas</p>
+            </div>
+        </div>
+
+        <!-- AUTOBÚS -->
+        <div class="flex items-start gap-4">
+            <div>
+                <h3 class="font-bold">AUTOBÚS</h3>
+                <p>Líneas 11, 49, 66, 124 y 177</p>
+            </div>
+        </div>
+
+        <!-- CONEXIONES -->
+        <div class="flex gap-4">
+            <div>
+                <h3 class="font-bold">CONEXIONES</h3>
+                <p>Intercambiador de Plaza de Castilla</p>
+            </div>
+        </div>
+
     </div>
-   </div>
+
+</div>
 
    <!-- MAPA OVALADO -->
-   <div class="mapa-ovalo w-[280px] h-[400px] rounded-[50%] overflow-hidden border border-darktext rotate-[12deg]">
-    <iframe allowfullscreen height="450" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d457.2909218040544!2d-3.702402414141447!3d40.425694860730054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1s-es!2ses!4v1793747624258!5m2!1ses!2ses" style="border:0;" width="600">
-    </iframe>
+   <div class="mapa-ovalo w-[320px] h-[440px] rounded-[50%] overflow-hidden border border-darktext rotate-[12deg]">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.191860945297!2d-3.7066399830751986!3d40.46567006944271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4229a7c6e8f111%3A0xc5f25ca4742d2ec8!2sC.%20de%20las%20Azucenas%2C%20124%2C%20Tetu%C3%A1n%2C%2028039%20Madrid!5e0!3m2!1ses!2ses!4v1793907631418!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
    </div>
   </section>
 
