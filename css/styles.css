@@ -695,3 +695,107 @@
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
     z-index: 10;
 }
+
+
+
+/* ====================================== */
+/* CATÁLOGO HANAKOTOBA */
+/* ====================================== */
+
+/* IMÁGENES */
+.tarjeta-movil img,
+.catalogo-extra article img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TARJETAS MÓVIL */
+.tarjeta-movil {
+    transition: scale 0.4s ease, translate 0.4s ease;
+}
+
+.tarjeta-movil > div {
+    flex-shrink: 0;
+}
+
+.tarjeta-movil h2,
+.tarjeta-movil p {
+    transform: none;
+    rotate: 0deg;
+}
+
+/* CATÁLOGO ORDENADOR */
+.catalogo-extra article {
+    position: relative;
+    width: 100%;
+    transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
+}
+
+.catalogo-extra .info-flor {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background-color: var(--color-tarjeta2);
+    color: var(--color-lighttext);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.catalogo-extra article:hover {
+    scale: 1.05;
+    translate: 0 -8px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+}
+
+.catalogo-extra article:hover .info-flor,
+.catalogo-extra article:focus .info-flor {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* MÓVIL Y TABLET */
+@media (max-width: 1023px) {
+
+    .catalogo-movil {
+        display: flex;
+    }
+
+    .catalogo-extra {
+        display: none;
+    }
+
+    .tarjeta-movil .info-flor {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #ver-mas {
+        display: block;
+    }
+}
+
+/* ORDENADOR */
+@media (min-width: 1024px) {
+
+    .catalogo-movil {
+        display: none;
+    }
+
+    .catalogo-extra {
+        display: grid;
+    }
+
+    #ver-mas {
+        display: none;
+    }
+}

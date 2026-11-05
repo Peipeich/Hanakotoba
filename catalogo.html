@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Catálogo | Hanakotoba</title>
+
+    <!-- FAVICON -->
+    <link href="media/img/Flor Redonda 4.png" rel="icon" type="image/x-icon"/>
+
+    <!-- LIBRERÍAS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet"/>
+
+    <!-- CSS PROPIO -->
+    <link href="css/styles.css" rel="stylesheet"/>
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- VARIABLES Y TEMA -->
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @theme static {
+            --color-bg: #D9DFFF;
+            --color-deg: #FDF5C8;
+            --color-flower: #82783F;
+            --color-tarjeta: #82783F;
+            --color-tarjeta2: #434037;
+            --color-darktext: #434037;
+            --color-lighttext: #FDF5C8;
+            --color-nav: #FDF5C8;
+
+            --font-lato: "Lato", sans-serif;
+            --font-asul: "Asul", serif;
+        }
+    </style>
+</head>
+
+<body class="bg-linear-to-b from-bg via-nav to-bg">
+
+    <!-- ====================================== -->
+    <!-- NAVEGACIÓN -->
+    <!-- ====================================== -->
+
+    <nav class="nav w-full fixed top-0 left-0 text-darktext p-5 z-50">
+        <div class="flex w-full items-center justify-between gap-4">
+
+            <div class="nav-izq bg-nav flex flex-1 items-center rounded-full px-3 py-2">
+                <div class="menu-logo text-2xl">
+                    <a class="hover:text-flower hover:underline" href="index.html">花言葉</a>
+                </div>
+
+                <div class="flex-1 text-sm">
+                    <ul class="menu-desktop hidden">
+                        <li><a class="hover:text-flower hover:underline" href="index.html#productos">Catálogo</a></li>
+                        <li><a class="hover:underline hover:text-flower" href="index.html#sobre-nosotras">Sobre Nosotras</a></li>
+                        <li><a class="hover:underline hover:text-flower" href="index.html#informacion">Información</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 shrink-0">
+
+                <button id="boton-tema" type="button" aria-label="Cambiar tema"
+                    class="rounded-full px-3 py-2 bg-nav hover:bg-darktext hover:text-nav">
+                    <i id="icono-tema" data-feather="sun"></i>
+                </button>
+
+                <div class="burger bg-nav cursor-pointer relative z-50 rounded-full border px-3 py-2">
+                    <i id="icon-menu" data-feather="menu"></i>
+                </div>
+
+                <div class="reserva hidden bg-nav rounded-full px-3 py-3 text-sm hover:bg-darktext hover:text-nav">
+                    <a href="reserva.html">Reserva</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center" id="menu-mov">
+        <ul class="flex flex-col items-center justify-center gap-8 text-center">
+            <li><a class="hover:underline hover:text-flower" href="index.html">Inicio</a></li>
+            <li><a class="hover:underline hover:text-flower" href="index.html#sobre-nosotras">Sobre Nosotras</a></li>
+            <li><a class="hover:underline hover:text-flower" href="productos.html">Catálogo</a></li>
+            <li><a class="hover:underline hover:text-flower" href="index.html#informacion">Información</a></li>
+            <li><a class="hover:underline hover:text-flower" href="reserva.html">Reserva</a></li>
+        </ul>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- MAIN -->
+    <!-- ====================================== -->
+
+    <main class="w-full mt-32 px-6 py-10">
+
+        <div class="flex flex-col items-center text-center mb-16">
+            <h1 class="font-asul text-6xl text-darktext mb-5">Nuestro catálogo</h1>
+            <p class="font-lato text-xl text-darktext">Descubre el significado de cada flor</p>
+        </div>
+
+        <!-- ====================================== -->
+        <!-- CATÁLOGO MÓVIL -->
+        <!-- ====================================== -->
+
+        <div class="catalogo-movil flex flex-col items-center gap-16 w-full">
+
+            <!-- FLOR 1 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[15deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 1.png" alt="Flor 1" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 1</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 2 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 2.png" alt="Flor 2" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 2</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 3 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[15deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 3.png" alt="Flor 3" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 3</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 4 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 4.png" alt="Flor 4" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 4</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 5 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[15deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 5.png" alt="Flor 5" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 5</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 6 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[15deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 6.png" alt="Amapola Amarilla" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Amapola Amarilla</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Éxito, prosperidad y energía positiva</p>
+            </article>
+
+            <!-- FLOR 7 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 7.png" alt="Rosa de Cuaresma" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Rosa de Cuaresma</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Esperanza, renovación, resiliencia y nuevos comienzos</p>
+            </article>
+
+            <!-- FLOR 8 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 8.png" alt="Amapola Roja" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Amapola Roja</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Pasión, amor, recuerdo y sacrificio</p>
+            </article>
+
+            <!-- FLOR 9 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 9.png" alt="Peonía Blanca" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Peonía Blanca</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Pureza, inocencia, prosperidad y buena fortuna</p>
+            </article>
+
+            <!-- FLOR 10 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 10.png" alt="Amapola Rosa" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Amapola Rosa</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Amor, ternura, dulzura y afecto</p>
+            </article>
+
+            <!-- FLOR 11 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 11.png" alt="Anémona Azul" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Anémona Azul</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Confianza, protección, anticipación y esperanza</p>
+            </article>
+
+            <!-- FLOR 12 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 12.png" alt="Aguileña" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Aguileña</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Valentía, sabiduría, libertad y transformación</p>
+            </article>
+
+            <!-- FLOR 13 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 13.png" alt="Ranúnculo" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Ranúnculo</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Encanto, atractivo, admiración y fascinación</p>
+            </article>
+
+            <!-- FLOR 14 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 14.png" alt="Peonía" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Peonía</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Pureza, inocencia, prosperidad y buena fortuna</p>
+            </article>
+
+            <!-- FLOR 15 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 15.png" alt="Amapola Amarilla" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Amapola Amarilla</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Éxito, prosperidad y energía positiva</p>
+            </article>
+
+            <!-- FLOR 16 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 16.png" alt="Amapola Púrpura" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Amapola Púrpura</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Imaginación, misterio, encanto y espiritualidad</p>
+            </article>
+
+            <!-- FLOR 17 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 17.png" alt="Amapola Naranja" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Amapola Naranja</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Entusiasmo, creatividad, alegría y vitalidad</p>
+            </article>
+
+            <!-- FLOR 18 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 18.png" alt="Amapola Oriental Blanca" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Amapola Oriental Blanca</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Paz, pureza, descanso y serenidad</p>
+            </article>
+
+            <!-- FLOR 19 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 19.png" alt="Flor 19" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 19</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 20 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 20.png" alt="Flor 20" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 20</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 21 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 21.png" alt="Flor 21" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 21</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 22 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 22.png" alt="Flor 22" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 22</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 23 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 23.png" alt="Flor 23" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 23</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 24 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 24.png" alt="Flor 24" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 24</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 25 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 25.png" alt="Flor 25" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 25</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 26 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 26.png" alt="Flor 26" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 26</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 27 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 27.png" alt="Flor 27" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 27</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 28 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 28.png" alt="Flor 28" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 28</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 29 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 29.png" alt="Flor 29" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 29</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 30 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 30.png" alt="Flor 30" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 30</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 31 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] bg-tarjeta overflow-hidden">
+                    <img src="media/img/Flor 31.png" alt="Flor 31" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 31</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+            <!-- FLOR 32 -->
+            <article class="tarjeta-movil w-full max-w-[280px] flex flex-col items-center text-center">
+                <div class="w-[280px] h-[400px] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden">
+                    <img src="media/img/Flor 32.png" alt="Flor 32" class="w-full h-full object-cover"/>
+                </div>
+                <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Flor 32</h2>
+                <p class="font-lato text-xl text-darktext leading-relaxed">Descubre el significado de esta flor</p>
+            </article>
+
+        </div>
+
+        <!-- BOTÓN VER MÁS MÓVIL -->
+        <button id="ver-mas" type="button"
+            class="mt-16 rounded-full border px-8 py-4 text-xl font-semibold bg-darktext text-nav hover:bg-lighttext hover:text-darktext">
+            Ver más
+        </button>
+
+        <!-- ====================================== -->
+        <!-- CATÁLOGO ORDENADOR -->
+        <!-- ====================================== -->
+
+        <div class="catalogo-extra hidden w-full max-w-[1400px] mx-auto grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-8 gap-y-16 items-center">
+
+            <!-- FLOR 1 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 1.png" alt="Flor 1" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[-12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Flor 1</h2>
+                        <p class="font-lato text-sm leading-relaxed">Descubre el significado de esta flor</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 2 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 2.png" alt="Flor 2" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Flor 2</h2>
+                        <p class="font-lato text-sm leading-relaxed">Descubre el significado de esta flor</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 3 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 3.png" alt="Flor 3" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Flor 3</h2>
+                    <p class="font-lato text-sm leading-relaxed">Descubre el significado de esta flor</p>
+                </div>
+            </article>
+
+            <!-- FLOR 4 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 4.png" alt="Flor 4" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Flor 4</h2>
+                    <p class="font-lato text-sm leading-relaxed">Descubre el significado de esta flor</p>
+                </div>
+            </article>
+
+            <!-- FLOR 5 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 5.png" alt="Flor 5" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[-12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Flor 5</h2>
+                        <p class="font-lato text-sm leading-relaxed">Descubre el significado de esta flor</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 6 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 6.png" alt="Amapola Amarilla" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[-12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Amapola Amarilla</h2>
+                        <p class="font-lato text-sm leading-relaxed">Éxito, prosperidad y energía positiva</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 7 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 7.png" alt="Rosa de Cuaresma" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Rosa de Cuaresma</h2>
+                    <p class="font-lato text-sm leading-relaxed">Esperanza, renovación, resiliencia y nuevos comienzos</p>
+                </div>
+            </article>
+
+            <!-- FLOR 8 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 8.png" alt="Amapola Roja" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Amapola Roja</h2>
+                        <p class="font-lato text-sm leading-relaxed">Pasión, amor, recuerdo y sacrificio</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 9 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 9.png" alt="Peonía Blanca" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Peonía Blanca</h2>
+                    <p class="font-lato text-sm leading-relaxed">Pureza, inocencia, prosperidad y buena fortuna</p>
+                </div>
+            </article>
+
+            <!-- FLOR 10 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 10.png" alt="Amapola Rosa" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[-12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Amapola Rosa</h2>
+                        <p class="font-lato text-sm leading-relaxed">Amor, ternura, dulzura y afecto</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 11 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 11.png" alt="Anémona Azul" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Anémona Azul</h2>
+                    <p class="font-lato text-sm leading-relaxed">Confianza, protección, anticipación y esperanza</p>
+                </div>
+            </article>
+
+            <!-- FLOR 12 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 12.png" alt="Aguileña" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Aguileña</h2>
+                        <p class="font-lato text-sm leading-relaxed">Valentía, sabiduría, libertad y transformación</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 13 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 13.png" alt="Ranúnculo" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Ranúnculo</h2>
+                    <p class="font-lato text-sm leading-relaxed">Encanto, atractivo, admiración y fascinación</p>
+                </div>
+            </article>
+
+            <!-- FLOR 14 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 14.png" alt="Peonía" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[-12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Peonía</h2>
+                        <p class="font-lato text-sm leading-relaxed">Pureza, inocencia, prosperidad y buena fortuna</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 15 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 15.png" alt="Amapola Amarilla" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Amapola Amarilla</h2>
+                    <p class="font-lato text-sm leading-relaxed">Éxito, prosperidad y energía positiva</p>
+                </div>
+            </article>
+
+            <!-- FLOR 16 -->
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 16.png" alt="Amapola Púrpura" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <div class="rotate-[12deg] flex flex-col items-center">
+                        <h2 class="font-asul text-2xl mb-3">Amapola Púrpura</h2>
+                        <p class="font-lato text-sm leading-relaxed">Imaginación, misterio, encanto y espiritualidad</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FLOR 17 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 17.png" alt="Amapola Naranja" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Amapola Naranja</h2>
+                    <p class="font-lato text-sm leading-relaxed">Entusiasmo, creatividad, alegría y vitalidad</p>
+                </div>
+            </article>
+
+            <!-- FLOR 18 -->
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 18.png" alt="Amapola Oriental Blanca" class="w-full h-full object-cover"/>
+                <div class="info-flor">
+                    <h2 class="font-asul text-2xl mb-3">Amapola Oriental Blanca</h2>
+                    <p class="font-lato text-sm leading-relaxed">Paz, pureza, descanso y serenidad</p>
+                </div>
+            </article>
+
+            <!-- FLORES 19 A 32 -->
+            <!-- Se conserva la misma estructura para completar la colección -->
+
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 19.png" alt="Flor 19" class="w-full h-full object-cover"/>
+                <div class="info-flor"><h2 class="font-asul text-2xl mb-3">Flor 19</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 20.png" alt="Flor 20" class="w-full h-full object-cover"/>
+                <div class="info-flor"><div class="rotate-[12deg] flex flex-col items-center"><h2 class="font-asul text-2xl mb-3">Flor 20</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 21.png" alt="Flor 21" class="w-full h-full object-cover"/>
+                <div class="info-flor"><h2 class="font-asul text-2xl mb-3">Flor 21</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 22.png" alt="Flor 22" class="w-full h-full object-cover"/>
+                <div class="info-flor"><div class="rotate-[-12deg] flex flex-col items-center"><h2 class="font-asul text-2xl mb-3">Flor 22</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 23.png" alt="Flor 23" class="w-full h-full object-cover"/>
+                <div class="info-flor"><h2 class="font-asul text-2xl mb-3">Flor 23</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 24.png" alt="Flor 24" class="w-full h-full object-cover"/>
+                <div class="info-flor"><div class="rotate-[12deg] flex flex-col items-center"><h2 class="font-asul text-2xl mb-3">Flor 24</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 25.png" alt="Flor 25" class="w-full h-full object-cover"/>
+                <div class="info-flor"><h2 class="font-asul text-2xl mb-3">Flor 25</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 26.png" alt="Flor 26" class="w-full h-full object-cover"/>
+                <div class="info-flor"><div class="rotate-[-12deg] flex flex-col items-center"><h2 class="font-asul text-2xl mb-3">Flor 26</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 27.png" alt="Flor 27" class="w-full h-full object-cover"/>
+                <div class="info-flor"><h2 class="font-asul text-2xl mb-3">Flor 27</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 28.png" alt="Flor 28" class="w-full h-full object-cover"/>
+                <div class="info-flor"><div class="rotate-[12deg] flex flex-col items-center"><h2 class="font-asul text-2xl mb-3">Flor 28</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 29.png" alt="Flor 29" class="w-full h-full object-cover"/>
+                <div class="info-flor"><h2 class="font-asul text-2xl mb-3">Flor 29</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 30.png" alt="Flor 30" class="w-full h-full object-cover"/>
+                <div class="info-flor"><div class="rotate-[-12deg] flex flex-col items-center"><h2 class="font-asul text-2xl mb-3">Flor 30</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] bg-tarjeta overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 31.png" alt="Flor 31" class="w-full h-full object-cover"/>
+                <div class="info-flor"><h2 class="font-asul text-2xl mb-3">Flor 31</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div>
+            </article>
+
+            <article class="group relative aspect-[3/4] rounded-[50%] rotate-[-12deg] bg-tarjeta2 overflow-hidden cursor-pointer" tabindex="0">
+                <img src="media/img/Flor 32.png" alt="Flor 32" class="w-full h-full object-cover"/>
+                <div class="info-flor"><div class="rotate-[12deg] flex flex-col items-center"><h2 class="font-asul text-2xl mb-3">Flor 32</h2><p class="font-lato text-sm">Descubre el significado de esta flor</p></div></div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
+
+    <footer class="bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
+
+        <div class="footer-top flex flex-col gap-3">
+            <div class="newsletter">
+                <label class="block text-2xl py-4" for="email">NEWSLETTER</label>
+                <div class="newslettertype">
+                    <input class="rounded-full border px-3 py-2" id="email" placeholder="Email" type="email"/>
+                    <button class="rounded-full border px-3 py-2 hover:bg-darktext hover:text-nav" type="button">Suscríbete</button>
+                </div>
+            </div>
+            <h2 class="pb-15">CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h2>
+        </div>
+
+        <div class="footer-bottom flex flex-col gap-8">
+            <div class="rrss">
+                <div class="rrss-icon flex justify-center items-center gap-6 mb-5">
+                    <i data-feather="phone"></i>
+                    <i data-feather="mail"></i>
+                    <i data-feather="instagram"></i>
+                </div>
+                <div class="rrss-info">
+                    <p>+34 676767676</p>
+                    <p>hanakotoba@atelier.com</p>
+                </div>
+            </div>
+
+            <div>
+                <a class="text-8xl" href="index.html">花言葉</a>
+            </div>
+
+            <div class="copyright">
+                <p>©2026 Hanakotoba</p>
+                <p class="text-xs">Web - Peiqi y Claudia // Imágenes - Paul Lange</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================== -->
+<!-- SCRIPTS -->
+<!-- ====================================== -->
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- SLICK CAROUSEL -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!-- FEATHER ICONS -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<!-- JAVASCRIPT PROPIO -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+</body>
+</html>

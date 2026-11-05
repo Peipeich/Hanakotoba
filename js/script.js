@@ -144,3 +144,59 @@ const observador = new IntersectionObserver((entradas) => {
 elementosAnimados.forEach((elemento) => {
     observador.observe(elemento);
 });
+
+// PAGINA CATALOGO
+
+/* ====================================== */
+/* CATÁLOGO - BOTÓN VER MÁS */
+/* ====================================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const tarjetas = document.querySelectorAll('.tarjeta-movil');
+    const boton = document.querySelector('#ver-mas');
+    const ordenador = window.matchMedia('(min-width: 1024px)');
+
+    let visibles = 5;
+
+    function actualizarCatalogo() {
+
+        tarjetas.forEach(function (tarjeta, indice) {
+            tarjeta.style.display = indice < visibles ? 'flex' : 'none';
+        });
+
+        if (ordenador.matches || visibles >= tarjetas.length) {
+            boton.style.display = 'none';
+        } else {
+            boton.style.display = 'block';
+        }
+    }
+
+    boton.addEventListener('click', function () {
+
+        visibles += 5;
+
+        if (visibles > tarjetas.length) {
+            visibles = tarjetas.length;
+        }
+
+        actualizarCatalogo();
+    });
+
+    ordenador.addEventListener('change', function () {
+        visibles = 5;
+        actualizarCatalogo();
+    });
+
+    actualizarCatalogo();
+
+});
+
+
+/* ====================================== */
+/* FEATHER ICONS */
+/* ====================================== */
+
+if (typeof feather !== 'undefined') {
+    feather.replace();
+}
