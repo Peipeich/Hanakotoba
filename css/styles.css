@@ -341,15 +341,24 @@
     /* ----------------------------------------- */
     /* NAV */
     /* ----------------------------------------- */
+    /* CONTENEDOR DEL LOGO Y MENÚ */
+
 
     .nav {
         padding: 20px 60px;
     }
 
+    .nav .nav-izq {
+    display: flex;
+    align-items: center;
+}
+
     .menu-desktop {
         display: flex;
+        align-items: center;
+        justify-content: flex-end;
         gap: 2rem;
-        flex-direction: row;
+        margin-left: auto;
     }
 
     .burger {

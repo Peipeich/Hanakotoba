@@ -12,8 +12,8 @@ function actualizarTema() {
     const oscuro = raiz.classList.contains('dark');
 
     botonTema.innerHTML = oscuro
-        ? '<i data-feather="sun"></i>'
-        : '<i data-feather="moon"></i>';
+        ? '<i data-feather="moon"></i>'
+        : '<i data-feather="sun"></i>';
 
     botonTema.setAttribute('aria-pressed', oscuro);
 
