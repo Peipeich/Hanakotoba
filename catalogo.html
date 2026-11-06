@@ -41,62 +41,85 @@
 
 <body class="bg-linear-to-b from-bg via-nav to-bg">
 
-    <!-- ====================================== -->
-    <!-- NAVEGACIÓN -->
-    <!-- ====================================== -->
+    
+<!-- ====================================== -->
+<!-- NAVEGACIÓN -->
+<!-- ====================================== -->
 
-    <nav class="nav w-full fixed top-0 left-0 text-darktext p-5 z-50">
-        <div class="flex w-full items-center justify-between gap-4">
+<nav class="nav w-full fixed top-0 left-0 text-darktext p-5 z-50">
 
-            <div class="nav-izq bg-nav flex flex-1 items-center rounded-full px-3 py-2">
-                <div class="menu-logo text-2xl">
-                    <a class="hover:text-flower hover:underline" href="index.html">花言葉</a>
-                </div>
+    <div class="flex w-full items-center justify-between gap-4">
 
-                <div class="flex-1 text-sm">
-                    <ul class="menu-desktop hidden">
-                        <li><a class="hover:text-flower hover:underline" href="index.html#productos">Catálogo</a></li>
-                        <li><a class="hover:underline hover:text-flower" href="index.html#sobre-nosotras">Sobre Nosotras</a></li>
-                        <li><a class="hover:underline hover:text-flower" href="index.html#informacion">Información</a></li>
-                    </ul>
-                </div>
+        <!-- LOGO Y MENÚ -->
+        <div class="nav-izq bg-nav flex flex-1 items-center rounded-full px-3 py-2">
+
+            <!-- LOGO -->
+            <div class="menu-logo text-2xl">
+                <a class="hover:text-flower hover:underline" href="index.html">花言葉</a>
             </div>
 
-            <div class="flex items-center gap-3 shrink-0">
-
-                <button id="boton-tema" type="button" aria-label="Cambiar tema"
-                    class="rounded-full px-3 py-2 bg-nav hover:bg-darktext hover:text-nav">
-                    <i id="icono-tema" data-feather="sun"></i>
-                </button>
-
-                <div class="burger bg-nav cursor-pointer relative z-50 rounded-full border px-3 py-2">
-                    <i id="icon-menu" data-feather="menu"></i>
-                </div>
-
-                <div class="reserva hidden bg-nav rounded-full px-3 py-3 text-sm hover:bg-darktext hover:text-nav">
-                    <a href="reserva.html">Reserva</a>
-                </div>
-
+            <!-- MENÚ ORDENADOR -->
+            <div class="flex-1 text-sm">
+                <ul class="menu-desktop hidden">
+                    <li><a class="hover:text-flower hover:underline" href="#productos">Catálogo</a></li>
+                    <li><a class="hover:underline hover:text-flower" href="#sobre-nosotras">Sobre Nosotras</a></li>
+                    <li><a class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
+                </ul>
             </div>
+
         </div>
-    </nav>
 
-    <!-- MENÚ MÓVIL -->
-    <div class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center" id="menu-mov">
-        <ul class="flex flex-col items-center justify-center gap-8 text-center">
-            <li><a class="hover:underline hover:text-flower" href="index.html">Inicio</a></li>
-            <li><a class="hover:underline hover:text-flower" href="index.html#sobre-nosotras">Sobre Nosotras</a></li>
-            <li><a class="hover:underline hover:text-flower" href="productos.html">Catálogo</a></li>
-            <li><a class="hover:underline hover:text-flower" href="index.html#informacion">Información</a></li>
-            <li><a class="hover:underline hover:text-flower" href="reserva.html">Reserva</a></li>
-        </ul>
+        <!-- BOTONES DERECHA -->
+        <div class="flex items-center gap-3 shrink-0 relative z-[60]">
+
+            <!-- MODO OSCURO -->
+            <button id="boton-tema" type="button" aria-label="Cambiar tema"
+                class="rounded-full px-3 py-2 bg-nav hover:bg-darktext hover:text-nav">
+                <i id="icono-tema" data-feather="sun"></i>
+            </button>
+
+            <!-- HAMBURGUESA -->
+<button type="button"
+    class="burger bg-nav relative z-[60] rounded-full border px-3 py-3"
+    aria-label="Abrir menú">
+
+    <span class="linea linea-1"></span>
+    <span class="linea linea-2"></span>
+    <span class="linea linea-3"></span>
+
+</button>
+
+            <!-- RESERVA ORDENADOR -->
+            <div class="reserva hidden bg-nav rounded-full px-3 py-3 text-sm hover:bg-darktext hover:text-nav">
+                <p>Reserva</p>
+            </div>
+
+        </div>
+
     </div>
+
+</nav>
+
+<!-- MENÚ MÓVIL DESPLEGADO -->
+<div id="menu-mov"
+    class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex items-center justify-center">
+
+    <ul class="flex flex-col items-center justify-center gap-8 text-center text-2xl">
+        <li><a class="hover:underline hover:text-flower" href="index.html">Inicio</a></li>
+        <li><a class="hover:underline hover:text-flower" href="#sobre-nosotras">Sobre Nosotras</a></li>
+        <li><a class="hover:underline hover:text-flower" href="catalogo.html">Catálogo</a></li>
+        <li><a class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
+        <li><a class="hover:underline hover:text-flower" href="reserva.html">Reserva</a></li>
+    </ul>
+
+</div>
+
 
     <!-- ====================================== -->
     <!-- MAIN -->
     <!-- ====================================== -->
 
-    <main class="w-full mt-32 px-6 py-10">
+    <main class="w-full mt-32 px-6 py-10 animacion-aparecer">
 
         <div class="flex flex-col items-center text-center mb-16">
             <h1 class="font-asul text-6xl text-darktext mb-5">Nuestro catálogo</h1>
@@ -116,6 +139,7 @@
                 </div>
                 <h2 class="pt-8 font-asul text-4xl text-darktext mb-4">Peonía Rosa</h2>
                 <p class="font-lato text-xl text-darktext leading-relaxed">Romance, amor, felicidad y buenos deseos</p>
+                <a href="productos.html" class="hover:underline ">Más</a>
             </article>
 
             <!-- FLOR 2 -->
@@ -401,7 +425,7 @@
 
         <!-- BOTÓN VER MÁS MÓVIL -->
         <button id="ver-mas" type="button"
-            class="mt-16 rounded-full border px-8 py-4 text-xl font-semibold bg-darktext text-nav hover:bg-lighttext hover:text-darktext">
+            class="mt-16 mx-auto rounded-full border px-8 py-4 text-xl font-semibold bg-darktext text-nav hover:bg-lighttext hover:text-darktext text-center">
             Ver más
         </button>
 
@@ -418,6 +442,7 @@
                     <div class="rotate-[-12deg] flex flex-col items-center">
                         <h2 class="font-asul text-2xl mb-3">Peonía Rosa</h2>
                         <p class="font-lato text-sm leading-relaxed">Romance, amor, felicidad y buenos deseos</p>
+                        <a href="productos.html" class="hover:underline ">Más</a>
                     </div>
                 </div>
             </article>

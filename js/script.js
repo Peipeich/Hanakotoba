@@ -1,202 +1,431 @@
-const raiz = document.documentElement;
-const botonTema = document.querySelector('#boton-tema');
-
-// CARGAR TEMA GUARDADO
-if (localStorage.getItem('tema') === 'oscuro') {
-    raiz.classList.add('dark');
-}
-
-// ACTUALIZAR ICONO
-function actualizarTema() {
-
-    const oscuro = raiz.classList.contains('dark');
-
-    botonTema.innerHTML = oscuro
-        ? '<i data-feather="moon"></i>'
-        : '<i data-feather="sun"></i>';
-
-    botonTema.setAttribute('aria-pressed', oscuro);
-
-    feather.replace();
-}
-
-// MOSTRAR ICONO INICIAL
-actualizarTema();
-
-// CAMBIAR TEMA
-botonTema.addEventListener('click', function () {
-
-    raiz.classList.toggle('dark');
-
-    const oscuro = raiz.classList.contains('dark');
-
-    localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
-
-    actualizarTema();
-
-});
-// MENU HAMBURGUESA
-$(function () {
-
-    $('.burger').on('click', function () {
-
-        // Mostrar u ocultar el menú
-        $('#menu-mov').toggleClass('hidden');
-
-        // Comprobar si el menú está abierto
-        const abierto = !$('#menu-mov').hasClass('hidden');
-
-        // Cambiar el icono
-        if (abierto) {
-            $('#icon-menu').attr('data-feather', 'x');
-        } else {
-            $('#icon-menu').attr('data-feather', 'menu');
-        }
-
-        // Actualizar los iconos de Feather
-        feather.replace();
-
-    });
-
-});
-
-// MARQUESINA 
 
 $(document).ready(function () {
 
-    function animarMarquesina() {
 
-        const marquesina = $('.marquesina-contenido');
-        const ancho = marquesina.children('p').first().outerWidth(true);
+    // ======================================
+    // 1. MODO OSCURO
+    // ======================================
 
-        marquesina.animate(
-            {
-                marginLeft: -ancho
-            },
-            15000,
-            'linear',
-            function () {
+    const raiz = $('html');
+    const botonTema = $('#boton-tema');
 
-                marquesina.css('margin-left', '0');
-
-                animarMarquesina();
-
-            }
-        );
+    // Cargar tema guardado
+    if (localStorage.getItem('tema') === 'oscuro') {
+        raiz.addClass('dark');
     }
 
-    animarMarquesina();
+    // Actualizar icono
+    function actualizarTema() {
 
-});
+        const oscuro = raiz.hasClass('dark');
 
-// CARRUSEL DE FLORE MAIN
+        botonTema.html(
+            oscuro
+                ? '<i data-feather="moon"></i>'
+                : '<i data-feather="sun"></i>'
+        );
 
-$(document).ready(function () {
+        botonTema.attr('aria-pressed', oscuro);
 
-    $('.carrusel-flores').slick({
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    }
 
-        slidesToShow: 1,
-        slidesToScroll: 1,
+    // Mostrar icono inicial
+    if (botonTema.length) {
 
-        autoplay: true,
-        autoplaySpeed: 2000,
+        actualizarTema();
 
-        speed: 500,
-        fade: true,
+        // Cambiar tema
+        botonTema.on('click', function () {
 
-        arrows: false,
-        dots: false,
+            raiz.toggleClass('dark');
 
-        infinite: true,
-        pauseOnHover: false,
-        pauseOnFocus: false
+            const oscuro = raiz.hasClass('dark');
+
+            localStorage.setItem(
+                'tema',
+                oscuro ? 'oscuro' : 'claro'
+            );
+
+            actualizarTema();
+
+        });
+
+    }
+
+
+    // ======================================
+    // 2. MENÚ HAMBURGUESA
+    // ======================================
+
+    const burger = $('.burger');
+    const menuMov = $('#menu-mov');
+
+    function cerrarMenu() {
+
+        burger.removeClass('activo');
+        menuMov.addClass('hidden');
+
+        burger.attr('aria-label', 'Abrir menú');
+
+    }
+
+    burger.on('click', function () {
+
+        const abierto = !$(this).hasClass('activo');
+
+        $(this).toggleClass('activo', abierto);
+
+        menuMov.toggleClass('hidden', !abierto);
+
+        $(this).attr(
+            'aria-label',
+            abierto ? 'Cerrar menú' : 'Abrir menú'
+        );
 
     });
 
-});
+    // Cerrar al pulsar un enlace
+    menuMov.find('a').on('click', function () {
 
-// ANIMACIONES
+        cerrarMenu();
 
-// =========================================
-// ANIMACIONES AL HACER SCROLL
-// =========================================
+    });
 
-const elementosAnimados = document.querySelectorAll('.animacion-aparecer');
 
-const observador = new IntersectionObserver((entradas) => {
+    // ======================================
+    // 3. CARRUSEL DE FLORES
+    // ======================================
 
-    entradas.forEach((entrada) => {
+    if ($('.carrusel-flores').length && $.fn.slick) {
 
-        if (entrada.isIntersecting) {
+        $('.carrusel-flores').slick({
 
-            entrada.target.classList.add('visible');
+            slidesToShow: 1,
+            slidesToScroll: 1,
 
-            observador.unobserve(entrada.target);
+            autoplay: true,
+            autoplaySpeed: 2000,
+
+            speed: 500,
+            fade: true,
+
+            arrows: false,
+            dots: false,
+
+            infinite: true,
+            pauseOnHover: false,
+            pauseOnFocus: false
+
+        });
+
+    }
+
+
+    // ======================================
+    // 4. ANIMACIONES AL HACER SCROLL
+    // ======================================
+
+    const elementosAnimados = $('.animacion-aparecer');
+
+    if ('IntersectionObserver' in window) {
+
+        const observador = new IntersectionObserver(function (entradas) {
+
+            entradas.forEach(function (entrada) {
+
+                if (entrada.isIntersecting) {
+
+                    $(entrada.target).addClass('visible');
+
+                    observador.unobserve(entrada.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+        elementosAnimados.each(function () {
+
+            observador.observe(this);
+
+        });
+
+    } else {
+
+        elementosAnimados.addClass('visible');
+
+    }
+
+
+    // ======================================
+    // 5. CATÁLOGO - BOTÓN VER MÁS
+    // ======================================
+
+    const tarjetas = $('.tarjeta-movil');
+    const botonMas = $('#ver-mas');
+
+    const ordenador = window.matchMedia('(min-width: 1024px)');
+
+    if (tarjetas.length && botonMas.length) {
+
+        let visibles = 5;
+
+        function actualizarCatalogo() {
+
+            tarjetas.each(function (indice) {
+
+                $(this).css(
+                    'display',
+                    indice < visibles ? 'flex' : 'none'
+                );
+
+            });
+
+            if (ordenador.matches || visibles >= tarjetas.length) {
+
+                botonMas.hide();
+
+            } else {
+
+                botonMas.show();
+
+            }
 
         }
 
-    });
+        // Mostrar más tarjetas
+        botonMas.on('click', function () {
 
-}, {
-    threshold: 0.15
+            visibles += 5;
+
+            if (visibles > tarjetas.length) {
+
+                visibles = tarjetas.length;
+
+            }
+
+            actualizarCatalogo();
+
+        });
+
+        // Actualizar al cambiar el tamaño de pantalla
+        ordenador.addEventListener('change', function () {
+
+            visibles = 5;
+
+            actualizarCatalogo();
+
+        });
+
+        actualizarCatalogo();
+
+    }
+
+
+    // ======================================
+    // 6. FEATHER ICONS
+    // ======================================
+
+    if (typeof feather !== 'undefined') {
+
+        feather.replace();
+
+    }
+
+
+    // ======================================
+    // 7. ANIMACIONES AOS
+    // ======================================
+
+    if (typeof AOS !== 'undefined') {
+
+        AOS.init({
+
+            duration: 800,
+            once: true,
+            offset: 80
+
+        });
+
+    }
+
 });
 
-elementosAnimados.forEach((elemento) => {
-    observador.observe(elemento);
-});
 
-// PAGINA CATALOGO
-
-/* ====================================== */
-/* CATÁLOGO - BOTÓN VER MÁS */
-/* ====================================== */
+// ======================================
+// PÁGINA DE PRODUCTO - PEONÍAS
+// ======================================
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const tarjetas = document.querySelectorAll('.tarjeta-movil');
-    const boton = document.querySelector('#ver-mas');
-    const ordenador = window.matchMedia('(min-width: 1024px)');
+    const imagenPrincipal = document.querySelector('#imagen-principal');
+    const miniaturas = document.querySelectorAll('.miniatura');
 
-    let visibles = 5;
+    const nombreFlor = document.querySelector('#nombre-flor');
+    const descripcionFlor = document.querySelector('#descripcion-flor');
 
-    function actualizarCatalogo() {
+    const botonReserva = document.querySelector('#anadir-reserva');
+    const mensajeReserva = document.querySelector('#mensaje-reserva');
 
-        tarjetas.forEach(function (tarjeta, indice) {
-            tarjeta.style.display = indice < visibles ? 'flex' : 'none';
+    // ======================================
+    // INFORMACIÓN DE LAS PEONÍAS
+    // ======================================
+
+    const flores = {
+        rosa: {
+            id: 1,
+            nombre: 'Peonía Rosa',
+            imagen: 'media/img/Flor 1.png',
+            descripcion: 'La peonía rosa representa el amor, el romance y la admiración. Sus numerosos pétalos simbolizan la belleza, la felicidad y los buenos deseos. Es una flor asociada a los sentimientos sinceros y a la prosperidad.',
+            significados: ['Amor', 'Prosperidad', 'Felicidad', 'Belleza'],
+            precio: 'Consultar'
+        },
+
+        blanca: {
+            id: 5,
+            nombre: 'Peonía Blanca',
+            imagen: 'media/img/Flor 5.png',
+            descripcion: 'La peonía blanca simboliza la pureza, la sinceridad y la inocencia. Su aspecto delicado transmite serenidad y elegancia. También representa los nuevos comienzos, la honestidad y los sentimientos más puros.',
+            significados: ['Pureza', 'Sinceridad', 'Inocencia', 'Serenidad'],
+            precio: 'Consultar'
+        },
+
+        lila: {
+            id: 19,
+            nombre: 'Peonía Lila',
+            imagen: 'media/img/Flor 19.png',
+            descripcion: 'La peonía lila evoca el encanto, la sensibilidad y la creatividad. Su tonalidad delicada se relaciona con la espiritualidad, la admiración y la originalidad, transmitiendo una belleza misteriosa y elegante.',
+            significados: ['Encanto', 'Creatividad', 'Admiración', 'Espiritualidad'],
+            precio: 'Consultar'
+        },
+
+        amarilla: {
+            id: 29,
+            nombre: 'Peonía Amarilla',
+            imagen: 'media/img/Flor 29.png',
+            descripcion: 'La peonía amarilla representa la alegría, la amistad y la energía positiva. Su color luminoso transmite optimismo y vitalidad. También se asocia con la prosperidad, la buena fortuna y los nuevos comienzos.',
+            significados: ['Alegría', 'Amistad', 'Optimismo', 'Fortuna'],
+            precio: 'Consultar'
+        }
+    };
+
+    // Flor seleccionada inicialmente
+    let florSeleccionada = flores.rosa;
+
+
+    // ======================================
+    // CAMBIAR INFORMACIÓN DE LA FLOR
+    // ======================================
+
+    function actualizarFlor(flor) {
+
+        florSeleccionada = flor;
+
+        // Cambiar imagen
+        imagenPrincipal.src = flor.imagen;
+        imagenPrincipal.alt = flor.nombre;
+
+        // Cambiar nombre y descripción
+        nombreFlor.textContent = flor.nombre;
+        descripcionFlor.textContent = flor.descripcion;
+
+        // Cambiar significados
+        const significados = document.querySelectorAll('.significado');
+
+        significados.forEach(function (elemento, index) {
+
+            if (flor.significados[index]) {
+                elemento.textContent = flor.significados[index];
+            }
+
         });
 
-        if (ordenador.matches || visibles >= tarjetas.length) {
-            boton.style.display = 'none';
-        } else {
-            boton.style.display = 'block';
-        }
     }
 
-    boton.addEventListener('click', function () {
 
-        visibles += 5;
+    // ======================================
+    // CLICK EN LAS MINIATURAS
+    // ======================================
 
-        if (visibles > tarjetas.length) {
-            visibles = tarjetas.length;
-        }
+    miniaturas.forEach(function (miniatura) {
 
-        actualizarCatalogo();
+        miniatura.addEventListener('click', function () {
+
+            const imagen = miniatura.querySelector('img');
+
+            if (!imagen) return;
+
+            let flor;
+
+            if (imagen.alt.toLowerCase().includes('rosa')) {
+                flor = flores.rosa;
+            } else if (imagen.alt.toLowerCase().includes('blanca')) {
+                flor = flores.blanca;
+            } else if (imagen.alt.toLowerCase().includes('lila')) {
+                flor = flores.lila;
+            } else if (imagen.alt.toLowerCase().includes('amarilla')) {
+                flor = flores.amarilla;
+            }
+
+            if (!flor) return;
+
+            actualizarFlor(flor);
+
+            // Marcar miniatura seleccionada
+            miniaturas.forEach(function (elemento) {
+                elemento.classList.remove('seleccionada');
+            });
+
+            miniatura.classList.add('seleccionada');
+
+        });
+
     });
 
-    ordenador.addEventListener('change', function () {
-        visibles = 5;
-        actualizarCatalogo();
-    });
 
-    actualizarCatalogo();
+    // ======================================
+    // AÑADIR A RESERVA
+    // ======================================
+
+    if (botonReserva && mensajeReserva) {
+
+        botonReserva.addEventListener('click', function () {
+
+            let reservas = JSON.parse(
+                localStorage.getItem('reservaHanakotoba')
+            ) || [];
+
+            const yaExiste = reservas.some(function (flor) {
+                return flor.id === florSeleccionada.id;
+            });
+
+            if (yaExiste) {
+
+                mensajeReserva.textContent =
+                    'Esta flor ya está añadida a tu reserva.';
+
+            } else {
+
+                reservas.push(florSeleccionada);
+
+                localStorage.setItem(
+                    'reservaHanakotoba',
+                    JSON.stringify(reservas)
+                );
+
+                mensajeReserva.textContent =
+                    '¡' + florSeleccionada.nombre + ' añadida a tu reserva!';
+
+            }
+
+        });
+
+    }
 
 });
-
-
-/* ====================================== */
-/* FEATHER ICONS */
-/* ====================================== */
-
-if (typeof feather !== 'undefined') {
-    feather.replace();
-}

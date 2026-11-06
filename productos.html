@@ -1,246 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramo de hortensias - Hanakotoba</title>
 
-   <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="media/img/Flor Redonda 4.png">
+    <title>Producto | Hanakotoba</title>
 
-    <!-- EMOJIS -->
-    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- FAVICON -->
+    <link href="media/img/Flor Redonda 4.png" rel="icon" type="image/x-icon">
 
-    <!-- JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Lato:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- CSS PROPIO -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- TAILWIND CSS -->
+    <!-- TAILWIND -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- VARIABLES Y TEMA -->
     <style type="text/tailwindcss">
 
-        /* Variante dark personalizada */
         @custom-variant dark (&:where(.dark, .dark *));
 
-        /* THEME: MODO CLARO */
         @theme static {
-            /* COLORES */
-            --color-periwinkle: #D9DFFF;
-            --color-beige: #F6EFE9;
-            --color-yellow: #FDF5C8;
-            --color-green: #BDC2AC;
-            --color-darkyellow: #82783F;
-            --color-darkgreen: #535841;
-            --color-black: #434037;
 
-            /* COLORES */
             --color-bg: #D9DFFF;
             --color-deg: #FDF5C8;
-            --color-flower: #FDF5C8;
+            --color-flower: #82783F;
             --color-tarjeta: #82783F;
             --color-tarjeta2: #434037;
             --color-darktext: #434037;
             --color-lighttext: #FDF5C8;
             --color-nav: #FDF5C8;
 
-            /* FUENTES */
-            --font-lato: "Lato", sans-serif;
-            --font-asul: "Asul", serif;
+            --font-lato: "Lato";
+            --font-asul: "Asul";
+
         }
 
     </style>
+
 </head>
 
-<body class="bg-linear-to-b from-bg via-deg to-bg">
 
-     <!-- ====================================== -->
-  <!-- NAVEGACIÓN -->
-  <!-- ====================================== -->
+<body class="bg-linear-to-b from-bg via-deg to-bg text-darktext font-lato">
+
+
+    <!-- ====================================== -->
+    <!-- NAVEGACIÓN -->
+    <!-- ====================================== -->
 
     <nav class="nav w-full fixed top-0 left-0 text-darktext p-5 z-50">
 
-    <div class="flex w-full items-center justify-between gap-4">
+        <div class="flex w-full items-center justify-between gap-4">
 
-        <!-- LOGO Y MENÚ -->
-        <div class="nav-izq bg-nav flex flex-1 items-center rounded-full px-3 py-2">
+            <!-- LOGO Y MENÚ -->
+            <div class="nav-izq bg-nav flex flex-1 items-center rounded-full px-3 py-2">
 
-            <!-- LOGO -->
-            <div class="menu-logo text-2xl">
-                <a href="index.html">花言葉</a>
+                <!-- LOGO -->
+                <div class="menu-logo text-2xl">
+                    <a class="hover:text-flower hover:underline" href="index.html">花言葉</a>
+                </div>
+
+                <!-- MENÚ ORDENADOR -->
+                <div class="flex-1 text-sm">
+                    <ul class="menu-desktop hidden">
+                        <li><a class="hover:text-flower hover:underline" href="#productos">Catálogo</a></li>
+                        <li><a class="hover:underline hover:text-flower" href="#sobre-nosotras">Sobre Nosotras</a></li>
+                        <li><a class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <!-- MENÚ ORDENADOR -->
-            <div class="flex-1 text-sm">
-                <ul class="menu-desktop hidden">
-                    <li><a href="productos.html">Catálogo</a></li>
-                    <li><a href="about.html">Sobre nosotras</a></li>
-                    <li><a href="#informacion">Información</a></li>
-                </ul>
+
+            <!-- BOTONES DERECHA -->
+            <div class="flex items-center gap-3 shrink-0 relative z-[60]">
+
+                <!-- MODO OSCURO -->
+                <button id="boton-tema" type="button" aria-label="Cambiar tema"
+                    class="rounded-full px-3 py-2 bg-nav hover:bg-darktext hover:text-nav">
+
+                    <i id="icono-tema" data-feather="sun"></i>
+
+                </button>
+
+
+                <!-- HAMBURGUESA -->
+                <button id="burger" type="button"
+                    class="burger bg-nav relative z-[60] rounded-full border px-3 py-3"
+                    aria-label="Abrir menú"
+                    aria-expanded="false">
+
+                    <span class="linea linea-1"></span>
+                    <span class="linea linea-2"></span>
+                    <span class="linea linea-3"></span>
+
+                </button>
+
+
+                <!-- RESERVA ORDENADOR -->
+                <div class="reserva hidden bg-nav rounded-full px-3 py-3 text-sm hover:bg-darktext hover:text-nav">
+                    <p>Reserva</p>
+                </div>
+
             </div>
 
         </div>
 
-        <!-- BOTONES DERECHA -->
-        <div class="flex items-center gap-3 shrink-0">
+    </nav>
 
-            <!-- MODO OSCURO -->
-            <button id="boton-tema" type="button" aria-label="Cambiar tema"
-                class="rounded-full px-3 py-2 bg-nav hover:bg-darktext hover:text-nav">
-                <i id="icono-tema" data-feather="sun"></i>
+
+    <!-- MENÚ MÓVIL DESPLEGADO -->
+    <div id="menu-mov"
+        class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex items-center justify-center">
+
+        <ul class="flex flex-col items-center justify-center gap-8 text-center text-2xl">
+
+            <li><a class="hover:underline hover:text-flower" href="index.html">Inicio</a></li>
+            <li><a class="hover:underline hover:text-flower" href="index.html#sobre-nosotras">Sobre Nosotras</a></li>
+            <li><a class="hover:underline hover:text-flower" href="catalogo.html">Catálogo</a></li>
+            <li><a class="hover:underline hover:text-flower" href="index.html#informacion">Información</a></li>
+            <li><a class="hover:underline hover:text-flower" href="reserva.html">Reserva</a></li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- ================================== -->
+    <!-- PRODUCTO -->
+    <!-- ================================== -->
+
+    <main class="pagina-producto w-full  px-6 py-10">
+
+
+        <!-- TÍTULO -->
+        <div class="text-center mt-32 mb-12" data-aos="fade-up">
+
+            <h1 class="font-asul text-6xl text-darktext mb-5">
+                Nuestro catálogo floral
+            </h1>
+
+            <p class="font-lato text-xl text-darktext">
+                Descubre el lenguaje de las flores
+            </p>
+
+        </div>
+
+
+       
+<!-- ================================== -->
+<!-- CONTENIDO DEL PRODUCTO -->
+<!-- ================================== -->
+
+<section class="producto-contenido">
+
+     <!-- VOLVER AL CATÁLOGO ORDENADOR -->
+        <a  href="catalogo.html"
+            class="volver-ordenador hidden mt-8 underline-offset-4 hover:underline ">
+    <i data-feather="arrow-left" class="inline-block w-4 h-4 mr-2"></i>
+            Volver al catálogo
+
+        </a>
+
+    <!-- ================================== -->
+    <!-- GALERÍA DE PEONÍAS -->
+    <!-- ================================== -->
+
+    <div class="producto-galeria flex flex-col" data-aos="fade-right">
+
+
+        <!-- IMAGEN PRINCIPAL -->
+        <div class="flor-principal bg-tarjeta2 overflow-hidden">
+
+            <img
+                id="imagen-principal"
+                src="media/img/Flor 1.png"
+                alt="Peonía rosa"
+                class="w-full h-full object-cover">
+
+        </div>
+
+
+        <!-- MINIATURAS -->
+        <div id="miniaturas" class="miniaturas flex flex-row">
+
+            <!-- PEONÍA BLANCA -->
+            <button type="button"
+                class="miniatura bg-tarjeta overflow-hidden"
+                aria-label="Peonía blanca">
+
+                <img src="media/img/Flor 5.png"
+                    alt="Peonía blanca"
+                    class="w-full h-full object-cover">
+
             </button>
 
-            <!-- HAMBURGUESA -->
-            <div class="burger bg-nav cursor-pointer relative z-50 rounded-full border px-3 py-2">
-                <i id="icon-menu" data-feather="menu"></i>
-            </div>
 
-            <!-- RESERVA ORDENADOR -->
-            <div class="reserva hidden bg-nav rounded-full px-3 py-3 text-sm hover:bg-darktext hover:text-nav">
-                <p>RESERVA</p>
-            </div>
+            <!-- PEONÍA LILA -->
+            <button type="button"
+                class="miniatura bg-tarjeta2 overflow-hidden"
+                aria-label="Peonía lila">
+
+                <img src="media/img/Flor 19.png"
+                    alt="Peonía lila"
+                    class="w-full h-full object-cover">
+
+            </button>
+
+
+            <!-- PEONÍA AMARILLA -->
+            <button type="button"
+                class="miniatura bg-tarjeta overflow-hidden"
+                aria-label="Peonía amarilla">
+
+                <img src="media/img/Flor 29.png"
+                    alt="Peonía amarilla"
+                    class="w-full h-full object-cover">
+
+            </button>
 
         </div>
 
     </div>
 
-</nav>
 
-    <!-- SECCIÓN PRESENTACIÓN -->
-    <section class="mt-20 w-full px-6 py-10">
+    <!-- ================================== -->
+    <!-- INFORMACIÓN -->
+    <!-- ================================== -->
 
-        <div class="presentacion-contenido
-                    w-full
-                    flex flex-col
-                    md:flex-row
-                    items-center
-                    justify-evenly
-                    gap-8
-                    p-8">
+    <div class="producto-info" data-aos="fade-left">
 
-            <!-- FIGURAS -->
-            <div class="presentacion-figuras
-                        flex flex-col
-                        items-baseline
-                        gap-4
-                        md:flex-row
-                        md:gap-6">
 
-                <div class="figura-oval
-                            w-[280px] h-[400px]
-                            rounded-[50%]
-                            bg-tarjeta2 rotate-[15deg]">
-                </div>
+        <!-- ETIQUETA -->
+        <p class="producto-etiqueta text-sm tracking-widest mb-5">
+            HANAKOTOBA · SIGNIFICADO FLORAL
+        </p>
 
-                <div class="figura-circulos flex gap-2">
-                    <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-darkgreen"></span>
-                    <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-darkgreen"></span>
-                    <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-darkgreen"></span>
-                </div>
 
-            </div>
+        <!-- NOMBRE -->
+        <h2 id="nombre-flor"
+            class="font-asul text-5xl text-darktext mb-6">
 
-            <!-- TEXTO -->
-            <div class="presentacion-texto
-                        flex flex-col
-                        items-center
-                        text-center
-                        md:items-start
-                        md:text-left">
+            Peonía Rosa
 
-                <h2 class="text-2xl md:text-3xl text-darktext mb-6">
-                    TÍTULO
-                </h2>
+        </h2>
 
-                <p class="text-sm text-darktext">
-                    inicio<br>
-                    productos más famosos<br>
-                    catálogo<br>
-                    servicios que ofrecemos<br>
-                    horario-mapa<br>
-                    footer
-                </p>
+
+        <!-- DESCRIPCIÓN -->
+        <p id="descripcion-flor"
+            class="font-lato text-lg leading-relaxed mb-6">
+
+            La peonía es una flor de aspecto exuberante y delicado,
+            conocida por sus numerosos pétalos y su belleza ornamental.
+            Tradicionalmente simboliza la prosperidad, la fortuna,
+            el amor y la felicidad. En su variedad rosa, representa
+            especialmente el romance, la admiración y los buenos deseos.
+
+        </p>
+
+
+        <!-- SIGNIFICADO -->
+        <div class="producto-significados mb-8">
+
+            <h3 class="font-asul text-2xl mb-5">
+                ¿Qué simboliza?
+            </h3>
+
+            <div class="flex flex-wrap gap-3">
+
+               <div class="significado ...">Amor</div>
+            <div class="significado ...">Prosperidad</div>
+<div class="significado ...">Felicidad</div>
+<div class="significado ...">Belleza</div>
 
             </div>
 
         </div>
 
-    </section>
+
+        <!-- ================================== -->
+        <!-- PRECIO -->
+        <!-- ================================== -->
+
+        <div class="producto-precio border-t border-darktext/30 pt-6 mb-7">
+
+            <p class="text-sm tracking-widest mb-2">
+                PRECIO
+            </p>
+
+            <p id="precio-flor" class="font-asul text-4xl">
+                2€ - 6€
+            </p>
+
+        </div>
+
+
+        <!-- ================================== -->
+        <!-- AÑADIR A RESERVA -->
+        <!-- ================================== -->
+
+        <div class="producto-reserva flex flex-col gap-4">
+
+            <button
+                id="anadir-reserva"
+                type="button"
+                class="w-full rounded-full bg-darktext text-lighttext px-8 py-4 text-lg font-semibold transition hover:bg-tarjeta hover:scale-105">
+
+                Añadir a reserva
+
+            </button>
+
+            <p id="mensaje-reserva"
+                class="text-center text-sm"
+                aria-live="polite">
+            </p>
+
+        </div>
+
+
+        <!-- VOLVER AL CATÁLOGO -->
+        <a  href="catalogo.html"
+            class="volver-catalogo inline-block mt-8 hover:underline underline-offset-4">
+            <i data-feather="arrow-left" class="inline-block w-4 h-4 mr-2"></i>
+            Volver al catálogo
+
+        </a>
+
+
+    </div>
+
+</section>
+
+    </main>
+
 
     <!-- ====================================== -->
-  <!-- FOOTER -->
-  <!-- ====================================== -->
-
-  <footer class="bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
-
-   <!-- PARTE SUPERIOR -->
-   <div class="footer-top flex flex-col gap-3">
-    <!-- NEWSLETTER -->
-    <div class="newsletter">
-        <label class="block text-2xl py-4" for="email">NEWSLETTER</label>
-        <div class="newslettertype">
-            <input class="rounded-full border px-3 py-2" id="email" placeholder="Email" type="email"/>
-            <button class="rounded-full border px-3 py-2 hover:bg-darktext hover:text-nav" type="button">Suscríbete</button>
-        </div>
-    </div>
-    <h2 class="pb-15">CONSIGUE TU RAMO MÁS BONITO Y FRESCO</h2>
-   </div>
-
-   <!-- PARTE INFERIOR -->
-   <div class="footer-bottom flex flex-col gap-8">
-    <!-- CONTACTO Y REDES SOCIALES -->
-    <div class="rrss">
-     <div class="rrss-icon flex justify-center items-center gap-6 mb-5">
-        <i data-feather="phone"></i>
-        <i data-feather="mail"></i>
-        <i data-feather="instagram"></i>
-     </div>
-     <div class="rrss-info">
-        <p>+34 676767676</p>
-        <p>hanakotoba@atelier.com</p>
-     </div>
-    </div>
-
-    <!-- LOGO FOOTER -->
-    <div>
-     <a class="text-8xl" href="index.html">花言葉</a>
-    </div>
-
-    <!-- COPYRIGHT -->
-    <div class="copyright">
-     <p>©2026 Hanakotoba</p>
-     <p class="text-xs">Web - Peiqi y Claudia // Imágenes - Paul Lange</p>
-    </div>
-   </div>
-  </footer>
-
+    <!-- FOOTER -->
     <!-- ====================================== -->
-  <!-- SCRIPTS -->
-  <!-- ====================================== -->
 
-  <!-- JQUERY -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js">
-  </script>
+    <footer class="bg-nav text-darktext mt-10 px-6 py-8 flex flex-col text-center justify-between">
 
-  <!-- SLICK CAROUSEL -->
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
-  </script>
+        <div class="footer-top flex flex-col gap-3">
 
-  <!-- FEATHER ICONS -->
-  <script src="https://unpkg.com/feather-icons">
-  </script>
-  <script>
-   feather.replace();
-  </script>
+            <div class="newsletter">
 
-  <!-- JAVASCRIPT PROPIO -->
-  <script src="js/script.js">
+                <label class="block text-2xl py-4" for="email">
+                    NEWSLETTER
+                </label>
 
-  </script>
+                <div class="newslettertype">
+
+                    <input class="rounded-full border px-3 py-2"
+                        id="email"
+                        placeholder="Email"
+                        type="email"/>
+
+                    <button class="rounded-full border px-3 py-2 hover:bg-darktext hover:text-nav"
+                        type="button">
+                        Suscríbete
+                    </button>
+
+                </div>
+
+            </div>
+
+            <h2 class="pb-15">
+                CONSIGUE TU RAMO MÁS BONITO Y FRESCO
+            </h2>
+
+        </div>
+
+
+        <div class="footer-bottom flex flex-col gap-8">
+
+            <div class="rrss">
+
+                <div class="rrss-icon flex justify-center items-center gap-6 mb-5">
+                    <i data-feather="phone"></i>
+                    <i data-feather="mail"></i>
+                    <i data-feather="instagram"></i>
+                </div>
+
+                <div class="rrss-info">
+                    <p>+34 676767676</p>
+                    <p>hanakotoba@atelier.com</p>
+                </div>
+
+            </div>
+
+
+            <div>
+                <a class="text-8xl" href="index.html">花言葉</a>
+            </div>
+
+
+            <div class="copyright">
+                <p>©2026 Hanakotoba</p>
+                <p class="text-xs">Web - Peiqi y Claudia // Imágenes - Paul Lange</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================== -->
+    <!-- LIBRERÍAS -->
+    <!-- ================================== -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+
+    <!-- JAVASCRIPT PROPIO -->
+    <script src="js/script.js"></script>
+
 
 </body>
 </html>
+

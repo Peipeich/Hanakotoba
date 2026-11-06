@@ -1,32 +1,13 @@
 
 /* ========================================= */
-/* TEORÍA Y ORGANIZACIÓN */
-/* ========================================= */
-
-/* ID >> CLASS >> TAG */
-
-/* Los selectores de etiqueta (h1, div, p...) van en base */
-/* Los selectores de clase (.class) van en components */
-
-
-/* ========================================= */
-/* IMPORTACIONES */
-/* ========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Lato:wght@300;400;700;900&display=swap');
-
-@import "tailwindcss";
-
-
-/* ========================================= */
-/* ORDEN DE CAPAS */
+/* 1. ORDEN DE CAPAS */
 /* ========================================= */
 
 @layer theme, base, components, utilities;
 
 
 /* ========================================= */
-/* MODO OSCURO */
+/* 2. MODO OSCURO */
 /* ========================================= */
 
 .dark {
@@ -44,7 +25,7 @@
 
 
 /* ========================================= */
-/* ESTILOS GENERALES */
+/* 3. ESTILOS GENERALES */
 /* ========================================= */
 
 @layer base {
@@ -69,7 +50,8 @@
         overflow-x: clip;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         font-family: var(--font-asul);
     }
 
@@ -77,23 +59,32 @@
         font-family: var(--font-lato);
     }
 
-    img, iframe {
+    img,
+    iframe {
         max-width: 100%;
     }
-
 }
 
 
 /* ========================================= */
-/* COMPONENTES */
+/* 4. COMPONENTES GENERALES */
 /* ========================================= */
 
 @layer components {
 
 
-    /* ----------------------------------------- */
+    /* ------------------------------------- */
+    /* NAVEGACIÓN */
+    /* ------------------------------------- */
+
+    .nav {
+        padding: 20px;
+    }
+
+
+    /* ------------------------------------- */
     /* BOTÓN MODO OSCURO */
-    /* ----------------------------------------- */
+    /* ------------------------------------- */
 
     #boton-tema {
         display: flex;
@@ -113,12 +104,58 @@
     }
 
 
-    /* ----------------------------------------- */
-    /* MAIN */
-    /* ----------------------------------------- */
+    /* ------------------------------------- */
+    /* MENÚ HAMBURGUESA */
+    /* ------------------------------------- */
+
+    .burger {
+        width: 48px;
+        height: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .burger .linea {
+        width: 22px;
+        height: 2px;
+        display: block;
+        background: var(--color-darktext);
+        border-radius: 10px;
+        transition: all 0.4s ease-in-out;
+        transform-origin: center;
+    }
+
+    .burger.activo .linea-1 {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .burger.activo .linea-2 {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .burger.activo .linea-3 {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* ===================================== */
+    /* PÁGINA DE INICIO */
+    /* ===================================== */
+
+
+    /* TÍTULO PRINCIPAL */
 
     .titulo-principal {
         white-space: nowrap;
+    }
+
+    .hanakotoba {
+        padding-top: 3rem;
     }
 
 
@@ -137,12 +174,11 @@
         width: 10rem;
         height: 10rem;
         object-fit: contain;
+        animation: pulsar 3s ease-in-out infinite;
     }
 
 
-    /* ----------------------------------------- */
     /* PRESENTACIÓN */
-    /* ----------------------------------------- */
 
     .presentacion-contenido {
         min-height: 210px;
@@ -154,9 +190,9 @@
     }
 
 
-    /* ----------------------------------------- */
+    /* ===================================== */
     /* MOST POPULAR */
-    /* ----------------------------------------- */
+    /* ===================================== */
 
     .most-popular {
         width: 100%;
@@ -172,16 +208,34 @@
         align-items: center;
     }
 
-    /* Versión ordenador oculta por defecto */
-
     .tarjetas-popu-extra {
         display: none;
     }
 
+    .tarjetas-popu-extra > div {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        transform-origin: center;
+    }
 
-    /* ----------------------------------------- */
+    .tarjetas-popu-extra > div:hover {
+        transform: scale(1.07) translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+        z-index: 10;
+        position: relative;
+    }
+
+    .tarjetas-popu-extra .ovalo-medio {
+        width: clamp(190px, 22vw, 320px);
+        height: auto;
+        aspect-ratio: 7 / 10;
+        flex: 0 1 320px;
+        z-index: 2;
+    }
+
+
+    /* ===================================== */
     /* MARQUESINA */
-    /* ----------------------------------------- */
+    /* ===================================== */
 
     .marquesina {
         width: 100%;
@@ -200,9 +254,187 @@
     }
 
 
-    /* ----------------------------------------- */
+    /* ===================================== */
+    /* CATÁLOGO */
+    /* ===================================== */
+
+    .tarjeta-movil img,
+    .catalogo-extra article img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tarjeta-movil {
+        transition: scale 0.4s ease, translate 0.4s ease;
+    }
+
+    .tarjeta-movil > div {
+        flex-shrink: 0;
+    }
+
+    .tarjeta-movil h2,
+    .tarjeta-movil p {
+        transform: none;
+        rotate: 0deg;
+    }
+
+    .catalogo-movil article > div:first-child {
+        position: relative;
+        transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .catalogo-movil article > div:first-child:hover {
+        scale: 1.05;
+        translate: 0 -8px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+        z-index: 10;
+    }
+
+    .catalogo-extra article {
+        position: relative;
+        width: 100%;
+        transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .catalogo-extra article:hover {
+        scale: 1.05;
+        translate: 0 -8px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+        z-index: 10;
+    }
+
+    .catalogo-extra .info-flor {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        background-color: var(--color-tarjeta2);
+        color: var(--color-lighttext);
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .catalogo-extra article:hover .info-flor,
+    .catalogo-extra article:focus .info-flor {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #ver-mas {
+        display: block;
+    }
+
+
+    /* ===================================== */
+    /* PÁGINA DE PRODUCTO */
+    /* ===================================== */
+
+    .pagina-producto {
+        width: 100%;
+        min-height: 70vh;
+    }
+
+    .producto-contenido {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 80px;
+    }
+
+
+    /* GALERÍA */
+
+    .producto-galeria {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        min-width: 0;
+    }
+
+    .flor-principal {
+        width: 340px;
+        height: 480px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .flor-principal img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* MINIATURAS */
+
+    .miniaturas {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .miniatura {
+        width: 95px;
+        height: 125px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    .miniatura img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* INFORMACIÓN */
+
+    .producto-info {
+        min-width: 0;
+        color: var(--color-darktext);
+    }
+
+    .producto-etiqueta {
+        letter-spacing: 0.15em;
+    }
+
+    .producto-info h2 {
+        line-height: 1.2;
+    }
+
+    .producto-descripcion,
+    .producto-significados {
+        max-width: 500px;
+    }
+
+    .significado {
+        font-size: 0.95rem;
+    }
+
+
+    /* BOTÓN VOLVER */
+
+    .volver-catalogo {
+        transition: all 0.3s ease;
+    }
+
+
+    /* ===================================== */
     /* MAPA */
-    /* ----------------------------------------- */
+    /* ===================================== */
 
     .mapa {
         width: 100%;
@@ -219,9 +451,13 @@
 
 }
 
+
 /* ========================================= */
-/* ANIMACIONES DE ENTRADA */
+/* 5. ANIMACIONES */
 /* ========================================= */
+
+
+/* ENTRADA */
 
 @keyframes aparecer {
     from {
@@ -243,12 +479,12 @@
     animation: aparecer 1s ease-out forwards;
 }
 
-/* ========================================= */
-/* ANIMACIÓN DE PULSACIÓN */
-/* ========================================= */
+
+/* PULSACIÓN */
 
 @keyframes pulsar {
-    0%, 100% {
+    0%,
+    100% {
         scale: 1;
     }
 
@@ -257,60 +493,125 @@
     }
 }
 
-.carrusel-flores img {
-    animation: pulsar 3s ease-in-out infinite;
-}
 
 /* ========================================= */
-/* TABLET */
+/* 6. RESPONSIVE: MÓVIL */
+/* ========================================= */
+
+@media (max-width: 767px) {
+
+
+    /* INICIO */
+
+    .titulo-principal {
+        font-size: 8rem;
+    }
+
+    .carrusel-flores {
+        width: 15rem;
+        height: 15rem;
+        margin: 0 -15px;
+    }
+
+    .carrusel-flores img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .presentacion-contenido {
+        min-height: 400px;
+        justify-content: center;
+    }
+
+
+    /* PRODUCTO */
+
+    .pagina-producto {
+        margin-top: 0;
+        padding: 30px 20px;
+    }
+
+    .pagina-producto > div:first-child h1 {
+        font-size: 2.8rem;
+    }
+
+    .producto-contenido {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .producto-galeria {
+        gap: 15px;
+    }
+
+    .flor-principal {
+        width: min(65vw, 250px);
+        height: 350px;
+    }
+
+    .miniaturas {
+        gap: 12px;
+    }
+
+    .miniatura {
+        width: 65px;
+        height: 85px;
+    }
+
+    .producto-info {
+        text-align: center;
+    }
+
+    .producto-info h2 {
+        font-size: 2rem;
+    }
+
+    .producto-info p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .producto-significados > div {
+        justify-content: center;
+    }
+
+    .volver-catalogo {
+        margin: 0 auto;
+    }
+
+}
+
+
+/* ========================================= */
+/* 7. RESPONSIVE: TABLET */
 /* ========================================= */
 
 @media (min-width: 768px) {
 
 
-    /* ----------------------------------------- */
-    /* NAV */
-    /* ----------------------------------------- */
+    /* NAVEGACIÓN */
 
     .nav {
         padding: 20px 40px;
     }
 
 
-    /* ----------------------------------------- */
-    /* MAIN */
-    /* ----------------------------------------- */
-
-    main {
-        padding: 40px 30px;
-    }
+    /* INICIO */
 
     .hanakotoba {
         padding-top: 6rem;
     }
 
-
-    /* CARRUSEL DE FLORES */
-
     .carrusel-flores {
         width: 20rem;
         height: 20rem;
         margin: 0 -5rem;
-        flex-shrink: 0;
-        position: relative;
-        z-index: 10;
     }
 
     .carrusel-flores img {
         width: 20rem;
         height: 20rem;
-        object-fit: contain;
     }
-
-
-    /* ----------------------------------------- */
-    /* MOST POPULAR */
-    /* ----------------------------------------- */
 
     .most-popular {
         padding: 100px 40px;
@@ -319,11 +620,6 @@
     .tarjetas-popu {
         flex-direction: row;
     }
-
-
-    /* ----------------------------------------- */
-    /* CATÁLOGO */
-    /* ----------------------------------------- */
 
     #productos {
         width: 100%;
@@ -337,9 +633,29 @@
     }
 
 
-    /* ----------------------------------------- */
+    /* PRODUCTO */
+
+    .producto-contenido {
+        grid-template-columns: 1fr 0.9fr;
+        gap: 35px;
+    }
+
+    .producto-galeria {
+        gap: 15px;
+    }
+
+    .flor-principal {
+        width: 260px;
+        height: 390px;
+    }
+
+    .miniatura {
+        width: 75px;
+        height: 100px;
+    }
+
+
     /* FOOTER */
-    /* ----------------------------------------- */
 
     footer {
         padding: 50px 40px;
@@ -349,15 +665,13 @@
 
 
 /* ========================================= */
-/* ORDENADOR */
+/* 8. RESPONSIVE: ORDENADOR */
 /* ========================================= */
 
 @media (min-width: 1024px) {
 
 
-    /* ----------------------------------------- */
-    /* NAV */
-    /* ----------------------------------------- */
+    /* NAVEGACIÓN */
 
     .nav {
         padding: 20px 60px;
@@ -376,10 +690,7 @@
         margin-left: auto;
     }
 
-    .burger {
-        display: none;
-    }
-
+    .burger,
     #menu-mov {
         display: none;
     }
@@ -389,48 +700,22 @@
     }
 
 
-    /* ----------------------------------------- */
-    /* MAIN */
-    /* ----------------------------------------- */
-
-    main {
-        padding: 60px 8%;
-    }
-
-    main h1 {
-        font-size: 14rem;
-    }
-
-    .titulo-principal {
-        flex-direction: row;
-    }
+    /* INICIO */
 
     .hanakotoba {
         padding-top: 3rem;
     }
 
-
-    /* CARRUSEL DE FLORES */
-
     .carrusel-flores {
         width: 25rem;
         height: 25rem;
         margin: 0 -5rem;
-        flex-shrink: 0;
-        position: relative;
-        z-index: 10;
     }
 
     .carrusel-flores img {
         width: 25rem;
         height: 25rem;
-        object-fit: contain;
     }
-
-
-    /* ----------------------------------------- */
-    /* MOST POPULAR */
-    /* ----------------------------------------- */
 
     .most-popular {
         width: 100%;
@@ -439,13 +724,9 @@
         padding: 100px 3%;
     }
 
-    /* Ocultar tarjetas de móvil y tablet */
-
     .tarjetas-popu {
         display: none;
     }
-
-    /* Mostrar tarjetas de ordenador */
 
     .tarjetas-popu-extra {
         display: flex;
@@ -455,8 +736,6 @@
         gap: clamp(15px, 2vw, 40px);
     }
 
-    /* Ajustar tamaño de las cinco tarjetas */
-
     .tarjetas-popu-extra > div {
         width: clamp(170px, 19vw, 280px);
         height: auto;
@@ -465,16 +744,12 @@
         min-width: 0;
     }
 
-    /* Tarjeta central */
-
     .tarjetas-popu-extra .ovalo-medio {
-        width: clamp(170px, 19vw, 280px);
+        width: clamp(190px, 22vw, 320px);
         height: auto;
         aspect-ratio: 7 / 10;
-        flex: 0 1 280px;
+        flex: 0 1 320px;
     }
-
-    /* Imágenes */
 
     .tarjetas-popu-extra img {
         width: 100%;
@@ -483,9 +758,7 @@
     }
 
 
-    /* ----------------------------------------- */
     /* CATÁLOGO */
-    /* ----------------------------------------- */
 
     #productos {
         width: 100%;
@@ -501,58 +774,85 @@
         display: none;
     }
 
+    .catalogo-extra {
+        display: grid;
+    }
 
-    /* ----------------------------------------- */
-    /* HORARIO Y MAPA */
-    /* ----------------------------------------- */
+    #ver-mas {
+        display: none;
+    }
+
+
+    /* MAPA */
 
     #informacion {
         padding: 0;
     }
 
     .mapa {
-        display: flex;
         flex-direction: row;
         gap: 20px;
         justify-content: space-around;
     }
 
-
-    /* ----------------------------------------- */
-    /* FOOTER */
-    /* ----------------------------------------- */
-
-    footer {
+    .volver-catalogo{
+        display:none
     }
 
+   /* ======================================
+   VOLVER AL CATÁLOGO - ORDENADOR
+====================================== */
+
+@media (min-width: 1024px) {
+
+    .producto-contenido {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        column-gap: 80px;
+    }
+
+    .volver-ordenador {
+        display: inline-block;
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        align-self: end;
+        margin: 0 0 20px 5%;
+    }
+
+    .producto-galeria {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .producto-info {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    /* Óvalos más grandes */
+    .miniatura {
+        width: 125px;
+        height: 165px;
+        flex-shrink: 0;
+    }
+
+    .miniaturas {
+        gap: 25px;
+    }
+
+}
 }
 
 
 /* ========================================= */
-/* PANTALLAS GRANDES */
+/* 9. RESPONSIVE: PANTALLAS GRANDES */
 /* ========================================= */
 
 @media (min-width: 1440px) {
 
 
-    /* ----------------------------------------- */
-    /* MAIN */
-    /* ----------------------------------------- */
-
-    main {
-        max-width: 1600px;
-        margin: 5rem auto;
-        padding: 60px 8%;
-    }
-
-    .maintext {
-        font-size: 20rem;
-    }
-
-
-    /* ----------------------------------------- */
-    /* MOST POPULAR */
-    /* ----------------------------------------- */
+    /* INICIO */
 
     .most-popular {
         max-width: 1800px;
@@ -565,10 +865,12 @@
         gap: 40px;
     }
 
+    .maintext {
+        font-size: 20rem;
+    }
 
-    /* ----------------------------------------- */
+
     /* CATÁLOGO */
-    /* ----------------------------------------- */
 
     #productos {
         width: 100%;
@@ -596,206 +898,13 @@
         max-width: none;
     }
 
-}
-
-
-/* ========================================= */
-/* MÓVIL */
-/* ========================================= */
-
-@media (max-width: 767px) {
-
-
-    /* ----------------------------------------- */
-    /* MAIN */
-    /* ----------------------------------------- */
-
-    .titulo-principal {
-        font-size: 8rem;
-    }
-
-    .carrusel-flores {
-        width: 15rem;
-        height: 15rem;
-        margin: 0 -15px;
-    }
-
-    .carrusel-flores img {
-        width: 15rem;
-        height: 15rem;
-    }
-
-
-    /* ----------------------------------------- */
-    /* PRESENTACIÓN */
-    /* ----------------------------------------- */
-
-    .presentacion-contenido {
-        min-height: 400px;
-        justify-content: center;
-    }
-
-}
-
-/* ========================================= */
-/* HOVER INDIVIDUAL DE LAS TARJETAS */
-/* ========================================= */
-
-/* Tarjetas de ordenador */
-.tarjetas-popu-extra > div {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-origin: center;
-}
-
-/* Efecto al pasar el ratón */
-.tarjetas-popu-extra > div:hover {
-    transform: scale(1.07) translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
-    z-index: 10;
-    position: relative;
-}
-
-/* TARJETA CENTRAL MÁS GRANDE */
-
-.tarjetas-popu-extra .ovalo-medio {
-    width: clamp(190px, 22vw, 320px);
-    height: auto;
-    aspect-ratio: 7 / 10;
-    flex: 0 1 320px;
-    z-index: 2;
-}
-
-/* ========================================= */
-/* HOVER INDIVIDUAL - CATÁLOGO */
-/* ========================================= */
-
-/* TARJETAS DE ORDENADOR */
-.catalogo-extra article {
-    position: relative;
-    transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
-}
-
-.catalogo-extra article:hover {
-    scale: 1.05;
-    translate: 0 -8px;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
-    z-index: 10;
-}
-
-
-/* TARJETAS DE MÓVIL Y TABLET */
-.catalogo-movil article > div:first-child {
-    position: relative;
-    transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
-}
-
-.catalogo-movil article > div:first-child:hover {
-    scale: 1.05;
-    translate: 0 -8px;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
-    z-index: 10;
-}
-
-
-
-/* ====================================== */
-/* CATÁLOGO HANAKOTOBA */
-/* ====================================== */
-
-/* IMÁGENES */
-.tarjeta-movil img,
-.catalogo-extra article img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* TARJETAS MÓVIL */
-.tarjeta-movil {
-    transition: scale 0.4s ease, translate 0.4s ease;
-}
-
-.tarjeta-movil > div {
-    flex-shrink: 0;
-}
-
-.tarjeta-movil h2,
-.tarjeta-movil p {
-    transform: none;
-    rotate: 0deg;
-}
-
-/* CATÁLOGO ORDENADOR */
-.catalogo-extra article {
-    position: relative;
-    width: 100%;
-    transition: scale 0.4s ease, translate 0.4s ease, box-shadow 0.4s ease;
-}
-
-.catalogo-extra .info-flor {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    background-color: var(--color-tarjeta2);
-    color: var(--color-lighttext);
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.catalogo-extra article:hover {
-    scale: 1.05;
-    translate: 0 -8px;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
-    z-index: 10;
-}
-
-.catalogo-extra article:hover .info-flor,
-.catalogo-extra article:focus .info-flor {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* MÓVIL Y TABLET */
-@media (max-width: 1023px) {
-
-    .catalogo-movil {
+     .titulo-principal {
+        margin-top: 150px;
         display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
     }
 
-    .catalogo-extra {
-        display: none;
-    }
-
-    .tarjeta-movil .info-flor {
-        position: relative;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    #ver-mas {
-        display: block;
-    }
-}
-
-/* ORDENADOR */
-@media (min-width: 1024px) {
-
-    .catalogo-movil {
-        display: none;
-    }
-
-    .catalogo-extra {
-        display: grid;
-    }
-
-    #ver-mas {
-        display: none;
-    }
 }

@@ -55,11 +55,12 @@
 
  <body class="bg-linear-to-b from-bg via-nav to-bg">
 
-  <!-- ====================================== -->
-  <!-- NAVEGACIÓN -->
-  <!-- ====================================== -->
+ 
+<!-- ====================================== -->
+<!-- NAVEGACIÓN -->
+<!-- ====================================== -->
 
-    <nav class="nav w-full fixed top-0 left-0 text-darktext p-5 z-50">
+<nav class="nav w-full fixed top-0 left-0 text-darktext p-5 z-50">
 
     <div class="flex w-full items-center justify-between gap-4">
 
@@ -74,16 +75,16 @@
             <!-- MENÚ ORDENADOR -->
             <div class="flex-1 text-sm">
                 <ul class="menu-desktop hidden">
-                    <li><a  class="hover:text-flower hover:underline" href="#productos">Catálogo</a></li>
-                    <li><a  class="hover:underline hover:text-flower" href="#sobre-nosotras">Sobre Nosotras</a></li>
-                    <li><a  class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
+                    <li><a class="hover:text-flower hover:underline" href="#productos">Catálogo</a></li>
+                    <li><a class="hover:underline hover:text-flower" href="#sobre-nosotras">Sobre Nosotras</a></li>
+                    <li><a class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
                 </ul>
             </div>
 
         </div>
 
         <!-- BOTONES DERECHA -->
-        <div class="flex items-center gap-3 shrink-0">
+        <div class="flex items-center gap-3 shrink-0 relative z-[60]">
 
             <!-- MODO OSCURO -->
             <button id="boton-tema" type="button" aria-label="Cambiar tema"
@@ -92,9 +93,15 @@
             </button>
 
             <!-- HAMBURGUESA -->
-            <div class="burger bg-nav cursor-pointer relative z-50 rounded-full border px-3 py-2">
-                <i id="icon-menu" data-feather="menu"></i>
-            </div>
+<button type="button"
+    class="burger bg-nav relative z-[60] rounded-full border px-3 py-3"
+    aria-label="Abrir menú">
+
+    <span class="linea linea-1"></span>
+    <span class="linea linea-2"></span>
+    <span class="linea linea-3"></span>
+
+</button>
 
             <!-- RESERVA ORDENADOR -->
             <div class="reserva hidden bg-nav rounded-full px-3 py-3 text-sm hover:bg-darktext hover:text-nav">
@@ -107,18 +114,21 @@
 
 </nav>
 
+<!-- MENÚ MÓVIL DESPLEGADO -->
+<div id="menu-mov"
+    class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex items-center justify-center">
 
-   <!-- MENÚ MÓVIL DESPLEGADO -->
-   <div class="hidden fixed inset-0 z-40 w-full h-screen bg-nav text-darktext flex flex-col items-center justify-center" id="menu-mov">
-    <ul class="flex flex-col items-center justify-center gap-8 text-center">
-     <li><a  class="hover:underline hover:text-deg"href="index.html">Inicio</a></li>
-     <li><a  class="hover:underline hover:text-flower"  class="hover:underline" href="#sobre-nosotros">Sobre Nosotras</a></li>
-     <li><a  class="hover:underline hover:text-flower" href="catalogo.html">Catálogo</a></li>
-     <li><a  class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
-     <li><a  class="hover:underline hover:text-flower" href="reserva.html">Reserva</a></li>
+    <ul class="flex flex-col items-center justify-center gap-8 text-center text-2xl">
+        <li><a class="hover:underline hover:text-flower" href="index.html">Inicio</a></li>
+        <li><a class="hover:underline hover:text-flower" href="#sobre-nosotras">Sobre Nosotras</a></li>
+        <li><a class="hover:underline hover:text-flower" href="catalogo.html">Catálogo</a></li>
+        <li><a class="hover:underline hover:text-flower" href="#informacion">Información</a></li>
+        <li><a class="hover:underline hover:text-flower" href="reserva.html">Reserva</a></li>
     </ul>
-   </div>
-</nav>
+
+</div>
+
+</div>
 
   <!-- ====================================== -->
   <!-- MAIN / TÍTULO PRINCIPAL -->
@@ -139,11 +149,47 @@
         <h1 class="maintext text-darktext">言</h1>
         <h1 class="maintext text-darktext">葉</h1>
     </div>
-    <div  id="sobre-nosotras" class="hanakotoba flex flex-col justify-center items-center text-darktext pt-14">
-        <h2 class="text-5xl pb-4 text-darktext">Hanakotoba</h2>
-        <p class="font-lato text-xl text-darktext">El lenguaje de las flores</p>
+</main>
+
+<!-- SOBRE HANAKOTOBA -->
+<section id="sobre-nosotras" class="hanakotoba px-6 py-20 md:py-28">
+
+    <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+
+        <!-- TÍTULO -->
+        <h2 class="font-asul text-5xl md:text-7xl text-darktext mb-4">
+            Hanakotoba
+        </h2>
+
+        <!-- SUBTÍTULO -->
+        <p class="font-lato text-xl md:text-2xl text-tarjeta mb-10">
+            El lenguaje de las flores
+        </p>
+
+        <!-- DECORACIÓN -->
+        <div class="flex items-center gap-4 mb-10">
+            <span class="text-tarjeta">⋆⊱༻𖥸༺⊰⋆</span>
+            <span class="text-2xl text-tarjeta">𖡼.𖤣𖥧𖡼.𖤣𖥧</span>
+            <span class="text-tarjeta"> ⋆⊱༻𖥸༺⊰⋆</span>
+        </div>
+
+        <!-- DESCRIPCIÓN -->
+        <p class="font-lato text-lg md:text-xl leading-relaxed text-darktext max-w-3xl">
+            Creemos que cada flor cuenta una historia. Por eso, te invitamos
+            a descubrir el lenguaje de las flores y a encontrar aquellas que
+            mejor representan tus sentimientos y emociones.
+            <span class="block mt-5">
+                Amor, amistad, gratitud, esperanza o nuevos comienzos:
+                cada ocasión tiene una flor esperando para ser descubierta.
+            </span>
+        </p>
+        <div class="boton-popu mt-20">
+    <a class="rounded-full border px-6 py-4 text-xl font-semibold bg-darktext text-nav hover:text-darktext hover:bg-lighttext" href="productos.html">Ver más</a>
+   </div>
+
     </div>
-  </main>
+
+</section>
 
   <!-- ====================================== -->
   <!-- MOST POPULAR -->
