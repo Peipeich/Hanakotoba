@@ -73,18 +73,18 @@
 @layer components {
 
 
-    /* ------------------------------------- */
+    /* ===================================== */
     /* NAVEGACIÓN */
-    /* ------------------------------------- */
+/* ===================================== */
 
     .nav {
         padding: 20px;
     }
 
 
-    /* ------------------------------------- */
+    /* ===================================== */
     /* BOTÓN MODO OSCURO */
-    /* ------------------------------------- */
+/* ===================================== */
 
     #boton-tema {
         display: flex;
@@ -104,9 +104,9 @@
     }
 
 
-    /* ------------------------------------- */
+    /* ===================================== */
     /* MENÚ HAMBURGUESA */
-    /* ------------------------------------- */
+/* ===================================== */
 
     .burger {
         width: 48px;
@@ -145,8 +145,7 @@
 
     /* ===================================== */
     /* PÁGINA DE INICIO */
-    /* ===================================== */
-
+/* ===================================== */
 
     /* TÍTULO PRINCIPAL */
 
@@ -192,7 +191,7 @@
 
     /* ===================================== */
     /* MOST POPULAR */
-    /* ===================================== */
+/* ===================================== */
 
     .most-popular {
         width: 100%;
@@ -232,31 +231,37 @@
         z-index: 2;
     }
 
+    /* ========================================= */
+/* MARQUESINA */
+/* ========================================= */
 
-    /* ===================================== */
-    /* MARQUESINA */
-    /* ===================================== */
+.marquesina {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-    .marquesina {
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-    }
+.marquesina-contenido {
+    display: flex;
+    width: max-content;
+    animation: mover-marquesina 30s linear infinite;
+}
 
-    .marquesina-contenido {
-        display: flex;
-        width: max-content;
-    }
+.marquesina-grupo {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+}
 
-    .marquesina-contenido p {
-        flex-shrink: 0;
-        padding-right: 20px;
-    }
+.marquesina-grupo p {
+    flex-shrink: 0;
+    padding: 0 25px;
+}
 
 
     /* ===================================== */
     /* CATÁLOGO */
-    /* ===================================== */
+/* ===================================== */
 
     .tarjeta-movil img,
     .catalogo-extra article img {
@@ -334,7 +339,7 @@
 
     /* ===================================== */
     /* PÁGINA DE PRODUCTO */
-    /* ===================================== */
+/* ===================================== */
 
     .pagina-producto {
         width: 100%;
@@ -434,7 +439,7 @@
 
     /* ===================================== */
     /* MAPA */
-    /* ===================================== */
+/* ===================================== */
 
     .mapa {
         width: 100%;
@@ -457,7 +462,7 @@
 /* ========================================= */
 
 
-/* ENTRADA */
+/* ANIMACIÓN DE ENTRADA */
 
 @keyframes aparecer {
     from {
@@ -480,7 +485,7 @@
 }
 
 
-/* PULSACIÓN */
+/* ANIMACIÓN DE PULSACIÓN */
 
 @keyframes pulsar {
     0%,
@@ -490,6 +495,20 @@
 
     50% {
         scale: 1.08;
+    }
+}
+
+/* ========================================= */
+/* ANIMACIÓN MARQUESINA */
+/* ========================================= */
+
+@keyframes mover-marquesina {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
     }
 }
 
@@ -621,6 +640,9 @@
         flex-direction: row;
     }
 
+
+    /* CATÁLOGO */
+
     #productos {
         width: 100%;
         padding-left: 30px;
@@ -717,6 +739,9 @@
         height: 25rem;
     }
 
+
+    /* MOST POPULAR */
+
     .most-popular {
         width: 100%;
         max-width: 100%;
@@ -795,20 +820,19 @@
         justify-content: space-around;
     }
 
-    .volver-catalogo{
-        display:none
-    }
 
-   /* ======================================
-   VOLVER AL CATÁLOGO - ORDENADOR
-====================================== */
-
-@media (min-width: 1024px) {
+    /* PRODUCTO */
 
     .producto-contenido {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
+        grid-template-rows: auto auto;
         column-gap: 80px;
+        row-gap: 0;
+    }
+
+    .volver-catalogo {
+        display: none;
     }
 
     .volver-ordenador {
@@ -830,7 +854,9 @@
         grid-row: 2;
     }
 
-    /* Óvalos más grandes */
+
+    /* MINIATURAS GRANDES */
+
     .miniatura {
         width: 125px;
         height: 165px;
@@ -841,7 +867,6 @@
         gap: 25px;
     }
 
-}
 }
 
 
@@ -867,6 +892,15 @@
 
     .maintext {
         font-size: 20rem;
+    }
+
+    .titulo-principal {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
     }
 
 
@@ -896,15 +930,6 @@
     #productos article {
         width: 100%;
         max-width: none;
-    }
-
-     .titulo-principal {
-        margin-top: 150px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        white-space: nowrap;
     }
 
 }
