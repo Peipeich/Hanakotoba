@@ -55,7 +55,7 @@
 
  <body class="bg-linear-to-b from-bg via-nav to-bg">
 
- 
+ <div id="cursor-personalizado">✿</div>
 <!-- ====================================== -->
 <!-- NAVEGACIÓN -->
 <!-- ====================================== -->
@@ -152,7 +152,7 @@
 </main>
 
 <!-- SOBRE HANAKOTOBA -->
-<section id="sobre-nosotras" class="hanakotoba px-6 py-20 md:py-28">
+<section id="sobre-nosotras" class="hanakotoba px-6 py-20 md:py-28 animacion-aparecer">
 
     <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
 
@@ -191,64 +191,75 @@
 
 </section>
 
-  <!-- ====================================== -->
-  <!-- MOST POPULAR -->
-  <!-- ====================================== -->
+<!-- ====================================== -->
+<!-- MOST POPULAR -->
+<!-- ====================================== -->
 
-    <section class="most-popular flex flex-col items-center justify-center animacion-aparecer">
+<section class="most-popular flex flex-col items-center justify-center">
 
-        <h2 class="text-5xl pb-10 text-darktext text-center ">
-            MÁS POPULARES
-        </h2>
+    <h2 class="text-5xl pb-10 text-darktext text-center">
+        MÁS POPULARES
+    </h2>
 
+    <!-- TARJETAS MÓVIL -->
+    <div class="tarjetas-popu w-full flex flex-col items-center justify-around gap-10">
 
-   <!-- TARJETAS MÓVIL -->
-   <div class="tarjetas-popu w-full flex flex-col items-center justify-around gap-10">
-    <!-- ÓVALO SUPERIOR -->
-    <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta2 rotate-[15deg]">
-     <img alt="Flor destacada" src="media/img/Flor 6.png"/>
+        <!-- ÓVALO SUPERIOR -->
+        <div data-aos="fade-up" data-aos-delay="0"
+             class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta2 rotate-[15deg]">
+            <img alt="Flor destacada" src="media/img/Flor 6.png"/>
+        </div>
+
+        <!-- ÓVALO INFERIOR -->
+        <div data-aos="fade-up" data-aos-delay="200"
+             class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+            <img alt="Flor destacada" src="media/img/Flor 2.png"/>
+        </div>
+
     </div>
 
-    <!-- ÓVALO INFERIOR -->
-    <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
-     <img alt="Flor destacada" src="media/img/Flor 2.png"/>
+    <!-- TARJETAS ORDENADOR -->
+    <div class="tarjetas-popu-extra hidden lg:flex">
+
+        <!-- TARJETA 1 -->
+        <div data-aos="fade-up" data-aos-delay="400"
+             class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+            <img alt="Flor" src="media/img/Flor 2.png"/>
+        </div>
+
+        <!-- TARJETA 2 -->
+        <div data-aos="fade-up" data-aos-delay="200"
+             class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+            <img alt="Flor" src="media/img/Flor 3.png"/>
+        </div>
+
+        <!-- TARJETA 3 -->
+        <div data-aos="fade-up" data-aos-delay="0"
+             class="ovalo-medio w-[280px] h-[400px] rounded-[50%] bg-tarjeta2 rotate-[15deg]">
+            <img alt="Flor" src="media/img/Flor 6.png"/>
+        </div>
+
+        <!-- TARJETA 4 -->
+        <div data-aos="fade-up" data-aos-delay="200"
+             class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+            <img alt="Flor" src="media/img/Flor 4.png"/>
+        </div>
+
+        <!-- TARJETA 5 -->
+        <div data-aos="fade-up" data-aos-delay="400"
+             class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
+            <img alt="Flor" src="media/img/Flor 5.png"/>
+        </div>
+
     </div>
-   </div>
 
-   <!-- TARJETAS ORDENADOR -->
-   <div class="tarjetas-popu-extra hidden">
-
-    <!-- TARJETA 1 -->
-    <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
-     <img alt="Flor" src="media/img/Flor 2.png"/>
+    <!-- BOTÓN VER MÁS -->
+    <div class="boton-popu mt-20">
+        <a class="rounded-full border px-6 py-4 text-xl font-semibold bg-darktext text-nav hover:text-darktext hover:bg-lighttext"
+           href="productos.html">Ver más</a>
     </div>
 
-    <!-- TARJETA 2 -->
-    <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
-     <img alt="Flor" src="media/img/Flor 3.png"/>
-    </div>
-
-    <!-- TARJETA 3 -->
-    <div class="ovalo-medio w-[280px] h-[400px] rounded-[50%] bg-tarjeta2 rotate-[15deg]">
-     <img alt="Flor" src="media/img/Flor 6.png"/>
-    </div>
-
-    <!-- TARJETA 4 -->
-    <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
-     <img alt="Flor" src="media/img/Flor 4.png"/>
-    </div>
-
-    <!-- TARJETA 5 -->
-    <div class="w-[280px] h-[400px] rounded-[50%] bg-tarjeta rotate-[-12deg]">
-     <img alt="Flor" src="media/img/Flor 5.png"/>
-    </div>
-   </div>
-
-   <!-- BOTÓN VER MÁS -->
-   <div class="boton-popu mt-20">
-    <a class="rounded-full border px-6 py-4 text-xl font-semibold bg-darktext text-nav hover:text-darktext hover:bg-lighttext" href="productos.html">Ver más</a>
-   </div>
-  </section>
+</section>
 
   <!-- ====================================== -->
   <!-- MARQUESINA -->
@@ -590,6 +601,10 @@
   <!-- SLICK CAROUSEL -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
   </script>
+
+    <!-- AOS ANIMATIONS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 
   <!-- FEATHER ICONS -->
   <script src="https://unpkg.com/feather-icons">

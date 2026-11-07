@@ -22,7 +22,21 @@
 
     color-scheme: dark;
 }
+* {
+    cursor: none;
+}
 
+#cursor-personalizado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 25px;
+    color: var(--color-darktext);
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease;
+}
 
 /* ========================================= */
 /* 3. ESTILOS GENERALES */
