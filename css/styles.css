@@ -22,9 +22,19 @@
 
     color-scheme: dark;
 }
+
+
+/* ========================================= */
+/* 3. CURSOR PERSONALIZADO */
+/* ========================================= */
+
+/* Ocultar cursor nativo */
+
 * {
     cursor: none;
 }
+
+/* Cursor normal */
 
 #cursor-personalizado {
     position: fixed;
@@ -35,11 +45,58 @@
     font-size: 25px;
     color: var(--color-darktext);
     transform: translate(-50%, -50%);
-    transition: transform 0.15s ease;
+    /* mix-blend-mode: difference; */
+
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        transform 0.3s ease,
+        border-radius 0.3s ease;
 }
 
+/* HOVER EN BOTONES Y ENLACES */
+
+#cursor-personalizado.cursor-hover {
+    transform: translate(-50%, -50%) scale(1.5) rotate(45deg);
+}
+
+/* BORDE AL HACER HOVER */
+
+/* BORDE DE LA FLOR AL HACER HOVER */
+
+#cursor-personalizado.cursor-hover,
+#cursor-personalizado.cursor-ver {
+    -webkit-text-stroke: 1px var(--color-lighttext);
+    paint-order: stroke fill;
+}
+
+/* HOVER EN IMÁGENES Y TARJETAS */
+
+#cursor-personalizado.cursor-ver {
+    transform: translate(-50%, -50%) scale(2);
+}
+
+/* INPUTS Y TEXTAREA: DESAPARECE LA FLOR */
+
+#cursor-personalizado.cursor-escribir {
+    display: none;
+}
+
+/* RECUPERAR EL CURSOR NATIVO EN CAMPOS DE ESCRITURA */
+
+input,
+textarea,
+[contenteditable="true"] {
+    cursor: text !important;
+}
+
+select {
+    cursor: pointer !important;
+}
+
+
 /* ========================================= */
-/* 3. ESTILOS GENERALES */
+/* 4. ESTILOS GENERALES */
 /* ========================================= */
 
 @layer base {
@@ -81,7 +138,7 @@
 
 
 /* ========================================= */
-/* 4. COMPONENTES GENERALES */
+/* 5. COMPONENTES GENERALES */
 /* ========================================= */
 
 @layer components {
@@ -89,7 +146,7 @@
 
     /* ===================================== */
     /* NAVEGACIÓN */
-/* ===================================== */
+    /* ===================================== */
 
     .nav {
         padding: 20px;
@@ -98,7 +155,7 @@
 
     /* ===================================== */
     /* BOTÓN MODO OSCURO */
-/* ===================================== */
+    /* ===================================== */
 
     #boton-tema {
         display: flex;
@@ -120,7 +177,7 @@
 
     /* ===================================== */
     /* MENÚ HAMBURGUESA */
-/* ===================================== */
+    /* ===================================== */
 
     .burger {
         width: 48px;
@@ -159,7 +216,7 @@
 
     /* ===================================== */
     /* PÁGINA DE INICIO */
-/* ===================================== */
+    /* ===================================== */
 
     /* TÍTULO PRINCIPAL */
 
@@ -205,7 +262,7 @@
 
     /* ===================================== */
     /* MOST POPULAR */
-/* ===================================== */
+    /* ===================================== */
 
     .most-popular {
         width: 100%;
@@ -245,37 +302,38 @@
         z-index: 2;
     }
 
-    /* ========================================= */
-/* MARQUESINA */
-/* ========================================= */
 
-.marquesina {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
+    /* ===================================== */
+    /* MARQUESINA */
+    /* ===================================== */
 
-.marquesina-contenido {
-    display: flex;
-    width: max-content;
-    animation: mover-marquesina 30s linear infinite;
-}
+    .marquesina {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
 
-.marquesina-grupo {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-}
+    .marquesina-contenido {
+        display: flex;
+        width: max-content;
+        animation: mover-marquesina 30s linear infinite;
+    }
 
-.marquesina-grupo p {
-    flex-shrink: 0;
-    padding: 0 25px;
-}
+    .marquesina-grupo {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+    }
+
+    .marquesina-grupo p {
+        flex-shrink: 0;
+        padding: 0 25px;
+    }
 
 
     /* ===================================== */
     /* CATÁLOGO */
-/* ===================================== */
+    /* ===================================== */
 
     .tarjeta-movil img,
     .catalogo-extra article img {
@@ -341,7 +399,7 @@
     }
 
     .catalogo-extra article:hover .info-flor,
-    .catalogo-extra article:focus .info-flor {
+    .catalogo-extra article:focus-within .info-flor {
         opacity: 1;
         visibility: visible;
     }
@@ -353,7 +411,7 @@
 
     /* ===================================== */
     /* PÁGINA DE PRODUCTO */
-/* ===================================== */
+    /* ===================================== */
 
     .pagina-producto {
         width: 100%;
@@ -453,7 +511,7 @@
 
     /* ===================================== */
     /* MAPA */
-/* ===================================== */
+    /* ===================================== */
 
     .mapa {
         width: 100%;
@@ -472,7 +530,7 @@
 
 
 /* ========================================= */
-/* 5. ANIMACIONES */
+/* 6. ANIMACIONES */
 /* ========================================= */
 
 
@@ -512,9 +570,8 @@
     }
 }
 
-/* ========================================= */
+
 /* ANIMACIÓN MARQUESINA */
-/* ========================================= */
 
 @keyframes mover-marquesina {
     from {
@@ -532,6 +589,7 @@
 ====================================== */
 
 /* ANIMACIÓN DE ENTRADA DE LAS TARJETAS */
+
 @keyframes entradaCatalogo {
     from {
         opacity: 0;
@@ -550,7 +608,7 @@
 
 
 /* ========================================= */
-/* 6. RESPONSIVE: MÓVIL */
+/* 7. RESPONSIVE: MÓVIL */
 /* ========================================= */
 
 @media (max-width: 767px) {
@@ -638,7 +696,7 @@
 
 
 /* ========================================= */
-/* 7. RESPONSIVE: TABLET */
+/* 8. RESPONSIVE: TABLET */
 /* ========================================= */
 
 @media (min-width: 768px) {
@@ -685,10 +743,9 @@
         white-space: nowrap;
     }
 
-     .maintext {
+    .maintext {
         font-size: 12rem;
     }
-
 
 
     /* CATÁLOGO */
@@ -737,7 +794,7 @@
 
 
 /* ========================================= */
-/* 8. RESPONSIVE: ORDENADOR */
+/* 9. RESPONSIVE: ORDENADOR */
 /* ========================================= */
 
 @media (min-width: 1024px) {
@@ -921,7 +978,7 @@
 
 
 /* ========================================= */
-/* 9. RESPONSIVE: PANTALLAS GRANDES */
+/* 10. RESPONSIVE: PANTALLAS GRANDES */
 /* ========================================= */
 
 @media (min-width: 1440px) {

@@ -555,21 +555,83 @@ $(document).ready(function () {
     }
 
 
-    // ======================================
-    // 10. CURSOR PERSONALIZADO
-    // ======================================
+   // ======================================
+// 10. CURSOR PERSONALIZADO
+// ======================================
 
-    const cursor = document.querySelector('#cursor-personalizado');
+const cursor = document.querySelector('#cursor-personalizado');
 
-    if (cursor) {
+if (cursor) {
 
-        document.addEventListener('mousemove', function (e) {
+    // SEGUIR EL MOVIMIENTO DEL RATÓN
 
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+    document.addEventListener('mousemove', function (e) {
+
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+
+    });
+
+
+    // HOVER EN BOTONES Y ENLACES
+
+    document.querySelectorAll('a, button').forEach(function (elemento) {
+
+        elemento.addEventListener('mouseenter', function () {
+
+            cursor.classList.remove('cursor-ver', 'cursor-escribir');
+            cursor.classList.add('cursor-hover');
 
         });
 
-    }
+        elemento.addEventListener('mouseleave', function () {
+
+            cursor.classList.remove('cursor-hover');
+
+        });
+
+    });
+
+
+    // HOVER EN IMÁGENES Y TARJETAS
+
+    document.querySelectorAll('.tarjeta-movil, .catalogo-extra article, img').forEach(function (elemento) {
+
+        elemento.addEventListener('mouseenter', function () {
+
+            cursor.classList.remove('cursor-hover', 'cursor-escribir');
+            cursor.classList.add('cursor-ver');
+
+        });
+
+        elemento.addEventListener('mouseleave', function () {
+
+            cursor.classList.remove('cursor-ver');
+
+        });
+
+    });
+
+
+    // HOVER EN INPUTS Y TEXTAREA
+
+    document.querySelectorAll('input, textarea').forEach(function (elemento) {
+
+        elemento.addEventListener('mouseenter', function () {
+
+            cursor.classList.remove('cursor-hover', 'cursor-ver');
+            cursor.classList.add('cursor-escribir');
+
+        });
+
+        elemento.addEventListener('mouseleave', function () {
+
+            cursor.classList.remove('cursor-escribir');
+
+        });
+
+    });
+
+}
 
 });
