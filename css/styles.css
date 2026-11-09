@@ -527,6 +527,28 @@
 }
 
 
+/* ======================================
+   ANIMACIÓN TARJETAS CATÁLOGO MÓVIL
+====================================== */
+
+/* ANIMACIÓN DE ENTRADA DE LAS TARJETAS */
+@keyframes entradaCatalogo {
+    from {
+        opacity: 0;
+        transform: translateY(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tarjeta-entrada {
+    animation: entradaCatalogo 0.8s ease-out both;
+}
+
+
 /* ========================================= */
 /* 6. RESPONSIVE: MÓVIL */
 /* ========================================= */
